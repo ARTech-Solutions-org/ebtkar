@@ -1,3 +1,4 @@
+import React, { Suspense } from "react";
 import { HashRouter, Routes, Route } from "react-router";
 import Frame3877 from "../imports/Frame3877";
 import Frame3876 from "../imports/Frame3876";
@@ -8,10 +9,12 @@ import Frame3871 from "../imports/Frame3871";
 import Frame3870 from "../imports/Frame3870";
 import Frame3869 from "../imports/Frame3869";
 import Frame3868 from "../imports/Frame3868";
-import AdminPanel from "../cms/AdminPanel";
 import { ContentProvider } from "../cms/ContentContext";
 import { ResponsiveScaler } from "./components/ResponsiveScaler";
 import { MobileNav } from "./components/MobileNav";
+
+// Lazy load AdminPanel so regular visitors NEVER download Admin code or routes
+const AdminPanel = React.lazy(() => import("../cms/AdminPanel"));
 
 /**
  * Wraps a page in the responsive scaler so the 1440px-wide design
@@ -34,19 +37,25 @@ function ScaledPage({ children }: { children: React.ReactNode }) {
 }
 
 function AppRoutes() {
+  const adminPath = (import.meta.env.VITE_ADMIN_PATH as string) || "/secret-admin-portal-2025";
+
   return (
-    <Routes>
-      <Route path="/" element={<ScaledPage><Frame3877 /></ScaledPage>} />
-      <Route path="/about" element={<ScaledPage><Frame3876 /></ScaledPage>} />
-      <Route path="/programs" element={<ScaledPage><Frame3875 /></ScaledPage>} />
-      <Route path="/initiatives" element={<ScaledPage><Frame3867 /></ScaledPage>} />
-      <Route path="/knowledge" element={<ScaledPage><Frame3874 /></ScaledPage>} />
-      <Route path="/empowerment" element={<ScaledPage><Frame3871 /></ScaledPage>} />
-      <Route path="/contact" element={<ScaledPage><Frame3870 /></ScaledPage>} />
-      <Route path="/policies" element={<ScaledPage><Frame3869 /></ScaledPage>} />
-      <Route path="/governance" element={<ScaledPage><Frame3868 /></ScaledPage>} />
-      <Route path="/admin" element={<AdminPanel />} />
-    </Routes>
+    <Suspense fallback={<div className="p-8 text-center text-gray-500">جاري التحميل...</div>}>
+      <Routes>
+        <Route path="/" element={<ScaledPage><Frame3877 /></ScaledPage>} />
+        <Route path="/about" element={<ScaledPage><Frame3876 /></ScaledPage>} />
+        <Route path="/programs" element={<ScaledPage><Frame3875 /></ScaledPage>} />
+        <Route path="/initiatives" element={<ScaledPage><Frame3867 /></ScaledPage>} />
+        <Route path="/knowledge" element={<ScaledPage><Frame3874 /></ScaledPage>} />
+        <Route path="/empowerment" element={<ScaledPage><Frame3871 /></ScaledPage>} />
+        <Route path="/contact" element={<ScaledPage><Frame3870 /></ScaledPage>} />
+        <Route path="/policies" element={<ScaledPage><Frame3869 /></ScaledPage>} />
+        <Route path="/governance" element={<ScaledPage><Frame3868 /></ScaledPage>} />
+        <Route path={adminPath} element={<AdminPanel />} />
+        {/* If someone tries /admin, render home page */}
+        <Route path="/admin" element={<ScaledPage><Frame3877 /></ScaledPage>} />
+      </Routes>
+    </Suspense>
   );
 }
 

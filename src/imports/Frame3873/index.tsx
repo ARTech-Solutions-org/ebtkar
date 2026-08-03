@@ -847,7 +847,7 @@ function LandingPage() {
         تؤمن جمعية الابتكار والاستدامة المجتمعية بأن النجاح الحقيقي لا يقاس بعدد البرامج أو المبادرات المنفذة، وإنما بما تتركه من أثر إيجابي ومستدام على الأفراد والمؤسسات والمجتمع. ومن هذا المنطلق، تعمل الجمعية على تصميم وتنفيذ برامج ومبادرات نوعية تُسهم في بناء القدرات، وتعزيز الابتكار، وتطوير الشراكات، ودعم التنمية المستدامة بما ينسجم مع مستهدفات رؤية المملكة العربية السعودية 2030.
       </p>
       <Footer className="-translate-x-1/2 absolute bottom-0 h-[268px] left-[calc(50%-0.5px)] w-[1459px]" />
-      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[824px]" style={{ clipPath: "polygon(0 0, 680px 0, 680px 20px, 720px 20px, 720px 0, 100% 0, 100% 100%, 0 100%)" }} />
+      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[824px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px]" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />

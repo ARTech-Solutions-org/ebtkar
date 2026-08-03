@@ -33,7 +33,11 @@ function ScaledPage({ children }: { children: React.ReactNode }) {
       <MobileNav />
       {/* Spacer that only appears on mobile to prevent content hiding under the fixed nav bar */}
       <div className="lg:hidden h-[52px]" />
-      <ResponsiveScaler>{children}</ResponsiveScaler>
+      <ResponsiveScaler>
+        <div className="animate-page-entrance">
+          {children}
+        </div>
+      </ResponsiveScaler>
     </>
   );
 }

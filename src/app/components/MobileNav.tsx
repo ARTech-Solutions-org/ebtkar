@@ -84,7 +84,7 @@ export function MobileNav() {
           style={{
             background: "linear-gradient(to bottom, #1a4a63, #2d7fa8)",
           }}
-          className="flex flex-col"
+          className="flex flex-col animate-menu-slide"
         >
           {NAV_ITEMS.map((item) => (
             <button

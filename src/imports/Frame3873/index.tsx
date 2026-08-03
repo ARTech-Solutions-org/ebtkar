@@ -241,13 +241,7 @@ function Bg() {
     <div className="absolute contents left-[-8px] top-0" data-name="bg">
       <div className="absolute bg-gradient-to-b from-[#0e3141] h-[707px] left-[-8px] to-[#409bc5] to-[98.558%] top-0 via-[#409bc5] via-[85.577%] w-[1456px]" />
       <Group2 />
-      <div className="absolute h-0 left-[calc(50%+42px)] top-[101px] w-[40px]">
-        <div className="absolute inset-[-0.5px_0]">
-          <svg className="block size-full" fill="none" height="1" preserveAspectRatio="none" viewBox="0 0 40 1" width="40">
-            <path d="M0 0.5H40" id="Vector 16" stroke="white" />
-          </svg>
-        </div>
-      </div>
+
     </div>
   );
 }

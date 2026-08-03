@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import svgPaths from "./svg-5s7x7gktrv";
 import { useNavigate } from "react-router";
 import { NavigationBar } from "../../app/components/NavigationBar";

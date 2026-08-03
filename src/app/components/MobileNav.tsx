@@ -13,6 +13,8 @@ const NAV_ITEMS: NavEntry[] = [
   { label: "البرامج والأكاديمية", route: "/programs" },
   { label: "المبادرات", route: "/initiatives" },
   { label: "مركز المعرفة", route: "/knowledge" },
+  { label: "الشركاء", route: "/partners" },
+  { label: "الأثر", route: "/impact" },
   { label: "الحوكمة والشفافية", route: "/governance" },
   { label: "اللوائح والسياسات", route: "/policies" },
   { label: "تواصل معنا", route: "/contact" },

@@ -37,12 +37,12 @@ const NAV_ITEMS = [
     className: "leading-[0] shrink-0 text-center",
   },
   {
-    route: "/__partners__",   // static link — no dedicated page; never shows active indicator
+    route: "/partners",
     node: <p className="leading-[19.129px]" dir="auto">الشركاء</p>,
     className: "leading-[19.129px] shrink-0 text-center",
   },
   {
-    route: "/__impact__",     // static link — no dedicated page; never shows active indicator
+    route: "/impact",
     node: <p className="leading-[19.129px]" dir="auto">الأثر</p>,
     className: "leading-[19.129px] shrink-0 text-right",
   },

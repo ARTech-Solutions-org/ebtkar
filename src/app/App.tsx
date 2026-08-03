@@ -5,6 +5,8 @@ import Frame3876 from "../imports/Frame3876";
 import Frame3875 from "../imports/Frame3875";
 import Frame3867 from "../imports/Frame3867";
 import Frame3874 from "../imports/Frame3874";
+import Frame3873 from "../imports/Frame3873";
+import Frame3872 from "../imports/Frame3872";
 import Frame3871 from "../imports/Frame3871";
 import Frame3870 from "../imports/Frame3870";
 import Frame3869 from "../imports/Frame3869";
@@ -47,6 +49,8 @@ function AppRoutes() {
         <Route path="/programs" element={<ScaledPage><Frame3875 /></ScaledPage>} />
         <Route path="/initiatives" element={<ScaledPage><Frame3867 /></ScaledPage>} />
         <Route path="/knowledge" element={<ScaledPage><Frame3874 /></ScaledPage>} />
+        <Route path="/partners" element={<ScaledPage><Frame3872 /></ScaledPage>} />
+        <Route path="/impact" element={<ScaledPage><Frame3873 /></ScaledPage>} />
         <Route path="/empowerment" element={<ScaledPage><Frame3871 /></ScaledPage>} />
         <Route path="/contact" element={<ScaledPage><Frame3870 /></ScaledPage>} />
         <Route path="/policies" element={<ScaledPage><Frame3869 /></ScaledPage>} />

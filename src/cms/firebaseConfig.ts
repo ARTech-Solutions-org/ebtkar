@@ -38,14 +38,14 @@ export function getSavedFirebaseConfig(): FirebaseConfig {
     /* fallback */
   }
 
-  // 3. Default fallback
+  // 3. Hardcoded project fallback (safe for client-side Firebase)
   return {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID",
+    apiKey: "AIzaSyBLP-YPhs2nLl_JCOY6G4w6duy4GMcJuw8",
+    authDomain: "artech-connect.firebaseapp.com",
+    projectId: "artech-connect",
+    storageBucket: "artech-connect.firebasestorage.app",
+    messagingSenderId: "927017986209",
+    appId: "1:927017986209:web:589de3323719a3a859e8e0",
   };
 }
 

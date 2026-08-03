@@ -213,6 +213,28 @@ export interface SiteContent {
     faq4A: string;
     heroImage: string;
   };
+
+  // ---- PARTNERS (Frame3872) ----
+  partners: {
+    heroTitle: string;
+    heroSubtitle: string;
+    sectionTitle: string;
+    sectionBodyLine1: string;
+    sectionBodyLine2: string;
+    heroImage: string;
+    sectionImage: string;
+  };
+
+  // ---- IMPACT (Frame3873) ----
+  impact: {
+    heroTitle: string;
+    heroSubtitle: string;
+    sectionTitle: string;
+    sectionBodyLine1: string;
+    sectionBodyLine2: string;
+    heroImage: string;
+    sectionImage: string;
+  };
 }
 
 export const defaultContent: SiteContent = {
@@ -457,5 +479,31 @@ export const defaultContent: SiteContent = {
     faq4A:
       "نعم، عند توفر التسجيل الإلكتروني يمكن التقديم مباشرة من خلال صفحة البرامج، وسيتم الإعلان عن البرامج والمواعيد المتاحة عبر الموقع.",
     heroImage: "",
+  },
+
+  partners: {
+    heroTitle: "الشـــركاء...",
+    heroSubtitle:
+      "نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع مختلف القطاعات.",
+    sectionTitle: "الشراكات الاستراتيجية",
+    sectionBodyLine1:
+      "نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع الجهات الحكومية، والقطاع الخاص، والقطاع غير الربحي، والجامعات، والمراكز البحثية، والشركاء المحليين والدوليين.",
+    sectionBodyLine2:
+      "وتسعى الجمعية إلى بناء علاقات طويلة الأمد تقوم على تبادل المعرفة، وتكامل الخبرات، وتوحيد الجهود، بما يسهم في تطوير المبادرات والبرامج، وتحقيق التنمية المستدامة، ودعم مستهدفات رؤية المملكة العربية السعودية 2030.",
+    heroImage: "",
+    sectionImage: "",
+  },
+
+  impact: {
+    heroTitle: "الأثــــــر...",
+    heroSubtitle:
+      "تؤمن الجمعية بأن النجاح الحقيقي لا يقاس بعدد البرامج أو المبادرات المنفذة، وإنما بما تتركه من أثر إيجابي ومستدام على المجتمع.",
+    sectionTitle: "مستهدفات الأثر المستدام",
+    sectionBodyLine1:
+      "تؤمن جمعية الابتكار والاستدامة المجتمعية بأن النجاح الحقيقي لا يقاس بعدد البرامج أو المبادرات المنفذة، وإنما بما تتركه من أثر إيجابي ومستدام على الأفراد والمؤسسات والمجتمع.",
+    sectionBodyLine2:
+      "ومن هذا المنطلق، تعمل الجمعية على تصميم وتنفيذ برامج ومبادرات نوعية تُسهم في بناء القدرات، وتعزيز الابتكار، وتطوير الشراكات، ودعم التنمية المستدامة بما ينسجم مع مستهدفات رؤية المملكة العربية السعودية 2030.",
+    heroImage: "",
+    sectionImage: "",
   },
 };

@@ -1,0 +1,28 @@
+I have TWO specific bugs that need fixing. Before making any changes, first investigate and explain the ROOT CAUSE of each bug in the actual code (not a general answer — point to the specific file, component, and CSS/logic causing it). Only after explaining the cause, make the fix. Do not tell me "fixed" without showing me what code changed.
+
+BUG 1: NAV BAR ACTIVE INDICATOR IS MISPLACED
+- There should be an underline/indicator that appears under the currently active tab/page name in the nav bar.
+- Right now, this underline is showing up in the WRONG position — not aligned under the correct active tab's text.
+- Find the exact code responsible for positioning this underline (likely calculated with a fixed width/position, or using the wrong index/ref, or not recalculating on route change or resize).
+- Fix it so the underline is ALWAYS correctly aligned directly under the active tab's label — its width should match the tab label's width, and its position should update correctly when: the page loads, the user switches tabs/pages, and the window is resized.
+- Test this on every single nav item, not just the first one — sometimes this bug only shows on specific tabs (e.g., longer text tabs).
+
+BUG 2: SITE IS NOT RESPONSIVE ACROSS SCREEN SIZES
+- Go through the actual CSS/layout code (not just visually skim it) and find where fixed pixel widths, fixed positioning, or hardcoded desktop-only values are being used instead of responsive units (%, rem, flexbox/grid, media queries).
+- Fix the layout so it adapts correctly and looks intentional at these exact breakpoints — check and fix EACH one individually, don't just assume fixing one fixes all:
+  - 360px (small mobile)
+  - 390px (standard mobile)
+  - 768px (tablet)
+  - 1024px (tablet landscape / small laptop)
+  - 1440px (laptop/desktop)
+  - 1920px (large desktop)
+- At each of these widths, there should be NO horizontal scrolling, no overlapping elements, no cut-off text, and no broken nav bar.
+- The nav bar specifically (from Bug 1) also needs to work correctly at ALL of these sizes — including collapsing into a mobile menu at smaller widths if it doesn't fit.
+
+IMPORTANT — VERIFICATION REQUIRED:
+- After making changes, you must literally list the exact files and lines you modified for each bug.
+- Do NOT say "this is now fixed" as a general statement — show me the before/after logic or CSS values you changed.
+- If you believe something was already correct and didn't need changes, say so explicitly and explain why, instead of silently skipping it.
+- If you are not able to fully fix something (e.g., a limitation in the framework/library being used), tell me clearly instead of claiming it's done.
+
+Do not touch anything else in the design, colors, fonts, content, or other pages — this is strictly about these two bugs.

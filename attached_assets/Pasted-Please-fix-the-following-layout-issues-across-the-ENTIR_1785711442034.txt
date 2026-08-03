@@ -1,0 +1,73 @@
+Please fix the following layout issues across the ENTIRE site (every page, every section) — without changing the overall design, colors, fonts, images, or content. This is a bug-fixing pass, not a redesign.
+
+1) UNWANTED WHITE SPACE / GAPS AROUND COLORED SECTIONS
+
+- Check every section that has a background color (or background image/gradient) and make sure that color fills its container edge-to-edge with NO unintended white gaps on the left, right, top, or bottom.
+
+- This is usually caused by: a parent container with default margin/padding that isn't accounted for, a fixed max-width wrapper cutting off the background color while the content itself should be constrained but the color shouldn't be, or a section not set to full width (100vw / 100%).
+
+- Fix it so the background color/section spans the full width and correct height as intended, while the actual content inside (text, buttons, images) still keeps proper padding/margins so it doesn't touch the edges.
+
+- Check this at ALL screen sizes — a gap might only appear on mobile or only on certain breakpoints, so test every width, not just desktop.
+
+2) OVERLAPPING TEXT / ELEMENTS
+
+- Go through every page and check for any text overlapping other text, overlapping images, or overlapping buttons/containers.
+
+- This usually happens due to: fixed/absolute positioning copied directly from the design instead of proper responsive layout, insufficient container height/min-height causing content to spill onto other elements, or missing z-index/stacking causing visual collision.
+
+- Fix by using proper flexbox/grid layout with adequate spacing (gap/padding/margin) instead of fixed absolute positioning, and make sure containers grow with their content instead of clipping/overlapping.
+
+- Check this issue specifically when text is long or wraps to multiple lines — make sure a longer line of text never overlaps the element below or beside it.
+
+3) FULL RESPONSIVENESS — ALL SCREEN SIZES & MOBILE
+
+- Test and fix layout at ALL breakpoints: small mobile (~360-390px), standard mobile (~414-430px), tablet (768-1024px), laptop (1280-1440px), and large desktop (1920px+).
+
+- Nothing should overflow horizontally (no sideways scrollbar) at any screen size — check this explicitly on every page.
+
+- Text, buttons, and images must resize/reflow properly on smaller screens — no cut-off text, no tiny unreadable text, no images that get squished/distorted.
+
+- Navigation must adapt properly on mobile (e.g., hamburger menu if the design doesn't fit on small screens) — don't leave a desktop-only nav that breaks or overlaps on mobile.
+
+- Section padding/margins should scale down sensibly on smaller screens — not stay identical to desktop causing cramped layouts, and not disappear entirely causing content to touch screen edges.
+
+- Recheck the white-space and overlapping-text issues (points 1 and 2) specifically on mobile — these bugs often only show up or get worse at smaller widths.
+
+WHAT NOT TO DO:
+
+- Do NOT change the visual design, layout structure, colors, fonts, or content.
+
+- Do NOT redesign anything — only fix the spacing/overflow/responsiveness bugs described above while preserving the exact look of the design at each screen size.
+
+4) NAV BAR ISSUES
+
+- Check the navigation bar on every page and fix any of the following:
+
+  - Nav items overlapping each other, overlapping the logo, or overlapping content below it.
+
+  - Nav bar not staying properly aligned (items should be evenly spaced / aligned exactly as the original design intends — not squished together or randomly spaced).
+
+  - Nav bar breaking, wrapping awkwardly, or overflowing horizontally on smaller screens instead of collapsing into a mobile menu (hamburger).
+
+  - Logo and nav links not vertically centered/aligned with each other.
+
+  - Dropdown menus (if any) not opening/closing correctly, or opening in the wrong position, or getting cut off/hidden behind other elements (z-index issue).
+
+  - Nav bar not staying fixed/sticky correctly if it's supposed to be (e.g., jumping, flickering, or disappearing on scroll) — or the opposite, scrolling away when it should stay fixed, depending on what the design shows.
+
+  - Active/hover states on nav links not working or not matching the design.
+
+  - Mobile menu (hamburger) icon not toggling open/close correctly, or the mobile menu overlay covering content incorrectly / not closing when a link is tapped.
+
+  - Check nav bar spacing and alignment specifically at EVERY breakpoint (mobile, tablet, laptop, desktop) — a nav bar issue often only appears at certain screen widths.
+
+AFTER FIXING:
+
+- Go through every page at every breakpoint (mobile, tablet, desktop) yourself and confirm: no unwanted white gaps on colored sections, no overlapping text/elements, no horizontal scroll, and everything is fully responsive.
+
+- Give me a list of what you found and fixed, organized by page and screen size, so I can verify each one.
+
+Go through this methodically, page by page, breakpoint by breakpoint — don't just check the homepage on desktop.
+
+- Also confirm the nav bar works correctly and looks properly aligned at every breakpoint, on every page, including all dropdown/mobile menu behavior.

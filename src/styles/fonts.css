@@ -1,0 +1,41 @@
+/* Custom Font Face for Hacen Casablanca */
+
+@font-face {
+  font-family: 'Hacen Casablanca';
+  src: url('./Hacen Casablanca.ttf') format('truetype'),
+       url('/fonts/Hacen Casablanca.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hacen Casablanca:Regular';
+  src: url('./Hacen Casablanca.ttf') format('truetype'),
+       url('/fonts/Hacen Casablanca.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hacen Casablanca Light:Regular';
+  src: url('./Hacen Casablanca.ttf') format('truetype'),
+       url('/fonts/Hacen Casablanca.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '29LT Bukra Variable:Medium';
+  src: url('./Hacen Casablanca.ttf') format('truetype'),
+       url('/fonts/Hacen Casablanca.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: 'Hacen Casablanca', sans-serif;
+}

@@ -53,7 +53,7 @@ function MessagesInboxCard() {
 // Route: /admin  (protected by simple password gate)
 // ================================================================
 
-const ADMIN_PASSWORD = "artechcms2025";
+const ADMIN_PASSWORD = (import.meta.env.VITE_ADMIN_PASSWORD as string) || "artechcms2025";
 
 // ---- tiny helpers ----
 type FieldDef = { label: string; path: string; type?: "text" | "textarea" | "image" };

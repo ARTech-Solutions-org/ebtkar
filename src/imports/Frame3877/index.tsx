@@ -1688,61 +1688,67 @@ function Component() {
   );
 }
 
-function TextField() {
-  return (
-    <div className="absolute content-stretch flex gap-[10px] h-[65px] items-center justify-end left-[calc(58.33%-5px)] px-[20px] py-[12px] top-[5310px] w-[400px]" data-name="text-field">
-      <div aria-hidden className="absolute border border-[#e0e0e0] border-solid inset-0 pointer-events-none" />
-      <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#828282] text-[18px] tracking-[0.18px] whitespace-nowrap" dir="auto">
-        الاسم
-      </p>
-    </div>
-  );
-}
+function QuickContactForm() {
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-function TextField1() {
-  return (
-    <div className="absolute content-stretch flex gap-[10px] h-[65px] items-center justify-end left-[calc(58.33%-5px)] px-[20px] py-[12px] top-[5390px] w-[400px]" data-name="text-field">
-      <div aria-hidden className="absolute border border-[#e0e0e0] border-solid inset-0 pointer-events-none" />
-      <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#828282] text-[18px] tracking-[0.18px] whitespace-nowrap" dir="auto">
-        رقم الهاتف
-      </p>
-    </div>
-  );
-}
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: "", phone: "", email: "" });
+      setSubmitted(false);
+    }, 4000);
+  };
 
-function TextField2() {
-  return (
-    <div className="absolute content-stretch flex gap-[10px] h-[65px] items-center justify-end left-[calc(58.33%-5px)] px-[20px] py-[12px] top-[5466px] w-[400px]" data-name="text-field">
-      <div aria-hidden className="absolute border border-[#e0e0e0] border-solid inset-0 pointer-events-none" />
-      <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[#828282] text-[18px] tracking-[0.18px] whitespace-nowrap" dir="auto">
-        الايميل
-      </p>
-    </div>
-  );
-}
+  const inputStyle = "absolute left-[calc(58.33%-5px)] w-[400px] h-[65px] px-[20px] py-[12px] bg-white border border-[#e0e0e0] font-['Hacen_Casablanca:Regular',sans-serif] text-[18px] text-[#241e56] focus:outline-none focus:border-[#009dc4] text-right placeholder:text-[#828282]";
 
-function Button() {
   return (
-    <div className="absolute bg-[#52489c] content-stretch flex h-[64px] items-center justify-center left-[calc(58.33%-5px)] px-[24px] py-[12px] top-[5551px] w-[400px]" data-name="button">
-      <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[22px] text-white uppercase whitespace-nowrap" dir="auto">
-        ارسال
+    <form onSubmit={handleSubmit} className="contents">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[normal] left-[calc(66.67%+272px)] not-italic text-[#009dc4] text-[55px] text-right top-[5224px] whitespace-nowrap" dir="auto">
+        تواصل سريع
       </p>
-    </div>
+      <input
+        type="text"
+        className={`${inputStyle} top-[5310px]`}
+        placeholder="الاسم"
+        value={formData.name}
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        required
+        dir="auto"
+      />
+      <input
+        type="tel"
+        className={`${inputStyle} top-[5390px]`}
+        placeholder="رقم الهاتف"
+        value={formData.phone}
+        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+        required
+        dir="auto"
+      />
+      <input
+        type="email"
+        className={`${inputStyle} top-[5466px]`}
+        placeholder="الايميل"
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        required
+        dir="auto"
+      />
+      <button
+        type="submit"
+        className="absolute bg-[#52489c] hover:bg-[#3f367c] transition-colors content-stretch flex h-[64px] items-center justify-center left-[calc(58.33%-5px)] px-[24px] py-[12px] top-[5551px] w-[400px] cursor-pointer border-none"
+      >
+        <p className="font-['Hacen_Casablanca:Regular',sans-serif] text-[22px] text-white uppercase whitespace-nowrap" dir="auto">
+          {submitted ? "✓ تم الإرسال" : "ارسال"}
+        </p>
+      </button>
+    </form>
   );
 }
 
 function Group37() {
-  return (
-    <div className="absolute contents left-[calc(58.33%-5px)] top-[5224px]">
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[normal] left-[calc(66.67%+272px)] not-italic text-[#009dc4] text-[55px] text-right top-[5224px] whitespace-nowrap" dir="auto">
-        تواصل سريع
-      </p>
-      <TextField />
-      <TextField1 />
-      <TextField2 />
-      <Button />
-    </div>
-  );
+  return <QuickContactForm />;
 }
 
 function Frame2() {

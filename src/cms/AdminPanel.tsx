@@ -27,13 +27,22 @@ function TextField({
   value: string;
   onChange: (v: string) => void;
 }) {
+  const [val, setVal] = useState(value);
+
+  React.useEffect(() => {
+    setVal(value);
+  }, [value]);
+
   return (
     <div style={styles.field}>
       <label style={styles.label}>{label}</label>
       <input
         style={styles.input}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        value={val}
+        onChange={(e) => {
+          setVal(e.target.value);
+          onChange(e.target.value);
+        }}
         dir="auto"
       />
     </div>
@@ -49,13 +58,22 @@ function TextareaField({
   value: string;
   onChange: (v: string) => void;
 }) {
+  const [val, setVal] = useState(value);
+
+  React.useEffect(() => {
+    setVal(value);
+  }, [value]);
+
   return (
     <div style={styles.field}>
       <label style={styles.label}>{label}</label>
       <textarea
         style={styles.textarea}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
+        value={val}
+        onChange={(e) => {
+          setVal(e.target.value);
+          onChange(e.target.value);
+        }}
         dir="auto"
       />
     </div>

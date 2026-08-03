@@ -442,133 +442,112 @@ function Frame() {
   );
 }
 
-function TextField() {
-  return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            الاسم الكامل
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: "",
+    org: "",
+    email: "",
+    phone: "",
+    subject: "",
+    type: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
 
-function TextField1() {
-  return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            اسم الجهة (اختياري)
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: "", org: "", email: "", phone: "", subject: "", type: "", message: "" });
+      setSubmitted(false);
+    }, 4000);
+  };
 
-function TextField2() {
-  return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            البريد الإلكتروني
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
+  const inputStyle = "w-full h-[65px] px-[20px] py-[12px] bg-white border border-[rgba(95,95,95,0.5)] font-['Hacen_Casablanca:Regular',sans-serif] text-[18px] text-[#241e56] focus:outline-none focus:border-[#009dc4] text-right placeholder:text-[rgba(95,95,95,0.4)]";
 
-function TextField3() {
   return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            رقم الهاتف
-          </p>
-        </div>
+    <form onSubmit={handleSubmit} className="contents">
+      <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-[calc(8.33%+85px)] top-[767px] w-[1030px]">
+        <input
+          type="text"
+          className={inputStyle}
+          placeholder="الاسم الكامل"
+          value={formData.name}
+          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+          required
+          dir="auto"
+        />
+        <input
+          type="text"
+          className={inputStyle}
+          placeholder="اسم الجهة (اختياري)"
+          value={formData.org}
+          onChange={(e) => setFormData({ ...formData, org: e.target.value })}
+          dir="auto"
+        />
+        <input
+          type="email"
+          className={inputStyle}
+          placeholder="البريد الإلكتروني"
+          value={formData.email}
+          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+          required
+          dir="auto"
+        />
+        <input
+          type="tel"
+          className={inputStyle}
+          placeholder="رقم الهاتف"
+          value={formData.phone}
+          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+          required
+          dir="auto"
+        />
+        <input
+          type="text"
+          className={inputStyle}
+          placeholder="موضوع الرسالة"
+          value={formData.subject}
+          onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+          required
+          dir="auto"
+        />
+        <input
+          type="text"
+          className={inputStyle}
+          placeholder="نوع الطلب"
+          value={formData.type}
+          onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+          dir="auto"
+        />
+        <textarea
+          className="w-full h-[196px] px-[20px] py-[12px] bg-white border border-[rgba(95,95,95,0.5)] font-['Hacen_Casablanca:Regular',sans-serif] text-[18px] text-[#241e56] focus:outline-none focus:border-[#009dc4] text-right placeholder:text-[rgba(95,95,95,0.4)] resize-none"
+          placeholder="تفاصيل الرسالة"
+          value={formData.message}
+          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+          required
+          dir="auto"
+        />
       </div>
-    </div>
-  );
-}
 
-function TextField4() {
-  return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            موضوع الرسالة
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TextField5() {
-  return (
-    <div className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            نوع الطلب
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function TextField6() {
-  return (
-    <div className="h-[196px] relative shrink-0 w-full" data-name="text-field">
-      <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-      <div className="flex flex-row items-center justify-end size-full">
-        <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-          <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">
-            تفاصيل الرسالة
-          </p>
-        </div>
-      </div>
-    </div>
+      <button
+        type="submit"
+        className="absolute bg-[#52489c] hover:bg-[#3f367c] transition-colors content-stretch flex h-[80.8px] items-center justify-center left-[calc(50%+10px)] px-[30.3px] py-[15.15px] top-[1458px] w-[505px] cursor-pointer border-none"
+      >
+        <p className="font-['Hacen_Casablanca:Regular',sans-serif] text-[27.775px] text-white uppercase whitespace-nowrap" dir="auto">
+          {submitted ? "✓ تم الإرسال بنجاح" : "ارسال"}
+        </p>
+      </button>
+    </form>
   );
 }
 
 function Frame1() {
-  return (
-    <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-[calc(8.33%+85px)] top-[767px] w-[1030px]">
-      <TextField />
-      <TextField1 />
-      <TextField2 />
-      <TextField3 />
-      <TextField4 />
-      <TextField5 />
-      <TextField6 />
-    </div>
-  );
+  return null;
 }
 
 function Button() {
-  return (
-    <div className="absolute bg-[#52489c] content-stretch flex h-[80.8px] items-center justify-center left-[calc(50%+10px)] px-[30.3px] py-[15.15px] top-[1458px] w-[505px]" data-name="button">
-      <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[27.775px] text-white uppercase whitespace-nowrap" dir="auto">
-        ارسال
-      </p>
-    </div>
-  );
+  return null;
 }
 
 function Frame2() {
@@ -629,34 +608,8 @@ function LandingPage() {
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">
         <NavigationBar />
       </div>
-      {/* Form fields */}
-      <div className="absolute content-stretch flex flex-col gap-[12px] items-start left-[calc(8.33%+85px)] top-[767px] w-[1030px]">
-        {[c.field1Placeholder, c.field2Placeholder, c.field3Placeholder, c.field4Placeholder, c.field5Placeholder, c.field6Placeholder].map((ph, i) => (
-          <div key={i} className="h-[65px] relative shrink-0 w-full" data-name="text-field">
-            <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-            <div className="flex flex-row items-center justify-end size-full">
-              <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-                <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">{ph}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-        {/* Message field - taller */}
-        <div className="h-[196px] relative shrink-0 w-full" data-name="text-field">
-          <div aria-hidden className="absolute border border-[rgba(95,95,95,0.5)] border-solid inset-0 pointer-events-none" />
-          <div className="flex flex-row items-center justify-end size-full">
-            <div className="content-stretch flex gap-[10px] items-center justify-end px-[20px] py-[12px] relative size-full">
-              <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[24px] not-italic relative shrink-0 text-[18px] text-[rgba(95,95,95,0.2)] tracking-[0.18px] whitespace-nowrap" dir="auto">{c.field7Placeholder}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Submit Button */}
-      <div className="absolute bg-[#52489c] content-stretch flex h-[80.8px] items-center justify-center left-[calc(50%+10px)] px-[30.3px] py-[15.15px] top-[1458px] w-[505px]" data-name="button">
-        <p className="[word-break:break-word] font-['Hacen_Casablanca:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[27.775px] text-white uppercase whitespace-nowrap" dir="auto">
-          {c.submitButton}
-        </p>
-      </div>
+      {/* Interactive Contact Form */}
+      <ContactForm />
       {/* FAQ Section */}
       <div className="[word-break:break-word] absolute content-stretch flex flex-col font-['Hacen_Casablanca_Light:Regular',sans-serif] gap-[70px] items-start leading-[0] left-[calc(8.33%+150px)] not-italic text-[#6e6e6e] text-[0px] text-right top-[1660px] w-[900px]">
         <p className="relative shrink-0 w-full" dir="auto">

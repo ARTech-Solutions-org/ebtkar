@@ -1,6 +1,4 @@
 {
-  "installCommand": "npm install --ignore-scripts --no-audit --prefer-offline || npm install --no-audit",
-  "buildCommand": "npx vite build",
   "rewrites": [
     {
       "source": "/(.*)",

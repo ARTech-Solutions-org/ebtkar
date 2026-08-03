@@ -1063,16 +1063,16 @@ function Group20() {
           رئيس مجلس الإدارة
         </p>
         <p className="leading-[34px] mb-[8.521232604980469px] text-[40px]" dir="auto">
-          ​
+
         </p>
         <p className="leading-[34px] mb-[8.521232604980469px] text-[30px]" dir="auto">
-          ​
+
         </p>
         <p className="leading-[34px] mb-[8.521232604980469px] text-[40px]" dir="auto">
-          ​
+
         </p>
         <p className="leading-[34px] text-[45px]" dir="auto">
-          ​
+
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[21px] leading-[6px] left-[calc(8.33%+695px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[5598px] w-[559px]" dir="auto">
@@ -1121,7 +1121,7 @@ function Group19() {
           نائب رئيس مجلس الإدارة
         </p>
         <p className="leading-[34px] text-[45px]" dir="auto">
-          ​
+
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[182px] leading-[34px] left-[calc(8.33%+695px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[6322px] w-[559px]" dir="auto">
@@ -1339,7 +1339,7 @@ function LandingPage() {
         الهيــــكل التنظيمي
       </p>
       <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px]" />
-      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[824px]" />
+      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[812px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px]" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />

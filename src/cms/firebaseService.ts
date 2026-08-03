@@ -69,3 +69,75 @@ export async function saveContentToCloud(content: SiteContent): Promise<boolean>
     return false;
   }
 }
+
+export interface ContactSubmission {
+  id?: string;
+  name: string;
+  email: string;
+  phone: string;
+  subject?: string;
+  type?: string;
+  org?: string;
+  message?: string;
+  createdAt: string;
+}
+
+const LOCAL_MESSAGES_KEY = "ebtkar_contact_messages_v1";
+
+export async function saveContactSubmission(submission: ContactSubmission): Promise<boolean> {
+  // Always save to local backup array first
+  try {
+    const existing = JSON.parse(localStorage.getItem(LOCAL_MESSAGES_KEY) || "[]");
+    localStorage.setItem(LOCAL_MESSAGES_KEY, JSON.stringify([submission, ...existing]));
+  } catch {
+    /* ignore */
+  }
+
+  if (!firestoreDb) {
+    firestoreDb = initFirebase();
+  }
+  if (!firestoreDb) return true;
+
+  try {
+    const docRef = doc(firestoreDb, "contact_submissions", `msg_${Date.now()}`);
+    await setDoc(docRef, submission);
+    return true;
+  } catch (err) {
+    console.warn("Could not save message to Cloud Firestore:", err);
+    return true;
+  }
+}
+
+export function subscribeToContactSubmissions(
+  onUpdate: (messages: ContactSubmission[]) => void
+): () => void {
+  // Read local messages first
+  try {
+    const existing = JSON.parse(localStorage.getItem(LOCAL_MESSAGES_KEY) || "[]");
+    onUpdate(existing);
+  } catch {
+    onUpdate([]);
+  }
+
+  if (!firestoreDb) {
+    firestoreDb = initFirebase();
+  }
+  if (!firestoreDb) return () => {};
+
+  try {
+    const docRef = doc(firestoreDb, "contact_submissions", "all_messages");
+    const unsubscribe = onSnapshot(
+      docRef,
+      (snapshot) => {
+        if (snapshot.exists()) {
+          const cloudMsgs = snapshot.data().list || [];
+          onUpdate(cloudMsgs);
+        }
+      },
+      () => {}
+    );
+    return unsubscribe;
+  } catch {
+    return () => {};
+  }
+}

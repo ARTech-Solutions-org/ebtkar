@@ -443,6 +443,8 @@ function Frame() {
   );
 }
 
+import { saveContactSubmission } from "../../cms/firebaseService";
+
 function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -455,8 +457,12 @@ function ContactForm() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveContactSubmission({
+      ...formData,
+      createdAt: new Date().toLocaleString("ar-SA"),
+    });
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: "", org: "", email: "", phone: "", subject: "", type: "", message: "" });

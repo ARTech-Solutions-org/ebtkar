@@ -1,7 +1,52 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useContent } from "./ContentContext";
 import { getSavedFirebaseConfig, saveFirebaseConfig, isFirebaseConfigured } from "./firebaseConfig";
-import { initFirebase } from "./firebaseService";
+import { initFirebase, subscribeToContactSubmissions, ContactSubmission } from "./firebaseService";
+
+function MessagesInboxCard() {
+  const [messages, setMessages] = useState<ContactSubmission[]>([]);
+
+  useEffect(() => {
+    const unsub = subscribeToContactSubmissions((msgs) => setMessages(msgs));
+    return unsub;
+  }, []);
+
+  return (
+    <div style={{ ...styles.sectionBlock, margin: "24px 32px 0 32px", padding: 20 }}>
+      <h3 style={{ margin: "0 0 16px 0", color: "#164256", display: "flex", alignItems: "center", gap: 10 }}>
+        <span>📬 الرسائل والطلبات الواردة من الزوار</span>
+        <span style={{ background: "#009dc4", color: "white", borderRadius: 12, padding: "2px 10px", fontSize: 13 }}>
+          {messages.length} رسالة
+        </span>
+      </h3>
+      {messages.length === 0 ? (
+        <p style={{ color: "#718096", margin: 0 }}>لا توجد رسائل واردة حتى الآن.</p>
+      ) : (
+        <div style={{ display: "flex", flexDirection: "column", gap: 12, maxHeight: 400, overflowY: "auto" }}>
+          {messages.map((m, idx) => (
+            <div key={idx} style={{ background: "#f8fafc", border: "1px solid #e2e8f0", borderRadius: 8, padding: 16 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, flexWrap: "wrap", gap: 8 }}>
+                <strong style={{ color: "#2d3748", fontSize: 16 }}>👤 {m.name} {m.org ? `(${m.org})` : ""}</strong>
+                <span style={{ color: "#718096", fontSize: 12 }}>🕒 {m.createdAt}</span>
+              </div>
+              <div style={{ display: "flex", gap: 16, fontSize: 13, color: "#4a5568", marginBottom: 8, flexWrap: "wrap" }}>
+                <span>📧 {m.email}</span>
+                <span>📞 {m.phone}</span>
+                {m.subject && <span>📌 {m.subject}</span>}
+                {m.type && <span>🏷️ {m.type}</span>}
+              </div>
+              {m.message && (
+                <div style={{ background: "white", padding: 12, borderRadius: 6, border: "1px solid #edf2f7", color: "#2d3748", fontSize: 14 }}>
+                  {m.message}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 // ================================================================
 // ADMIN PANEL — CMS for the ARTech Connect website
@@ -23,6 +68,7 @@ function TextField({
   value,
   onChange,
 }: {
+  key?: React.Key;
   label: string;
   value: string;
   onChange: (v: string) => void;
@@ -54,6 +100,7 @@ function TextareaField({
   value,
   onChange,
 }: {
+  key?: React.Key;
   label: string;
   value: string;
   onChange: (v: string) => void;
@@ -86,6 +133,7 @@ function ImageField({
   path,
   onChange,
 }: {
+  key?: React.Key;
   label: string;
   value: string;
   path: string;
@@ -165,6 +213,7 @@ function SectionBlock({
   getVal,
   onUpdate,
 }: {
+  key?: React.Key;
   section: SectionDef;
   getVal: (path: string) => string;
   onUpdate: (path: string, value: string) => void;
@@ -662,6 +711,9 @@ function AdminPanelInner() {
 
       {/* Firebase Cloud Sync Status Card */}
       <FirebaseConfigCard />
+
+      {/* Incoming Messages Card */}
+      <MessagesInboxCard />
 
       {/* Info bar */}
       <div style={styles.infoBar}>

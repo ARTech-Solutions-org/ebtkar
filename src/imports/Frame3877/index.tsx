@@ -1689,12 +1689,21 @@ function Component() {
   );
 }
 
+import { saveContactSubmission } from "../../cms/firebaseService";
+
 function QuickContactForm() {
   const [formData, setFormData] = useState({ name: "", phone: "", email: "" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    await saveContactSubmission({
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      subject: "تواصل سريع من الرئيسية",
+      createdAt: new Date().toLocaleString("ar-SA"),
+    });
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: "", phone: "", email: "" });

@@ -11,21 +11,23 @@ export interface FirebaseConfig {
 const LOCAL_STORAGE_KEY = "firebase_user_config_v1";
 
 export function getSavedFirebaseConfig(): FirebaseConfig {
-  // 1. Check Vercel / Vite Environment Variables first
-  const envConfig: FirebaseConfig = {
-    apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
-    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "",
-    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "",
-    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "",
-    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
-    appId: import.meta.env.VITE_FIREBASE_APP_ID || "",
-  };
+  // 1. Vite bakes VITE_FIREBASE_* env vars into the JS bundle at build time.
+  //    When deployed on Vercel with env vars set, ALL visitors get them automatically.
+  const envApiKey = import.meta.env.VITE_FIREBASE_API_KEY as string | undefined;
+  const envProjectId = import.meta.env.VITE_FIREBASE_PROJECT_ID as string | undefined;
 
-  if (envConfig.apiKey && envConfig.projectId) {
-    return envConfig;
+  if (envApiKey && envProjectId) {
+    return {
+      apiKey: envApiKey,
+      authDomain: (import.meta.env.VITE_FIREBASE_AUTH_DOMAIN as string) || "",
+      projectId: envProjectId,
+      storageBucket: (import.meta.env.VITE_FIREBASE_STORAGE_BUCKET as string) || "",
+      messagingSenderId: (import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID as string) || "",
+      appId: (import.meta.env.VITE_FIREBASE_APP_ID as string) || "",
+    };
   }
 
-  // 2. Check localStorage saved configuration
+  // 2. Fallback: check localStorage (set via admin panel UI)
   try {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (saved) {
@@ -35,17 +37,17 @@ export function getSavedFirebaseConfig(): FirebaseConfig {
       }
     }
   } catch {
-    /* fallback */
+    /* ignore */
   }
 
-  // 3. Default fallback
+  // 3. Not configured yet
   return {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID",
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: "",
   };
 }
 
@@ -58,10 +60,5 @@ export function saveFirebaseConfig(config: FirebaseConfig): void {
 }
 
 export function isFirebaseConfigured(config: FirebaseConfig = getSavedFirebaseConfig()): boolean {
-  return Boolean(
-    config.apiKey &&
-    config.apiKey !== "YOUR_API_KEY" &&
-    config.projectId &&
-    config.projectId !== "YOUR_PROJECT_ID"
-  );
+  return Boolean(config.apiKey && config.projectId);
 }

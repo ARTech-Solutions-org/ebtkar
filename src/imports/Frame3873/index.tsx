@@ -837,7 +837,7 @@ function Group12() {
 
 function LandingPage() {
   return (
-    <div className="absolute bg-white h-[2134px] left-0 overflow-clip top-0 w-[1440px]" data-name="Landing Page">
+    <div className="relative bg-white h-[2134px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
       <p className="-translate-x-full [word-break:break-word] absolute bottom-[84.86%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[12.42%] w-[404px]" dir="auto">

@@ -1339,7 +1339,7 @@ function LandingPage() {
         الهيــــكل التنظيمي
       </p>
       <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px]" />
-      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[824px]" />
+      <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[824px]" style={{ clipPath: "polygon(0 0, 620px 0, 620px 90px, 100% 90px, 100% 100%, 0 100%)" }} />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px]" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />

@@ -2,8 +2,11 @@ import svgPaths from "./svg-pazhbispa7";
 import imgLayer11 from "./922ea633b05e4bd1260330b71876671f04ddc610.png";
 import { useNavigate } from "react-router";
 import { NavigationBar } from "../../app/components/NavigationBar";
+import { useContent } from "../../cms/ContentContext";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -14,7 +17,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -622,26 +625,30 @@ function Group6() {
 }
 
 function Group3() {
+  const { content } = useContent();
+  const p = content.partners;
   return (
     <div className="-translate-x-1/2 [word-break:break-word] absolute contents left-1/2 not-italic text-center top-[867px]">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-1/2 text-[#009dc4] text-[55px] top-[867px] w-[406px]" dir="auto">
-        مزايا الشراكة
+        {p.benefitsTitle}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+600px)] text-[#6e6e6e] text-[28px] top-[933px] w-[928px]" dir="auto">
-        تمنح الشراكة مع الجمعية فرصًا متعددة لتحقيق قيمة مضافة لجميع الأطراف، ومن أبرزها:
+        {p.benefitsBody}
       </p>
     </div>
   );
 }
 
 function Group7() {
+  const { content } = useContent();
+  const p = content.partners;
   return (
     <div className="-translate-x-1/2 [word-break:break-word] absolute contents left-1/2 not-italic text-center top-[1653px]">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-1/2 text-[#009dc4] text-[55px] top-[1653px] w-[406px]" dir="auto">
-        مجالات التعاون
+        {p.areasTitle}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+600px)] text-[#6e6e6e] text-[28px] top-[1719px] w-[928px]" dir="auto">
-        ترحب الجمعية بالتعاون مع مختلف الجهات في العديد من المجالات، ومنها:
+        {p.areasBody}
       </p>
     </div>
   );
@@ -691,19 +698,21 @@ function Group18() {
 }
 
 function LandingPage() {
+  const { content } = useContent();
+  const p = content.partners;
   return (
     <div className="relative bg-white h-[2602px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
       <p className="-translate-x-full [word-break:break-word] absolute bottom-[87.93%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[9.84%] w-[404px] animate-hero-reveal" dir="auto">
-        الشـــركاء...
+        {p.heroTitle}
       </p>
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[710px] not-italic text-[28px] text-right text-white top-[325px] w-[555px]">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
-          نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع الجهات الحكومية، والقطاع الخاص، والقطاع غير الربحي، والجامعات، والمراكز البحثية، والشركاء المحليين والدوليين.
+          {p.sectionBodyLine1}
         </p>
         <p className="leading-[30px]" dir="auto">
-          وتسعى الجمعية إلى بناء علاقات طويلة الأمد تقوم على تبادل المعرفة، وتكامل الخبرات، وتوحيد الجهود، بما يسهم في تطوير المبادرات والبرامج، وتحقيق التنمية المستدامة، ودعم مستهدفات رؤية المملكة العربية السعودية 2030.
+          {p.sectionBodyLine2}
         </p>
       </div>
       <Footer className="-translate-x-1/2 absolute bottom-0 h-[268px] left-[calc(50%-0.5px)] w-[1459px]" />

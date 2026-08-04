@@ -5,6 +5,8 @@ import imgLayer11 from "./922ea633b05e4bd1260330b71876671f04ddc610.png";
 import { useContent } from "../../cms/ContentContext";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -15,7 +17,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -479,19 +481,16 @@ function Group3() {
 }
 
 function Group6() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(66.67%-16.54px)] top-[764px]">
       <Group3 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(66.67%+76.33px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
-        نمكّن الجهات من بناء بيئات ابتكارية مستدامة من خلال تطوير الإستراتيجيات، والحوكمة، وإدارة الابتكار، وتعزيز الثقافة الابتكارية، وقياس النضج، وتصميم الخدمات ،والحلول.
+        {e.card4Body}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[251.636px] leading-[0] left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          الابتكـــــار
-        </p>
-        <p className="leading-[23.606px]" dir="auto">
-          المـــــؤسسي
-        </p>
+        {e.card4Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(66.67%-16.54px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
     </div>
@@ -525,19 +524,16 @@ function Group4() {
 }
 
 function Group9() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(66.67%-16.54px)] top-[1370.47px]">
       <Group4 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(66.67%+76.33px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
-        ندعم رحلة التحول الرقمي من خلال تبني التقنيات الحديثة، وتطوير الخدمات الرقمية، وتحسين تجربة المستفيد، ورفع كفاءة العمليات.
+        {e.card8Body}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          التحــول
-        </p>
-        <p className="leading-[23.606px]" dir="auto">
-          الــــرقمي
-        </p>
+        {e.card8Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(66.67%-16.54px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
     </div>
@@ -589,14 +585,16 @@ function Group7() {
 }
 
 function Group5() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(50%+12.3px)] top-[764px]">
       <Group7 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
-        ندعم منظومة البحث والتطوير والابتكار من خلال ربط المعرفة بالتطبيق، وتشجيع البحث العلمي، وتطوير الحلول المبتكرة التي تستجيب للتحديات الوطنية وتحقق التنمية المستدامة.
+        {e.card3Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[251.636px] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]" dir="auto">
-        البحث والتطوير والابتكار
+        {e.card3Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
     </div>
@@ -630,19 +628,16 @@ function Group8() {
 }
 
 function Group10() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(50%+12.3px)] top-[1370.47px]">
       <Group8 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
-        نعمل على تمكين الجهات والأفراد من الاستفادة من تقنيات الذكاء الاصطناعي في تطوير الخدمات، وتحليل البيانات، وابتكار حلول تدعم التنمية المستدامة.
+        {e.card7Body}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          الــــذكاء
-        </p>
-        <p className="leading-[23.606px]" dir="auto">
-          الاصطناعي
-        </p>
+        {e.card7Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
     </div>
@@ -701,14 +696,16 @@ function Group11() {
 }
 
 function Group13() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(50%+12.3px)] top-[1950.74px]">
       <Group11 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[2265.88px] w-[149.235px]" dir="auto">
-        نبني شراكات استراتيجية، وننظم المؤتمرات والملتقيات، ونعزز تبادل الخبرات ونشر المعرفة لدعم منظومة الابتكار والاستدامة.
+        {e.card10Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
-        الشراكات
+        {e.card10Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[271.481px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[2196.02px] w-[186.544px]" />
     </div>
@@ -758,14 +755,16 @@ function Group14() {
 }
 
 function Group12() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(33.33%+41.15px)] top-[764px]">
       <Group14 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
-        نعزز استدامة المبادرات والمنظمات من خلال تطوير نماذج الاستدامة، وقياس الأثر، وربط المبادرات بأهداف التنمية المستدامة.
+        {e.card2Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1046.59px] w-[149.235px]" dir="auto">
-        الاستدامة
+        {e.card2Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
     </div>
@@ -810,19 +809,16 @@ function Group16() {
 }
 
 function Group15() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(33.33%+41.15px)] top-[1370.47px]">
       <Group16 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
-        نقدّم برامج احترافية وتنفيذية، وورش عمل، ومعسكرات، وهاكاثونات، لتطوير القيادات والكفاءات الوطنية في مجالات الابتكار والاستدامة.
+        {e.card6Body}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1653.06px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          بنــــــاء
-        </p>
-        <p className="leading-[23.606px]" dir="auto">
-          القدرات
-        </p>
+        {e.card6Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
     </div>
@@ -875,14 +871,16 @@ function Group18() {
 }
 
 function Group17() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(33.33%+41.15px)] top-[1950.74px]">
       <Group18 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[2265.88px] w-[149.235px]" dir="auto">
-        نوفر دراسات متخصصة واستشارات استراتيجية وتقييماً للمبادرات والبرامج، بما يدعم اتخاذ القرار وتحقيق الأثر المؤسسي والمجتمعي.
+        {e.card9Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
-        الاستشارات
+        {e.card9Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[271.481px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[2196.02px] w-[186.544px]" />
     </div>
@@ -928,19 +926,16 @@ function Group20() {
 }
 
 function Group19() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(16.67%+70px)] top-[764px]">
       <Group20 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
-        ندعم المؤسسات في تنفيذ التحول المؤسسي من خلال تطوير الهياكل التنظيمية، وتحسين الإجراءات، وإدارة التغيير، بما يعزز الكفاءة ويرفع جودة الأداء.
+        {e.card1Body}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          التحــــول
-        </p>
-        <p className="leading-[23.606px]" dir="auto">
-          المؤسسي
-        </p>
+        {e.card1Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(16.67%+70px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
     </div>
@@ -985,14 +980,16 @@ function Group22() {
 }
 
 function Group21() {
+  const { content } = useContent();
+  const e = content.empowerment;
   return (
     <div className="absolute contents left-[calc(16.67%+70px)] top-[1370.47px]">
       <Group22 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
-        نعمل على تصميم وتنفيذ مبادرات مجتمعية مبتكرة تستجيب لاحتياجات المجتمع، وتعزز المشاركة المجتمعية، وتسهم في تحقيق أثر مستدام.
+        {e.card5Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]" dir="auto">
-        المبادرات المجتمعية
+        {e.card5Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(16.67%+70px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
     </div>

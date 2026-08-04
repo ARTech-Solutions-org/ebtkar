@@ -435,13 +435,15 @@ function IsolationMode1() {
 }
 
 function Group4() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(25%+138px)] top-[2053px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(25%+233px)] not-italic text-[25px] text-center text-white top-[2296px] w-[190px]" dir="auto">
-        نقيس نجاحنا بما نحققه من أثر حقيقي ومستدام.
+        {a.value6Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(37.5%+53.5px)] not-italic text-[40px] text-center text-white top-[2249px] whitespace-nowrap" dir="auto">
-        الأثر
+        {a.value6Title}
       </p>
       <IsolationMode1 />
     </div>
@@ -491,13 +493,15 @@ function IsolationMode3() {
 }
 
 function Group7() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(66.67%+28px)] top-[2053px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(66.67%+123px)] not-italic text-[25px] text-center text-white top-[2296px] w-[190px]" dir="auto">
-        نلتزم بأعلى معايير الجودة والاحترافية في جميع أعمالنا.
+        {a.value8Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(79.17%-56.5px)] not-italic text-[40px] text-center text-white top-[2249px] whitespace-nowrap" dir="auto">
-        الجودة
+        {a.value8Title}
       </p>
       <IsolationMode3 />
     </div>
@@ -549,13 +553,15 @@ function IsolationMode5() {
 }
 
 function Group3() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(50%+24px)] top-[1699px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(50%+119px)] not-italic text-[25px] text-center text-white top-[1942px] w-[190px]" dir="auto">
-        نعمل على تطوير حلول تستمر آثارها وتحقق قيمة طويلة المدى.
+        {a.value3Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(62.5%-61px)] not-italic text-[40px] text-center text-white top-[1895px] whitespace-nowrap" dir="auto">
-        الاستدامة
+        {a.value3Title}
       </p>
       <IsolationMode5 />
     </div>
@@ -609,13 +615,15 @@ function IsolationMode7() {
 }
 
 function Group8() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(50%+23px)] top-[2053px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(50%+118px)] not-italic text-[25px] text-center text-white top-[2296px] w-[190px]" dir="auto">
-        نؤمن بأن التعاون أساس النجاح وتحقيق الأثر.
+        {a.value7Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(62.5%-61.5px)] not-italic text-[40px] text-center text-white top-[2249px] whitespace-nowrap" dir="auto">
-        الشراكة
+        {a.value7Title}
       </p>
       <IsolationMode7 />
     </div>
@@ -665,13 +673,15 @@ function IsolationMode9() {
 }
 
 function Group5() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(33.33%+22px)] top-[1699px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(33.33%+117px)] not-italic text-[25px] text-center text-white top-[1942px] w-[190px]" dir="auto">
-        نبني القدرات ونوفر البيئة الداعمة للإبداع والتميز.
+        {a.value2Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(37.5%+57px)] not-italic text-[40px] text-center text-white top-[1895px] whitespace-nowrap" dir="auto">
-        التمكين
+        {a.value2Title}
       </p>
       <IsolationMode9 />
     </div>
@@ -728,12 +738,14 @@ function IsolationMode11() {
 }
 
 function Group9() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(66.67%+26px)] top-[1699px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(66.67%+121px)] not-italic text-[25px] text-center text-white top-[1942px] w-[190px]" dir="auto">
-        نؤمن بأن الابتكار هو المحرك الرئيس للتنمية وصناعة المستقبل.
+        {a.value4Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(79.17%-58.5px)] not-italic text-[40px] text-center text-white top-[1895px] whitespace-nowrap" dir="auto">{` الابتكار`}</p>
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(79.17%-58.5px)] not-italic text-[40px] text-center text-white top-[1895px] whitespace-nowrap" dir="auto">{a.value4Title}</p>
       <IsolationMode11 />
     </div>
   );
@@ -786,13 +798,15 @@ function IsolationMode13() {
 }
 
 function Group6() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+140px)] top-[1699px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+235px)] not-italic text-[25px] text-center text-white top-[1942px] w-[190px]" dir="auto">
-        نعزز التعلم المستمر ونقل أفضل الممارسات والخبرات.
+        {a.value1Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(20.83%+55.5px)] not-italic text-[40px] text-center text-white top-[1895px] whitespace-nowrap" dir="auto">
-        المعرفة
+        {a.value1Title}
       </p>
       <IsolationMode13 />
     </div>
@@ -843,13 +857,15 @@ function IsolationMode15() {
 }
 
 function Group10() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+133px)] top-[2053px]">
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+228px)] not-italic text-[25px] text-center text-white top-[2296px] w-[190px]" dir="auto">
-        نقود التغيير الإيجابي نحو مستقبل أكثر ابتكارًا واستدامة.
+        {a.value5Body}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[36px] left-[calc(20.83%+48.5px)] not-italic text-[40px] text-center text-white top-[2249px] whitespace-nowrap" dir="auto">
-        التحول
+        {a.value5Title}
       </p>
       <IsolationMode15 />
     </div>
@@ -1043,6 +1059,8 @@ function Frame() {
 }
 
 function Group20() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+122px)] top-[5423px]">
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[131px] leading-[0] left-[calc(8.33%+695px)] not-italic text-[#009dc4] text-[0px] text-right top-[5423px] w-[559px] whitespace-pre-wrap">
@@ -1050,10 +1068,10 @@ function Group20() {
           سعــــادة الأستاذ الدكتور
         </p>
         <p className="leading-[34px] mb-[8.521232604980469px] text-[50px]" dir="auto">
-          الدكتور علي صالح الشمراني
+          {a.boardMember1Name}
         </p>
         <p className="font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] mb-[8.521232604980469px] text-[40px]" dir="auto">
-          رئيس مجلس الإدارة
+          {a.boardMember1Role}
         </p>
         <p className="leading-[34px] mb-[8.521232604980469px] text-[40px]" dir="auto">
 
@@ -1069,10 +1087,10 @@ function Group20() {
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[21px] leading-[6px] left-[calc(8.33%+695px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[5598px] w-[559px]" dir="auto">
-        خبير في قيادة منظومات الابتكار والتحول الاستراتيجي
+        {a.boardMember1Specialty}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[205px] leading-[34px] left-[calc(8.33%+695px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[5667px] w-[573px]" dir="auto">
-        يُعد من القيادات الوطنية في مجالات الابتكار والبحث والتطوير، ويتمتع بخبرة تتجاوز 19 عامًا في قيادة منظومات الابتكار، وإدارة مراكز الأبحاث التطبيقية، وتصميم الحلول الاستراتيجية للتحديات الوطنية. يقود الجمعية برؤية طموحة نحو تمكين الابتكار والاستدامة المجتمعية، وبناء شراكات ومبادرات وطنية ذات أثر مستدام.
+        {a.boardMember1Bio}
       </p>
       <div className="absolute h-[75px] left-[calc(33.33%+88px)] top-[5565px] w-[247px]">
         <div className="absolute inset-[-1.33%_0]">
@@ -1100,6 +1118,8 @@ function Group18() {
 }
 
 function Group19() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[5962px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[591px] left-[calc(8.33%+85px)] rounded-[30px] top-[5962px] w-[1030px]" />
@@ -1108,20 +1128,20 @@ function Group19() {
           الدكــتور
         </p>
         <p className="leading-[40px] mb-[8.521232604980469px] text-[50px]" dir="auto">
-          عبدالله غانم آل منصور
+          {a.boardMember2Name}
         </p>
         <p className="font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] mb-[8.521232604980469px] text-[40px]" dir="auto">
-          نائب رئيس مجلس الإدارة
+          {a.boardMember2Role}
         </p>
         <p className="leading-[34px] text-[45px]" dir="auto">
 
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[182px] leading-[34px] left-[calc(8.33%+695px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[6322px] w-[559px]" dir="auto">
-        يقود مبادرات وطنية ودولية في الابتكار، ومتخصص في تطوير منظومات الابتكار، وبناء القدرات، وتصميم الاستراتيجيات، وتطوير المبادرات ذات الأثر، وتعزيز الاستدامة المؤسسية والمجتمعية، وبناء الشراكات الاستراتيجية لتحقيق أثر مستدام.
+        {a.boardMember2Bio}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[78px] leading-[39px] left-[calc(8.33%+695px)] not-italic text-[#757575] text-[30px] text-right top-[6198px] w-[559px]" dir="auto">
-        خبير دولي في الابتكار المؤسسي والاستدامة المجتمعية | مستشار تنفيذي في الابتكار والتحول الاستراتيجي
+        {a.boardMember2Specialty}
       </p>
       <div className="absolute h-[103px] left-[calc(33.33%+88px)] top-[6188px] w-[247px]">
         <div className="absolute inset-[-0.97%_0]">
@@ -1135,22 +1155,24 @@ function Group19() {
 }
 
 function Group22() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[6575px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[356px] left-[calc(8.33%+85px)] rounded-[30px] top-[6575px] w-[1030px]" />
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+680px)] not-italic text-[#009dc4] text-[0px] text-right top-[6606px] w-[559px]">
         <p className="leading-[40px] mb-[8.521232604980469px] text-[50px]" dir="auto">
-          سهاج سعود العتيبي
+          {a.boardMember3Name}
         </p>
         <p className="font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[29px] text-[30px]" dir="auto">
-          عضو مجلس الإدارة
+          {a.boardMember3Role}
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(16.67%+680px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[6761px] w-[610px]" dir="auto">
-        خبير في القطاع الصحي بخبرة تمتد لأكثر من عشرين عامًا، شغل خلالها عددًا من المناصب القيادية والتنفيذية، وأسهم في قيادة مبادرات التطوير المؤسسي، والتخطيط الاستراتيجي، وإدارة التغيير، وتطوير الأعمال، ودعم الابتكار والاستدامة المجتمعية.
+        {a.boardMember3Bio}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[78px] leading-[39px] left-[calc(16.67%+680px)] not-italic text-[#757575] text-[25px] text-right top-[6684px] w-[559px]" dir="auto">
-        خبير في التخطيط الاستراتيجي والتطوير المؤسسي وإدارة التغيير
+        {a.boardMember3Specialty}
       </p>
       <div className="absolute h-0 left-[calc(50%+12px)] top-[6740px] w-[188px]">
         <div className="absolute inset-[-1px_0]">
@@ -1177,22 +1199,24 @@ function Group21() {
 }
 
 function Group24() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[6953px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[356px] left-[calc(8.33%+85px)] rounded-[30px] top-[6953px] w-[1030px]" />
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+680px)] not-italic text-[#009dc4] text-[0px] text-right top-[7004px] w-[559px]">
         <p className="leading-[40px] mb-[8.521232604980469px] text-[50px]" dir="auto">
-          بندر العويمري
+          {a.boardMember4Name}
         </p>
         <p className="font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[29px] text-[30px]" dir="auto">
-          عضو مجلس الإدارة
+          {a.boardMember4Role}
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(16.67%+680px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[7159px] w-[610px]" dir="auto">
-        متخصص في الإعلام الاستراتيجي والاتصال المؤسسي، بخبرة في بناء الاستراتيجيات الإعلامية والهوية المؤسسية، وتوظيف الاتصال المؤثر لدعم الابتكار، وتعزيز الأثر المجتمعي، وبناء الشراكات.
+        {a.boardMember4Bio}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[39px] left-[calc(16.67%+680px)] not-italic text-[#757575] text-[25px] text-right top-[7082px] w-[559px]" dir="auto">
-        خبير في الإعلام الاستراتيجي والاتصال المؤسسي
+        {a.boardMember4Specialty}
       </p>
       <div className="absolute h-0 left-[calc(50%+12px)] top-[7138px] w-[188px]">
         <div className="absolute inset-[-1px_0]">
@@ -1214,22 +1238,24 @@ function Group23() {
 }
 
 function Group26() {
+  const { content } = useContent();
+  const a = content.about;
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[7331px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[462px] left-[calc(8.33%+85px)] rounded-[30px] top-[7331px] w-[1030px]" />
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+680px)] not-italic text-[#009dc4] text-[0px] text-right top-[7382px] w-[559px]">
         <p className="leading-[40px] mb-[8.521232604980469px] text-[50px]" dir="auto">
-          د. عمر بن حماد البلوي
+          {a.boardMember5Name}
         </p>
         <p className="font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[29px] text-[30px]" dir="auto">
-          عضو مجلس الإدارة
+          {a.boardMember5Role}
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(16.67%+680px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[7619px] w-[610px]" dir="auto">
-        يشغل منصب رئيس مركز الابتكار وريادة الأعمال ، ويتمتع بخبرة في تطوير البرامج والمبادرات الابتكارية، واحتضان المشاريع، وتحويل الأفكار والمخرجات البحثية والطلابية إلى حلول تطبيقية ذات أثر اقتصادي ومجتمعي مستدام.
+        {a.boardMember5Bio}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[39px] left-[calc(16.67%+680px)] not-italic text-[#757575] text-[25px] text-right top-[7460px] w-[610px]" dir="auto">
-        مهندس محترف (PE) ورئيس تنفيذي معتمد للابتكار (Certified Chief Innovation Officer)، ومتخصص في الهندسة الصناعية وبناء منظومات الابتكار وريادة الأعمال.
+        {a.boardMember5Specialty}
       </p>
       <div className="absolute h-0 left-[calc(50%+12px)] top-[7596px] w-[188px]">
         <div className="absolute inset-[-1px_0]">

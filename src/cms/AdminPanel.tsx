@@ -346,7 +346,7 @@ const sections: SectionDef[] = [
       { label: "العنوان الفرعي", path: "home.ctaSubtitle" },
       { label: "نص دعوة التعاون", path: "home.ctaBody", type: "textarea" },
       { label: "عنوان أبرز البرامج", path: "home.section3Title" },
-      { label: "نص أبرز البرامج", path: "home.section3Body", type: "textarea" },
+      { label: "نص أبرز البرامج (الكلام الظاهر في الصفحة)", path: "home.programsBody", type: "textarea" },
       { label: "صورة البرامج", path: "home.section3Image", type: "image" },
     ],
   },

@@ -434,42 +434,44 @@ function Frame() {
 }
 
 function Frame1() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="[word-break:break-word] absolute content-stretch flex flex-col font-['Hacen_Casablanca_Light:Regular',sans-serif] gap-[70px] items-start leading-[0] left-[calc(8.33%+150px)] not-italic text-[#6e6e6e] text-[0px] text-right top-[4089px] w-[900px] reveal-on-scroll">
       <p className="relative shrink-0 w-full" dir="auto">
-        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">كيف يمكن الاستفادة من محتوى مركز المعرفة؟</span>
+        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">{k.faq1Q}</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
           <br aria-hidden />
         </span>
-        <span className="leading-[41px] text-[30px]">يمكن تصفح المقالات، وتحميل الأدلة والتقارير، والاطلاع على الدراسات، ومشاهدة الفيديوهات، والاستماع إلى حلقات البودكاست المتاحة عبر الموقع.</span>
+        <span className="leading-[41px] text-[30px]">{k.faq1A}</span>
       </p>
       <p className="relative shrink-0 w-full" dir="auto">
-        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">هل المحتوى متاح للجميع؟</span>
+        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">{k.faq2Q}</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
           <br aria-hidden />
         </span>
-        <span className="leading-[41px] text-[30px]">يتوفر جزء كبير من المحتوى لجميع الزوار، بينما قد تتطلب بعض المواد أو الإصدارات المتخصصة التسجيل أو الاشتراك للاستفادة منها.</span>
+        <span className="leading-[41px] text-[30px]">{k.faq2A}</span>
       </p>
       <p className="relative shrink-0 w-full" dir="auto">
-        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">هل يتم تحديث المحتوى بشكل دوري؟</span>
+        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">{k.faq3Q}</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
           <br aria-hidden />
         </span>
-        <span className="leading-[41px] text-[30px]">نعم، يتم تحديث مركز المعرفة بشكل مستمر بإضافة مقالات، وأدلة، ودراسات، وتقارير، ومواد مرئية وصوتية جديدة، بما يواكب أحدث التطورات في مجالات الابتكار والاستدامة.</span>
+        <span className="leading-[41px] text-[30px]">{k.faq3A}</span>
       </p>
       <p className="relative shrink-0 w-full" dir="auto">
-        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">هل يمكن تحميل الأدلة والتقارير؟</span>
+        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">{k.faq4Q}</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
           <br aria-hidden />
         </span>
-        <span className="leading-[41px] text-[30px]">نعم، يمكن تحميل الأدلة والتقارير المتاحة بصيغ إلكترونية، وفقًا لسياسة النشر الخاصة بالجمعية.</span>
+        <span className="leading-[41px] text-[30px]">{k.faq4A}</span>
       </p>
       <p className="relative shrink-0 w-full" dir="auto">
-        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">هل يمكن المساهمة بمحتوى علمي أو بحثي؟</span>
+        <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">{k.faq5Q}</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
           <br aria-hidden />
         </span>
-        <span className="leading-[41px] text-[30px]">ترحب الجمعية بالتعاون مع الباحثين والخبراء والجهات المتخصصة للمساهمة في إثراء المحتوى المعرفي، وفق ضوابط ومعايير النشر المعتمدة.</span>
+        <span className="leading-[41px] text-[30px]">{k.faq5A}</span>
       </p>
     </div>
   );

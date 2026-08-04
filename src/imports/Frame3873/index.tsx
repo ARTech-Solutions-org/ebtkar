@@ -2,8 +2,11 @@ import svgPaths from "./svg-hloju71tj7";
 import imgLayer11 from "./922ea633b05e4bd1260330b71876671f04ddc610.png";
 import { useNavigate } from "react-router";
 import { NavigationBar } from "../../app/components/NavigationBar";
+import { useContent } from "../../cms/ContentContext";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -14,7 +17,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -820,15 +823,17 @@ function Group12() {
 }
 
 function LandingPage() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="relative bg-white h-[2134px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
       <p className="-translate-x-full [word-break:break-word] absolute bottom-[84.86%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[12.42%] w-[404px] animate-hero-reveal" dir="auto">
-        الأثــــــر...
+        {im.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[710px] not-italic text-[28px] text-right text-white top-[334px] w-[555px]" dir="auto">
-        تؤمن جمعية الابتكار والاستدامة المجتمعية بأن النجاح الحقيقي لا يقاس بعدد البرامج أو المبادرات المنفذة، وإنما بما تتركه من أثر إيجابي ومستدام على الأفراد والمؤسسات والمجتمع. ومن هذا المنطلق، تعمل الجمعية على تصميم وتنفيذ برامج ومبادرات نوعية تُسهم في بناء القدرات، وتعزيز الابتكار، وتطوير الشراكات، ودعم التنمية المستدامة بما ينسجم مع مستهدفات رؤية المملكة العربية السعودية 2030.
+        {im.sectionBodyLine1}
       </p>
       <Footer className="-translate-x-1/2 absolute bottom-0 h-[268px] left-[calc(50%-0.5px)] w-[1459px]" />
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[780px]" />
@@ -842,10 +847,10 @@ function LandingPage() {
       </div>
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[236px] left-[calc(8.33%+85px)] rounded-[30px] top-[823px] w-[1030px] reveal-on-scroll card-hover-fx" />
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[867px] w-[406px] reveal-on-scroll" dir="auto">
-        منهجية قياس الأثر
+        {im.methodologyTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[933px] w-[928px] reveal-on-scroll" dir="auto">
-        تعتمد الجمعية منهجية متكاملة لقياس أثر برامجها ومبادراتها، بهدف تقييم النتائج، وتحسين الأداء، وتعظيم القيمة المضافة للمستفيدين والشركاء. وترتكز المنهجية على مجموعة من المراحل تشمل:
+        {im.methodologyBody}
       </p>
       <Group7 />
       <Group10 />

@@ -238,7 +238,7 @@ function Bg() {
       <div className="absolute bg-gradient-to-b from-[#0e3141] h-[917px] left-[-8px] to-[#409bc5] to-[98.558%] top-0 via-[#409bc5] via-[85.577%] w-[1456px]" />
       <Group9 />
       <div className="-translate-x-1/2 absolute h-[632px] left-[calc(50%-1.5px)] top-[249px] w-[975px]" data-name="1 6">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none animate-hero-image">
           <img alt="" className="absolute h-[114.35%] left-[-0.05%] max-w-none top-0 w-[100.1%]" src={img16} />
         </div>
       </div>

@@ -10,7 +10,7 @@
   /* Any plain <a> that is not a styled component */
   a:not([class]),
   a[class=""] {
-    transition: opacity 0.18s ease, color 0.18s ease;
+    transition: opacity 0.36s ease, color 0.36s ease;
   }
   a:not([class]):hover,
   a[class=""]:hover {
@@ -20,7 +20,7 @@
   /* Unstyled / utility buttons */
   button:not([class]),
   button[class=""] {
-    transition: transform 0.15s ease, opacity 0.15s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
   button:not([class]):hover,
   button[class=""]:hover {
@@ -40,7 +40,7 @@
   min-height: 100vh;
   width: 100%;
   background: #ffffff;
-  animation: pageFadeSlide 0.25s ease both;
+  animation: pageFadeSlide 0.5s ease both;
 }
 
 .page-loading-spinner__ring {
@@ -49,7 +49,7 @@
   border: 3px solid #e0e0e0;
   border-top-color: #0199c2;
   border-radius: 50%;
-  animation: spinRing 0.7s linear infinite;
+  animation: spinRing 1.4s linear infinite;
 }
 
 /* ── Accessibility: disable all motion for users who request it ─────────── */

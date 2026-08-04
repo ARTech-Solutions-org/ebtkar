@@ -201,8 +201,8 @@
 .reveal-on-scroll {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.55s cubic-bezier(0.215, 0.61, 0.355, 1),
-              transform 0.55s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1),
+              transform 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
   will-change: opacity, transform;
 }
 
@@ -229,9 +229,9 @@
 /* Interactive Hover Elevation for Cards and Boxes */
 @media (hover: hover) and (pointer: fine) {
   .card-hover-fx {
-    transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.4, 1),
-                box-shadow 0.28s cubic-bezier(0.2, 0.8, 0.4, 1),
-                border-color 0.28s ease;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.4, 1),
+                box-shadow 0.6s cubic-bezier(0.2, 0.8, 0.4, 1),
+                border-color 0.6s ease;
   }
 
   .card-hover-fx:hover {
@@ -240,8 +240,8 @@
   }
 
   .banner-hover-fx {
-    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.4, 1),
-                filter 0.35s ease;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.4, 1),
+                filter 0.7s ease;
   }
 
   .banner-hover-fx:hover {
@@ -256,7 +256,7 @@
 
 /* Slower, longer reveal for large sections */
 .reveal-slow {
-  transition-duration: 0.8s;
+  transition-duration: 1.5s;
 }
 
 /* ==========================================================================
@@ -267,8 +267,8 @@
 
   /* Card lift — subtle upward shift + shadow */
   .hover-lift {
-    transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      box-shadow 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .hover-lift:hover {
@@ -282,7 +282,7 @@
 
   /* Gentle scale */
   .hover-scale-sm {
-    transition: transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .hover-scale-sm:hover {
@@ -295,8 +295,8 @@
 
   /* Logo hover */
   .hover-logo {
-    transition: transform 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      filter 250ms ease;
+    transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      filter 500ms ease;
   }
 
   .hover-logo:hover {
@@ -306,7 +306,7 @@
 
   /* Image zoom on hover — works with Figma's nested absolute-img pattern */
   .img-zoom-hover img {
-    transition: transform 450ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .img-zoom-hover:hover img {
@@ -328,7 +328,7 @@
     background: white;
     transform: scaleX(0);
     transform-origin: right;
-    transition: transform 200ms ease-out;
+    transition: transform 400ms ease-out;
   }
 
   .nav-hover-underline:hover::after {
@@ -338,7 +338,7 @@
 
   /* Social icon hover bounce */
   .hover-social {
-    transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
     display: inline-block;
   }
 
@@ -352,7 +352,7 @@
    ========================================================================== */
 
 .hover-press {
-  transition: transform 120ms ease-out;
+  transition: transform 250ms ease-out;
 }
 
 .hover-press:active {
@@ -361,9 +361,9 @@
 
 /* Button press with color hint */
 .btn-animate {
-  transition: transform 120ms ease-out,
-    filter 120ms ease-out,
-    box-shadow 200ms ease-out;
+  transition: transform 250ms ease-out,
+    filter 250ms ease-out,
+    box-shadow 400ms ease-out;
 }
 
 .btn-animate:hover {
@@ -383,7 +383,7 @@
 .back-to-top {
   border-radius: 50%;
   outline: none;
-  transition: transform 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .back-to-top:hover {
@@ -400,7 +400,7 @@
 
 input:focus,
 textarea:focus {
-  transition: border-color 200ms ease, box-shadow 200ms ease;
+  transition: border-color 400ms ease, box-shadow 400ms ease;
   box-shadow: 0 0 0 3px rgba(0, 157, 196, 0.15);
 }
 
@@ -421,7 +421,7 @@ textarea:focus {
 }
 
 .animate-page-fade-slide {
-  animation: pageFadeSlide 280ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: pageFadeSlide 560ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   will-change: transform, opacity;
 }
 
@@ -478,7 +478,7 @@ textarea:focus {
 }
 
 .anim-count-up {
-  animation: countUp 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: countUp 1000ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
 /* ==========================================================================
@@ -504,7 +504,7 @@ textarea:focus {
 
 /* Suspense loading state */
 .suspense-loading {
-  animation: pageFadeSlide 400ms ease-out forwards;
+  animation: pageFadeSlide 800ms ease-out forwards;
 }
 
 @keyframes pageEntrance {
@@ -555,29 +555,29 @@ textarea:focus {
 }
 
 .animate-page-entrance {
-  animation: pageEntrance 0.38s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  animation: pageEntrance 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) both;
   will-change: transform, opacity;
 }
 
 .animate-hero-reveal {
-  animation: heroReveal 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+  animation: heroReveal 1.2s cubic-bezier(0.165, 0.84, 0.44, 1) both;
   will-change: transform, opacity;
 }
 
 .animate-hero-image {
-  animation: heroSlideUp 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: heroSlideUp 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
   will-change: transform, opacity;
 }
 
 .animate-menu-slide {
-  animation: menuSlideDown 200ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  animation: menuSlideDown 500ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
   will-change: transform, opacity;
 }
 
 /* Micro-interactions */
 @media (hover: hover) and (pointer: fine) {
   .interactive-hover {
-    transition: transform 150ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 150ms ease;
+    transition: transform 300ms cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 300ms ease;
   }
 
   .interactive-hover:hover {

@@ -10,6 +10,8 @@ import imgChatGptImageJul272026At034858Pm1 from "./8412212911617701aefd6b50b2e1c
 import imgChatGptImageJul272026At035257Pm1 from "./fe5f2fb3671112d964b76defb36d198d461b7200.png";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -458,48 +460,37 @@ function LandingPage() {
         {p.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[885px] w-[406px] reveal-on-scroll" dir="auto">
-        الابتكــــــــار
-        <br aria-hidden />
-        المــــــــؤسسي
+        {p.prog1Title}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[1457px] w-[406px]">
-        <p className="leading-[54px] mb-0" dir="auto">
-          الاستـــــدامة
-        </p>
-        <p className="leading-[54px]" dir="auto">
-          المــــجتمــــعية
-        </p>
-      </div>
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[1457px] w-[406px] reveal-on-scroll" dir="auto">
+        {p.prog2Title}
+      </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[1976px] w-[406px]" dir="auto">
-        التحول الرقمي والذكاء الاصطناعي
+        {p.prog3Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[2525px] w-[406px]" dir="auto">
-        بناء القدرات
-        <br aria-hidden />
-        القيـــــــــادية
+        {p.prog4Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[3021px] w-[406px]" dir="auto">
-        أكاديمية
-        <br aria-hidden />
-        STEAM
+        {p.prog5Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[178px] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1005px] w-[400px] reveal-fade delay-200" dir="auto">
-        برنامج تدريبي احترافي يهدف إلى تمكين الجهات الحكومية والخاصة وغير الربحية من بناء منظومات ابتكار مؤسسية مستدامة، وتطوير استراتيجيات الابتكار، وتعزيز ثقافة الابتكار داخل بيئة العمل، بما يسهم في رفع كفاءة الأداء وتحقيق التميز المؤسسي.
+        {p.prog1Body}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1577px] w-[400px] reveal-fade delay-200" dir="auto">
-        يهدف البرنامج إلى تعزيز فهم مفاهيم الاستدامة المجتمعية، وتمكين المشاركين من تصميم وتنفيذ مبادرات مستدامة تحقق أثرًا طويل المدى وتدعم جودة الحياة.
+        {p.prog2Body}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2096px] w-[400px] reveal-fade delay-200" dir="auto">
-        برنامج يركز على تمكين المشاركين من فهم التحول الرقمي وتطبيقات الذكاء الاصطناعي، والاستفادة منها في تطوير الخدمات وتحسين العمليات ورفع كفاءة الأداء.
+        {p.prog3Body}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2645px] w-[400px] reveal-fade delay-200" dir="auto">
-        برنامج يهدف إلى تطوير القيادات الوطنية وتعزيز مهارات القيادة، وإدارة التغيير، والابتكار، واتخاذ القرار، بما يسهم في رفع كفاءة الأداء المؤسسي.
+        {p.prog4Body}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[3141px] w-[400px] reveal-fade delay-200" dir="auto">
-        تطوّر أكاديمية الابتكار وSTEAM مهارات المستقبل لدى الأطفال والطلاب والمعلمين والجامعات، من خلال برامج STEAM، والروبوتات، والبرمجة، والذكاء الاصطناعي، والتفكير التصميمي، والابتكار وريادة الأعمال، بما يسهم في إعداد جيل قادر على الإبداع والابتكار ومواكبة متطلبات المستقبل.
+        {p.prog5Body}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+590px)] not-italic text-[28px] text-right text-white top-[367px] w-[503px]" dir="auto">
-        تقدّم الجمعية برامج نوعية تستهدف مختلف الفئات، وتركّز على بناء القدرات في الابتكار والاستدامة المجتمعية، من خلال برامج احترافية، وأكاديمية STEAM، وورش العمل، والمعسكرات، والهاكاثونات، والبرامج التنفيذية والقيادية.
+        {p.heroSubtitle}
       </p>
       <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px]" />
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[780px]" />

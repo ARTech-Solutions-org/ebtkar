@@ -294,39 +294,91 @@ const sections: SectionDef[] = [
 
   // ---- HOME ----
   {
-    title: "🏠 الصفحة الرئيسية",
+    title: "🏠 الصفحة الرئيسية — الهيرو والشارات",
     fields: [
-      { label: "عنوان الهيرو", path: "home.heroTitle" },
-      { label: "نص الهيرو الفرعي", path: "home.heroSubtitle", type: "textarea" },
-      { label: "عنوان القسم 1", path: "home.section1Title" },
-      { label: "محتوى القسم 1", path: "home.section1Body", type: "textarea" },
-      { label: "عنوان القسم 2", path: "home.section2Title" },
-      { label: "محتوى القسم 2", path: "home.section2Body", type: "textarea" },
-      { label: "عنوان القسم 3", path: "home.section3Title" },
-      { label: "محتوى القسم 3", path: "home.section3Body", type: "textarea" },
-      { label: "عنوان القسم 4", path: "home.section4Title" },
-      { label: "محتوى القسم 4", path: "home.section4Body", type: "textarea" },
+      { label: "عنوان الهيرو (السطر 1)", path: "home.heroTitle" },
+      { label: "عنوان الهيرو (السطر 2)", path: "home.heroSubtitle" },
+      { label: "شارة يسار — الرقم", path: "home.heroBadge1Number" },
+      { label: "شارة يسار — النص", path: "home.heroBadge1Label" },
+      { label: "شارة يمين — الرقم", path: "home.heroBadge2Number" },
+      { label: "شارة يمين — النص", path: "home.heroBadge2Label" },
       { label: "صورة الهيرو", path: "home.heroImage", type: "image" },
-      { label: "صورة القسم 1", path: "home.section1Image", type: "image" },
-      { label: "صورة القسم 2", path: "home.section2Image", type: "image" },
-      { label: "صورة القسم 3", path: "home.section3Image", type: "image" },
-      { label: "صورة القسم 4", path: "home.section4Image", type: "image" },
+    ],
+  },
+  {
+    title: "🏠 الصفحة الرئيسية — نبذة عن الجمعية",
+    fields: [
+      { label: "عنوان القسم", path: "home.section1Title" },
+      { label: "الفقرة الأولى", path: "home.section1Body", type: "textarea" },
+      { label: "الفقرة الثانية", path: "home.section1Body2", type: "textarea" },
+      { label: "صورة القسم", path: "home.section1Image", type: "image" },
+    ],
+  },
+  {
+    title: "🏠 الصفحة الرئيسية — لماذا الجمعية؟",
+    fields: [
+      { label: "عنوان القسم", path: "home.section2Title" },
+      { label: "الفقرة الأولى", path: "home.section2Body", type: "textarea" },
+      { label: "الفقرة الثانية", path: "home.section2Body2", type: "textarea" },
+      { label: "صورة القسم", path: "home.section2Image", type: "image" },
+    ],
+  },
+  {
+    title: "🏠 الصفحة الرئيسية — أرقام الأثر",
+    fields: [
+      { label: "نص مقدمة قسم الأثر", path: "home.impactIntro", type: "textarea" },
+      { label: "مؤشر 1: العنوان", path: "home.impactStat1Label" },
+      { label: "مؤشر 1: القيمة", path: "home.impactStat1Value" },
+      { label: "مؤشر 2: العنوان", path: "home.impactStat2Label" },
+      { label: "مؤشر 2: القيمة", path: "home.impactStat2Value" },
+      { label: "مؤشر 3: العنوان", path: "home.impactStat3Label" },
+      { label: "مؤشر 3: القيمة", path: "home.impactStat3Value" },
+      { label: "مؤشر 4: العنوان", path: "home.impactStat4Label" },
+      { label: "مؤشر 4: القيمة", path: "home.impactStat4Value" },
+    ],
+  },
+  {
+    title: "🏠 الصفحة الرئيسية — الشركاء ودعوة التعاون",
+    fields: [
+      { label: "عنوان قسم الشركاء", path: "home.partnersTitle" },
+      { label: "نص قسم الشركاء", path: "home.partnersBody", type: "textarea" },
+      { label: "عنوان دعوة التعاون", path: "home.ctaTitle" },
+      { label: "العنوان الفرعي", path: "home.ctaSubtitle" },
+      { label: "نص دعوة التعاون", path: "home.ctaBody", type: "textarea" },
+      { label: "عنوان أبرز البرامج", path: "home.section3Title" },
+      { label: "نص أبرز البرامج", path: "home.section3Body", type: "textarea" },
+      { label: "صورة البرامج", path: "home.section3Image", type: "image" },
     ],
   },
 
   // ---- ABOUT ----
   {
-    title: "ℹ️ صفحة عن الجمعية",
+    title: "ℹ️ عن الجمعية — النص العام والتأسيس",
     fields: [
       { label: "عنوان الهيرو", path: "about.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "about.heroSubtitle", type: "textarea" },
-      { label: "العنوان الرئيسي", path: "about.mainTitle" },
-      { label: "المحتوى الرئيسي", path: "about.mainBody", type: "textarea" },
-      { label: "عنوان الرؤية", path: "about.visionTitle" },
-      { label: "نص الرؤية", path: "about.visionBody", type: "textarea" },
+      { label: "عنوان قسم عن الجمعية", path: "about.mainTitle" },
+      { label: "نص عن الجمعية", path: "about.mainBody", type: "textarea" },
+      { label: "عنوان قصة التأسيس", path: "about.foundingStoryTitle" },
+      { label: "قصة التأسيس — الفقرة 1", path: "about.foundingStoryBody", type: "textarea" },
+      { label: "قصة التأسيس — الفقرة 2", path: "about.foundingStoryBody2", type: "textarea" },
+      { label: "صورة الهيرو", path: "about.heroImage", type: "image" },
+      { label: "الصورة الرئيسية", path: "about.mainImage", type: "image" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — الرسالة والرؤية",
+    fields: [
       { label: "عنوان الرسالة", path: "about.missionTitle" },
       { label: "نص الرسالة", path: "about.missionBody", type: "textarea" },
-      { label: "عنوان القيم", path: "about.valuesTitle" },
+      { label: "عنوان الرؤية", path: "about.visionTitle" },
+      { label: "نص الرؤية", path: "about.visionBody", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — القيم (8 قيم)",
+    fields: [
+      { label: "عنوان قسم القيم", path: "about.valuesTitle" },
       { label: "قيمة 1: العنوان", path: "about.value1Title" },
       { label: "قيمة 1: المحتوى", path: "about.value1Body", type: "textarea" },
       { label: "قيمة 2: العنوان", path: "about.value2Title" },
@@ -335,14 +387,95 @@ const sections: SectionDef[] = [
       { label: "قيمة 3: المحتوى", path: "about.value3Body", type: "textarea" },
       { label: "قيمة 4: العنوان", path: "about.value4Title" },
       { label: "قيمة 4: المحتوى", path: "about.value4Body", type: "textarea" },
-      { label: "صورة الهيرو", path: "about.heroImage", type: "image" },
-      { label: "الصورة الرئيسية", path: "about.mainImage", type: "image" },
+      { label: "قيمة 5: العنوان", path: "about.value5Title" },
+      { label: "قيمة 5: المحتوى", path: "about.value5Body", type: "textarea" },
+      { label: "قيمة 6: العنوان", path: "about.value6Title" },
+      { label: "قيمة 6: المحتوى", path: "about.value6Body", type: "textarea" },
+      { label: "قيمة 7: العنوان", path: "about.value7Title" },
+      { label: "قيمة 7: المحتوى", path: "about.value7Body", type: "textarea" },
+      { label: "قيمة 8: العنوان", path: "about.value8Title" },
+      { label: "قيمة 8: المحتوى", path: "about.value8Body", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — الأهداف الاستراتيجية",
+    fields: [
+      { label: "عنوان الأهداف الاستراتيجية", path: "about.strategicObjectivesTitle" },
+      { label: "نص الأهداف (سطر لكل هدف)", path: "about.strategicObjectivesBody", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — كلمة رئيس مجلس الإدارة",
+    fields: [
+      { label: "عنوان القسم", path: "about.chairmanMessageTitle" },
+      { label: "النص الكامل للكلمة", path: "about.chairmanMessageBody", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — كلمة المدير التنفيذي",
+    fields: [
+      { label: "عنوان القسم", path: "about.ceoMessageTitle" },
+      { label: "النص الكامل للكلمة", path: "about.ceoMessageBody", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 1)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember1Name" },
+      { label: "المنصب", path: "about.boardMember1Role" },
+      { label: "التخصص", path: "about.boardMember1Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember1Bio", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 2)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember2Name" },
+      { label: "المنصب", path: "about.boardMember2Role" },
+      { label: "التخصص", path: "about.boardMember2Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember2Bio", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 3)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember3Name" },
+      { label: "المنصب", path: "about.boardMember3Role" },
+      { label: "التخصص", path: "about.boardMember3Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember3Bio", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 4)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember4Name" },
+      { label: "المنصب", path: "about.boardMember4Role" },
+      { label: "التخصص", path: "about.boardMember4Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember4Bio", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 5)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember5Name" },
+      { label: "المنصب", path: "about.boardMember5Role" },
+      { label: "التخصص", path: "about.boardMember5Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember5Bio", type: "textarea" },
+    ],
+  },
+  {
+    title: "ℹ️ عن الجمعية — مجلس الإدارة (العضو 6 — اختياري)",
+    fields: [
+      { label: "الاسم", path: "about.boardMember6Name" },
+      { label: "المنصب", path: "about.boardMember6Role" },
+      { label: "التخصص", path: "about.boardMember6Specialty", type: "textarea" },
+      { label: "النبذة", path: "about.boardMember6Bio", type: "textarea" },
     ],
   },
 
   // ---- PROGRAMS ----
   {
-    title: "📚 صفحة البرامج والأكاديمية",
+    title: "📚 البرامج والأكاديمية",
     fields: [
       { label: "عنوان الهيرو", path: "programs.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "programs.heroSubtitle", type: "textarea" },
@@ -352,16 +485,22 @@ const sections: SectionDef[] = [
       { label: "برنامج 2: المحتوى", path: "programs.prog2Body", type: "textarea" },
       { label: "برنامج 3: العنوان", path: "programs.prog3Title" },
       { label: "برنامج 3: المحتوى", path: "programs.prog3Body", type: "textarea" },
+      { label: "برنامج 4: العنوان", path: "programs.prog4Title" },
+      { label: "برنامج 4: المحتوى", path: "programs.prog4Body", type: "textarea" },
+      { label: "برنامج 5 (أكاديمية STEAM): العنوان", path: "programs.prog5Title" },
+      { label: "برنامج 5: المحتوى", path: "programs.prog5Body", type: "textarea" },
       { label: "صورة الهيرو", path: "programs.heroImage", type: "image" },
       { label: "صورة البرنامج 1", path: "programs.prog1Image", type: "image" },
       { label: "صورة البرنامج 2", path: "programs.prog2Image", type: "image" },
       { label: "صورة البرنامج 3", path: "programs.prog3Image", type: "image" },
+      { label: "صورة البرنامج 4", path: "programs.prog4Image", type: "image" },
+      { label: "صورة البرنامج 5", path: "programs.prog5Image", type: "image" },
     ],
   },
 
   // ---- EMPOWERMENT ----
   {
-    title: "💪 صفحة مجالات التمكين",
+    title: "💪 مجالات التمكين (10 بطاقات)",
     fields: [
       { label: "عنوان الهيرو", path: "empowerment.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "empowerment.heroSubtitle", type: "textarea" },
@@ -381,13 +520,17 @@ const sections: SectionDef[] = [
       { label: "بطاقة 7: المحتوى", path: "empowerment.card7Body", type: "textarea" },
       { label: "بطاقة 8: العنوان", path: "empowerment.card8Title" },
       { label: "بطاقة 8: المحتوى", path: "empowerment.card8Body", type: "textarea" },
+      { label: "بطاقة 9: العنوان", path: "empowerment.card9Title" },
+      { label: "بطاقة 9: المحتوى", path: "empowerment.card9Body", type: "textarea" },
+      { label: "بطاقة 10: العنوان", path: "empowerment.card10Title" },
+      { label: "بطاقة 10: المحتوى", path: "empowerment.card10Body", type: "textarea" },
       { label: "صورة الهيرو", path: "empowerment.heroImage", type: "image" },
     ],
   },
 
   // ---- INITIATIVES ----
   {
-    title: "🚀 صفحة المبادرات",
+    title: "🚀 المبادرات",
     fields: [
       { label: "عنوان الهيرو", path: "initiatives.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "initiatives.heroSubtitle", type: "textarea" },
@@ -429,26 +572,44 @@ const sections: SectionDef[] = [
 
   // ---- KNOWLEDGE ----
   {
-    title: "📖 مركز المعرفة",
+    title: "📖 مركز المعرفة — الأقسام الستة",
     fields: [
       { label: "عنوان الهيرو", path: "knowledge.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "knowledge.heroSubtitle", type: "textarea" },
-      { label: "قسم 1: العنوان (الأدلة)", path: "knowledge.section1Title" },
+      { label: "قسم 1: العنوان (المقالات)", path: "knowledge.section1Title" },
       { label: "قسم 1: المحتوى", path: "knowledge.section1Body", type: "textarea" },
-      { label: "قسم 2: العنوان (الدراسات)", path: "knowledge.section2Title" },
+      { label: "قسم 2: العنوان (الأدلة)", path: "knowledge.section2Title" },
       { label: "قسم 2: المحتوى", path: "knowledge.section2Body", type: "textarea" },
-      { label: "قسم 3: العنوان (التقارير)", path: "knowledge.section3Title" },
+      { label: "قسم 3: العنوان (الدراسات)", path: "knowledge.section3Title" },
       { label: "قسم 3: المحتوى", path: "knowledge.section3Body", type: "textarea" },
-      { label: "قسم 4: العنوان (الفيديوهات)", path: "knowledge.section4Title" },
+      { label: "قسم 4: العنوان (التقارير)", path: "knowledge.section4Title" },
       { label: "قسم 4: المحتوى", path: "knowledge.section4Body", type: "textarea" },
-      { label: "قسم 5: العنوان (البودكاست)", path: "knowledge.section5Title" },
+      { label: "قسم 5: العنوان (الفيديوهات)", path: "knowledge.section5Title" },
       { label: "قسم 5: المحتوى", path: "knowledge.section5Body", type: "textarea" },
+      { label: "قسم 6: العنوان (البودكاست)", path: "knowledge.section6Title" },
+      { label: "قسم 6: المحتوى", path: "knowledge.section6Body", type: "textarea" },
       { label: "صورة الهيرو", path: "knowledge.heroImage", type: "image" },
       { label: "صورة قسم 1", path: "knowledge.section1Image", type: "image" },
       { label: "صورة قسم 2", path: "knowledge.section2Image", type: "image" },
       { label: "صورة قسم 3", path: "knowledge.section3Image", type: "image" },
       { label: "صورة قسم 4", path: "knowledge.section4Image", type: "image" },
       { label: "صورة قسم 5", path: "knowledge.section5Image", type: "image" },
+      { label: "صورة قسم 6", path: "knowledge.section6Image", type: "image" },
+    ],
+  },
+  {
+    title: "📖 مركز المعرفة — الأسئلة الشائعة",
+    fields: [
+      { label: "س&ج 1: السؤال", path: "knowledge.faq1Q" },
+      { label: "س&ج 1: الجواب", path: "knowledge.faq1A", type: "textarea" },
+      { label: "س&ج 2: السؤال", path: "knowledge.faq2Q" },
+      { label: "س&ج 2: الجواب", path: "knowledge.faq2A", type: "textarea" },
+      { label: "س&ج 3: السؤال", path: "knowledge.faq3Q" },
+      { label: "س&ج 3: الجواب", path: "knowledge.faq3A", type: "textarea" },
+      { label: "س&ج 4: السؤال", path: "knowledge.faq4Q" },
+      { label: "س&ج 4: الجواب", path: "knowledge.faq4A", type: "textarea" },
+      { label: "س&ج 5: السؤال", path: "knowledge.faq5Q" },
+      { label: "س&ج 5: الجواب", path: "knowledge.faq5A", type: "textarea" },
     ],
   },
 
@@ -459,8 +620,8 @@ const sections: SectionDef[] = [
       { label: "عنوان الهيرو", path: "governance.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "governance.heroSubtitle", type: "textarea" },
       { label: "عنوان القسم", path: "governance.sectionTitle" },
-      { label: "محتوى القسم (السطر 1)", path: "governance.sectionBodyLine1", type: "textarea" },
-      { label: "محتوى القسم (السطر 2)", path: "governance.sectionBodyLine2", type: "textarea" },
+      { label: "محتوى القسم (الفقرة 1)", path: "governance.sectionBodyLine1", type: "textarea" },
+      { label: "محتوى القسم (الفقرة 2)", path: "governance.sectionBodyLine2", type: "textarea" },
       { label: "صورة الهيرو", path: "governance.heroImage", type: "image" },
       { label: "صورة القسم", path: "governance.sectionImage", type: "image" },
     ],
@@ -472,19 +633,19 @@ const sections: SectionDef[] = [
     fields: [
       { label: "عنوان الهيرو", path: "policies.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "policies.heroSubtitle", type: "textarea" },
-      { label: "بطاقة 1: العنوان", path: "policies.card1Title" },
-      { label: "بطاقة 2: العنوان", path: "policies.card2Title" },
-      { label: "بطاقة 3: العنوان", path: "policies.card3Title" },
-      { label: "بطاقة 4: العنوان", path: "policies.card4Title" },
-      { label: "بطاقة 5: العنوان", path: "policies.card5Title" },
-      { label: "بطاقة 6: العنوان", path: "policies.card6Title" },
+      { label: "لائحة 1: العنوان", path: "policies.card1Title" },
+      { label: "لائحة 2: العنوان", path: "policies.card2Title" },
+      { label: "لائحة 3: العنوان", path: "policies.card3Title" },
+      { label: "لائحة 4: العنوان", path: "policies.card4Title" },
+      { label: "لائحة 5: العنوان", path: "policies.card5Title" },
+      { label: "لائحة 6: العنوان", path: "policies.card6Title" },
       { label: "صورة الهيرو", path: "policies.heroImage", type: "image" },
     ],
   },
 
   // ---- CONTACT ----
   {
-    title: "📞 نموذج التواصل",
+    title: "📞 تواصل معنا",
     fields: [
       { label: "عنوان الهيرو", path: "contact.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "contact.heroSubtitle", type: "textarea" },
@@ -505,6 +666,45 @@ const sections: SectionDef[] = [
       { label: "س&ج 4: السؤال", path: "contact.faq4Q" },
       { label: "س&ج 4: الجواب", path: "contact.faq4A", type: "textarea" },
       { label: "صورة الهيرو", path: "contact.heroImage", type: "image" },
+    ],
+  },
+
+  // ---- PARTNERS ----
+  {
+    title: "🤝 الشركاء",
+    fields: [
+      { label: "عنوان الهيرو", path: "partners.heroTitle" },
+      { label: "نص الهيرو الفرعي", path: "partners.heroSubtitle", type: "textarea" },
+      { label: "عنوان القسم الرئيسي", path: "partners.sectionTitle" },
+      { label: "الفقرة 1", path: "partners.sectionBodyLine1", type: "textarea" },
+      { label: "الفقرة 2", path: "partners.sectionBodyLine2", type: "textarea" },
+      { label: "عنوان مزايا الشراكة", path: "partners.benefitsTitle" },
+      { label: "مزايا الشراكة", path: "partners.benefitsBody", type: "textarea" },
+      { label: "عنوان مجالات التعاون", path: "partners.areasTitle" },
+      { label: "مجالات التعاون", path: "partners.areasBody", type: "textarea" },
+      { label: "صورة الهيرو", path: "partners.heroImage", type: "image" },
+      { label: "صورة القسم", path: "partners.sectionImage", type: "image" },
+    ],
+  },
+
+  // ---- IMPACT ----
+  {
+    title: "📊 الأثر",
+    fields: [
+      { label: "عنوان الهيرو", path: "impact.heroTitle" },
+      { label: "نص الهيرو الفرعي", path: "impact.heroSubtitle", type: "textarea" },
+      { label: "عنوان القسم", path: "impact.sectionTitle" },
+      { label: "محتوى القسم", path: "impact.sectionBodyLine1", type: "textarea" },
+      { label: "عنوان منهجية قياس الأثر", path: "impact.methodologyTitle" },
+      { label: "مقدمة المنهجية", path: "impact.methodologyBody", type: "textarea" },
+      { label: "الخطوة 1", path: "impact.step1" },
+      { label: "الخطوة 2", path: "impact.step2" },
+      { label: "الخطوة 3", path: "impact.step3" },
+      { label: "الخطوة 4", path: "impact.step4" },
+      { label: "الخطوة 5", path: "impact.step5" },
+      { label: "الخطوة 6", path: "impact.step6" },
+      { label: "صورة الهيرو", path: "impact.heroImage", type: "image" },
+      { label: "صورة القسم", path: "impact.sectionImage", type: "image" },
     ],
   },
 ];

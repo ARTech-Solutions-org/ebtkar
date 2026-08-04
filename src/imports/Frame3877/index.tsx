@@ -10,6 +10,8 @@ import imgChatGptImageJul192026At123740Pm1 from "./d9c64ff36042893422132192fcd41
 import imgChatGptImageApr12026At113940Am1 from "./cb3fdae483b9785efe849ad36c9a64ac36ddb65e.png";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -20,7 +22,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -256,12 +258,14 @@ function Stats1() {
 }
 
 function Stats() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="absolute contents left-[137px] top-[682px]" data-name="stats">
       <div className="absolute bg-[rgba(255,255,255,0.07)] h-[114.36px] left-[137px] rounded-[8.981px] top-[682px] w-[210.159px]" />
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-[159.75px] not-italic text-[12.139px] text-[rgba(255,255,255,0.8)] top-[757.44px] tracking-[-0.607px] whitespace-nowrap">Patient Satisfaction</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-[159.75px] not-italic text-[12.139px] text-[rgba(255,255,255,0.8)] top-[757.44px] tracking-[-0.607px] whitespace-nowrap">{h.heroBadge1Label}</p>
       <Stats1 />
-      <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] left-[159.75px] not-italic opacity-96 text-[18.209px] text-white top-[707.15px] tracking-[-0.9104px] whitespace-nowrap">98%</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] left-[159.75px] not-italic opacity-96 text-[18.209px] text-white top-[707.15px] tracking-[-0.9104px] whitespace-nowrap">{h.heroBadge1Number}</p>
     </div>
   );
 }
@@ -276,20 +280,24 @@ function Header() {
 }
 
 function Stats3() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="[word-break:break-word] absolute contents font-['Inter:Semi_Bold',sans-serif] font-semibold leading-[normal] left-[calc(83.33%-43.79px)] not-italic text-white top-[568.48px] whitespace-nowrap" data-name="Stats">
-      <p className="absolute left-[calc(83.33%-43.79px)] opacity-77 text-[48.557px] top-[568.48px] tracking-[-2.4278px]">15+</p>
-      <p className="absolute left-[calc(91.67%-72.75px)] opacity-71 text-[18.209px] top-[593.52px] tracking-[-0.9104px]">Years</p>
+      <p className="absolute left-[calc(83.33%-43.79px)] opacity-77 text-[48.557px] top-[568.48px] tracking-[-2.4278px]">{h.heroBadge2Number}</p>
+      <p className="absolute left-[calc(91.67%-72.75px)] opacity-71 text-[18.209px] top-[593.52px] tracking-[-0.9104px]">سنوات</p>
     </div>
   );
 }
 
 function Stats2() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="absolute contents left-[calc(75%+36px)] top-[548px]" data-name="stats">
       <div className="absolute bg-[rgba(255,255,255,0.07)] h-[132.013px] left-[calc(75%+36px)] rounded-[11.38px] top-[548px] w-[238.231px]" />
       <Stats3 />
-      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-[calc(83.33%-55.17px)] not-italic opacity-76 text-[15.174px] text-[rgba(255,255,255,0.8)] top-[626.9px] tracking-[-0.7587px] whitespace-nowrap">Trusted Medical Experience</p>
+      <p className="[word-break:break-word] absolute font-['Inter:Regular',sans-serif] font-normal leading-[normal] left-[calc(83.33%-55.17px)] not-italic opacity-76 text-[15.174px] text-[rgba(255,255,255,0.8)] top-[626.9px] tracking-[-0.7587px] whitespace-nowrap">{h.heroBadge2Label}</p>
     </div>
   );
 }
@@ -2373,10 +2381,10 @@ function LandingPage() {
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px] reveal-on-scroll reveal-delay-150">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
-          جمعية الابتكار والاستدامة المجتمعية هي جمعية أهلية وطنية متخصصة في تمكين الابتكار والاستدامة المجتمعية، تعمل على تطوير القدرات، وتصميم الحلول، ودعم المبادرات، وبناء الشراكات التي تسهم في تحقيق التنمية المستدامة وتعزيز جودة الحياة.
+          {h.section1Body}
         </p>
         <p className="leading-[30px]" dir="auto">
-          نقدم حلولًا متكاملة في الابتكار المؤسسي، والابتكار المجتمعي، والاستدامة، وبناء القدرات، وأكاديمية STEAM، والدراسات والاستشارات، بما يسهم في تحويل الأفكار إلى أثر مستدام.
+          {h.section1Body2}
         </p>
       </div>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap reveal-on-scroll reveal-delay-150">
@@ -2405,7 +2413,7 @@ function LandingPage() {
         مجالات التمكين
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(16.67%+480px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[3557px] w-[820px] reveal-on-scroll reveal-delay-100" dir="auto">
-        رسالتنا لا تُقاس بعدد الأنشطة، بل بما تحققه من أثر مستدام.
+        {h.impactIntro}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[3500px] w-[418.961px] reveal-on-scroll" dir="auto">
         الأثـــــر
@@ -2415,16 +2423,16 @@ function LandingPage() {
       <div className="absolute bg-[#ebeef3] h-[474px] left-[-66px] rounded-[6px] top-[4212px] w-[1571px] reveal-on-scroll" />
       <Frame />
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[305px] leading-[34px] left-[calc(58.33%+390px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[3136px] w-[395px] reveal-on-scroll reveal-delay-150" dir="auto">
-        تقدّم الجمعية برامج نوعية تستهدف مختلف الفئات، وتركّز على بناء القدرات في الابتكار والاستدامة المجتمعية، من خلال برامج احترافية، وأكاديمية STEAM، وورش العمل، والمعسكرات، والهاكاثونات، والبرامج التنفيذية والقيادية.
+        {h.programsBody}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(66.67%+272px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[4841px] w-[292px] reveal-on-scroll reveal-delay-150" dir="auto">
-        ندعو جميع الجهات والأفراد والشركاء إلى التعاون معنا لبناء مستقبل أكثر ابتكارًا واستدامة، وتحويل الأفكار إلى مبادرات ومشروعات تسهم في تنمية المجتمع وتحقيق مستهدفات رؤية المملكة العربية السعودية 2030.
+        {h.ctaBody}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(75%+152px)] not-italic text-[#009dc4] text-[30px] text-right top-[4800px] whitespace-nowrap reveal-on-scroll" dir="auto">
-        لنصنع الأثر معًا
+        {h.ctaTitle}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[4355px] w-[1020px] reveal-on-scroll reveal-delay-100" dir="auto">
-        نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع الجهات الحكومية، والقطاع الخاص، والقطاع غير الربحي، والجامعات، والمراكز البحثية، والشركاء المحليين والدوليين.
+        {h.partnersBody}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px] reveal-on-scroll" dir="auto">
         الشـــركاء

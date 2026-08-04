@@ -16,6 +16,8 @@ import img121 from "./6629da1079a37f15c700219087ca6fafa64627de.png";
 import img12131 from "./d6ed6f9adbf90557ff040c46b5728beb3c8b80eb.png";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -1304,30 +1306,18 @@ function LandingPage() {
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[3612px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">
-          كلمة رئيس مجلس الإدارة
-        </p>
-        <p className="leading-[45px] mb-[16px] text-[30px]" dir="auto">
-          نؤمن بأن الابتكار لم يعد خيارًا، بل أصبح ضرورة لتحقيق التنمية المستدامة وتعزيز تنافسية المجتمعات. وانطلاقًا من هذا الإيمان، تأسست جمعية الابتكار والاستدامة المجتمعية لتكون منصة وطنية تجمع بين الفكر والمعرفة والشراكات، وتمكّن الأفراد والجهات من تحويل الأفكار إلى حلول ذات أثر مستدام.
-        </p>
-        <p className="leading-[45px] mb-[16px] text-[30px]" dir="auto">
-          نسعى إلى بناء منظومة متكاملة تدعم الابتكار في مختلف القطاعات، وتطوّر القدرات الوطنية، وتعزز الاستدامة المجتمعية، من خلال مبادرات نوعية، وبرامج متخصصة، وشراكات استراتيجية تسهم في تحقيق مستهدفات رؤية المملكة العربية السعودية 2030.
+          {a.chairmanMessageTitle}
         </p>
         <p className="leading-[45px] text-[30px]" dir="auto">
-          إننا نؤمن بأن الأثر الحقيقي يبدأ بفكرة، وينمو بالشراكة، ويستمر بالاستدامة، ونتطلع إلى العمل مع جميع شركائنا لبناء مستقبل أكثر ابتكارًا واستدامة.
+          {a.chairmanMessageBody}
         </p>
       </div>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[4332px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">
-          كلمة المدير التنفيذي
-        </p>
-        <p className="leading-[45px] mb-[16px] text-[30px]" dir="auto">
-          نؤمن بأن الابتكار لم يعد خيارًا، بل أصبح ضرورة لتحقيق التنمية المستدامة وتعزيز تنافسية المجتمعات. وانطلاقًا من هذا الإيمان، تأسست جمعية الابتكار والاستدامة المجتمعية لتكون منصة وطنية تجمع بين الفكر والمعرفة والشراكات، وتمكّن الأفراد والجهات من تحويل الأفكار إلى حلول ذات أثر مستدام.
-        </p>
-        <p className="leading-[45px] mb-[16px] text-[30px]" dir="auto">
-          نسعى إلى بناء منظومة متكاملة تدعم الابتكار في مختلف القطاعات، وتطوّر القدرات الوطنية، وتعزز الاستدامة المجتمعية، من خلال مبادرات نوعية، وبرامج متخصصة، وشراكات استراتيجية تسهم في تحقيق مستهدفات رؤية المملكة العربية السعودية 2030.
+          {a.ceoMessageTitle}
         </p>
         <p className="leading-[45px] text-[30px]" dir="auto">
-          إننا نؤمن بأن الأثر الحقيقي يبدأ بفكرة، وينمو بالشراكة، ويستمر بالاستدامة، ونتطلع إلى العمل مع جميع شركائنا لبناء مستقبل أكثر ابتكارًا واستدامة.
+          {a.ceoMessageBody}
         </p>
       </div>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[5058px] w-[900px] reveal-on-scroll" dir="auto">

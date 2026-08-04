@@ -1273,7 +1273,7 @@ function LandingPage() {
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(37.5%+216px)] not-italic text-[#009dc4] text-[55px] text-right top-[1289px] w-[329px]" dir="auto">
         {a.missionTitle}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[505px]">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[870px] w-[505px]">
         <p className="leading-[30px]" dir="auto">
           {a.mainBody}
         </p>

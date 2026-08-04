@@ -39,19 +39,35 @@ function deepMerge<T extends Record<string, unknown>>(
 
 const STORAGE_KEY = "cms_site_content_v2";
 
+function sanitizeContent(c: SiteContent): { content: SiteContent; wasUpdated: boolean } {
+  let wasUpdated = false;
+  if (c.home?.heroTitle === "الـرئيسية...") {
+    c.home.heroTitle = "نمــــكّن الابتكار";
+    wasUpdated = true;
+  }
+  if (c.home?.heroSubtitle === "جمعية الابتكار والاستدامة المجتمعية") {
+    c.home.heroSubtitle = "ونصنع أثـراً مستداماً";
+    wasUpdated = true;
+  }
+  if (
+    !c.about?.heroSubtitle ||
+    c.about.heroSubtitle === "جمعية الابتكار والاستدامة المجتمعية جمعية وطنية سعودية غير ربحية، تأسست بهدف تعزيز ثقافة الابتكار، ودعم مسيرة الاستدامة المجتمعية في المملكة العربية السعودية." ||
+    c.about.heroSubtitle.includes("غير ربحية")
+  ) {
+    c.about.heroSubtitle = defaultContent.about.heroSubtitle;
+    wasUpdated = true;
+  }
+  return { content: c, wasUpdated };
+}
+
 function loadContent(): SiteContent {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return defaultContent;
     const parsed = JSON.parse(raw) as Partial<SiteContent>;
     const merged = deepMerge(defaultContent as Record<string, unknown>, parsed as Record<string, unknown>) as SiteContent;
-    if (merged.home.heroTitle === "الـرئيسية...") {
-      merged.home.heroTitle = "نمــــكّن الابتكار";
-    }
-    if (merged.home.heroSubtitle === "جمعية الابتكار والاستدامة المجتمعية") {
-      merged.home.heroSubtitle = "ونصنع أثـراً مستداماً";
-    }
-    return merged;
+    const { content } = sanitizeContent(merged);
+    return content;
   } catch {
     return defaultContent;
   }
@@ -86,8 +102,14 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
           current as Record<string, unknown>,
           cloudPartialContent as Record<string, unknown>
         ) as SiteContent;
-        saveContent(merged);
-        return merged;
+        const { content: sanitized, wasUpdated } = sanitizeContent(merged);
+        if (wasUpdated) {
+          setTimeout(() => {
+            saveContentToCloud(sanitized);
+          }, 100);
+        }
+        saveContent(sanitized);
+        return sanitized;
       });
     });
     return () => unsubscribe();

@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from "react";
 import { useNavigate, useLocation } from "react-router";
+import { motion } from "motion/react";
 
 /**
  * NAV ITEMS — ordered left-to-right as they appear in the flex row.
@@ -136,38 +137,52 @@ export function NavigationBar() {
     // Tailwind "lg:" = min-width: 1024px.
     <div
       ref={containerRef}
-      // `relative` so the indicator's `position:absolute` anchors to THIS div.
-      // Was `absolute` in the original export; since the parent container is itself
-      // absolutely positioned (left/top/width set), relative flows identically.
-      className="[word-break:break-word] relative content-stretch font-['29LT_Bukra_Variable:Medium',sans-serif] gap-[26px] items-center left-0 not-italic text-[15.5px] text-white top-0 whitespace-nowrap hidden lg:flex"
+      className="[word-break:break-word] relative content-stretch font-['29LT_Bukra_Variable:Medium',sans-serif] gap-[26px] items-center left-0 not-italic text-[15.5px] text-white top-0 whitespace-nowrap hidden lg:flex select-none"
     >
-      {NAV_ITEMS.map((item, i) => (
-        <div
-          key={item.route}
-          ref={(el) => { itemRefs.current[i] = el; }}
-          className={`relative h-[42px] flex flex-col justify-center ${item.className}`}
-          style={{ cursor: item.route.startsWith("/__") ? "default" : "pointer" }}
-          onClick={() => {
-            if (!item.route.startsWith("/__")) navigate(item.route);
-          }}
-        >
-          {item.node}
-        </div>
-      ))}
+      {NAV_ITEMS.map((item, i) => {
+        const isActive = location.pathname === item.route;
+        return (
+          <motion.div
+            key={item.route}
+            ref={(el) => { itemRefs.current[i] = el; }}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 450, damping: 22 }}
+            className={`relative h-[42px] flex flex-col justify-center transition-opacity duration-200 ${
+              isActive ? "opacity-100 font-semibold" : "opacity-90 hover:opacity-100"
+            } ${item.className}`}
+            style={{ cursor: item.route.startsWith("/__") ? "default" : "pointer" }}
+            onClick={() => {
+              if (!item.route.startsWith("/__")) navigate(item.route);
+            }}
+          >
+            {item.node}
+          </motion.div>
+        );
+      })}
 
-      {/* Dynamic active indicator — a white line below the active tab label. */}
+      {/* Dynamic active indicator — a white line below the active tab label with spring animation */}
       {indicator && (
-        <div
+        <motion.div
+          layout
           aria-hidden="true"
+          initial={false}
+          animate={{
+            left: indicator.left,
+            width: indicator.width,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 380,
+            damping: 32,
+          }}
           style={{
             position: "absolute",
             bottom: "-4px",
-            left: indicator.left,
-            width: indicator.width,
-            height: 2,
+            height: 2.5,
             backgroundColor: "white",
+            borderRadius: 2,
             pointerEvents: "none",
-            transition: "left 0.2s ease, width 0.2s ease",
           }}
         />
       )}

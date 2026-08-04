@@ -15,24 +15,8 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
-            <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
-              <div className="relative size-full">
-                <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
-                  <g id="Group 1">
-                    <circle cx="33" cy="33" fill="white" id="Ellipse 2" r="32.5" stroke="#1A4668" />
-                    <g id="arrow_upward">
-                      <mask height="30" id="mask0_0_174" maskUnits="userSpaceOnUse" style={{ maskType: "alpha" }} width="30" x="18" y="18">
-                        <rect fill="#D9D9D9" height="28.921" id="Bounding box" stroke="#1A4668" strokeWidth="0.507692" transform="matrix(1 0 0 -1 18.2773 47.2155)" width="28.921" x="0.253846" y="-0.253846" />
-                      </mask>
-                      <g mask="url(#mask0_0_174)">
-                        <path d={svgPaths.p12f60180} fill="#1A4668" id="arrow_upward_2" stroke="#1A4668" strokeWidth="0.0126923" />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top transition-transform duration-300 hover:scale-110" style={{ cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+            <img src="/Group 1.svg" alt="للأعلى" className="w-[66px] h-[66px] block pointer-events-none select-none" />
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
@@ -52,8 +36,10 @@ function Footer({ className }: { className?: string }) {
               </svg>
             </div>
           </div>
-          <div className="content-stretch flex items-start relative shrink-0" data-name="Social Icon">
-            <p className="[word-break:break-word] font-['Font_Awesome_6_Brands:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-white whitespace-nowrap">instagram</p>
+          <div className="h-[18px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
+            <svg className="absolute block inset-0 size-full" fill="none" height="18" viewBox="0 0 18 18" width="18">
+              <path d="M8.75 4.51C11.21 4.51 13.24 6.54 13.24 9C13.24 11.46 11.21 13.49 8.75 13.49C6.25 13.49 4.26 11.5 4.26 9C4.26 6.54 6.25 4.51 8.75 4.51ZM8.75 11.93C10.35 11.93 11.64 10.64 11.64 9C11.64 7.4 10.35 6.11 8.75 6.11C7.11 6.11 5.82 7.4 5.82 9C5.82 10.64 7.15 11.93 8.75 11.93ZM14.45 4.35C14.45 3.77 13.98 3.3 13.4 3.3C12.81 3.3 12.34 3.77 12.34 4.35C12.34 4.94 12.81 5.41 13.4 5.41C13.98 5.41 14.45 4.94 14.45 4.35ZM17.42 5.41C17.5 6.85 17.5 11.19 17.42 12.63C17.34 14.04 17.03 15.25 16.02 16.3C15 17.32 13.75 17.63 12.34 17.71C10.9 17.79 6.56 17.79 5.12 17.71C3.71 17.63 2.5 17.32 1.45 16.3C0.43 15.25 0.12 14.04 0.04 12.63C-0.04 11.19 -0.04 6.85 0.04 5.41C0.12 4 0.43 2.75 1.45 1.73C2.5 0.72 3.71 0.41 5.12 0.33C6.56 0.25 10.9 0.25 12.34 0.33C13.75 0.41 15 0.72 16.02 1.73C17.03 2.75 17.34 4 17.42 5.41ZM15.55 14.16C16.02 13.02 15.9 10.29 15.9 9C15.9 7.75 16.02 5.02 15.55 3.84C15.23 3.1 14.65 2.48 13.91 2.2C12.73 1.73 10 1.85 8.75 1.85C7.46 1.85 4.73 1.73 3.59 2.2C2.81 2.52 2.23 3.1 1.91 3.84C1.45 5.02 1.56 7.75 1.56 9C1.56 10.29 1.45 13.02 1.91 14.16C2.23 14.94 2.81 15.52 3.59 15.84C4.73 16.3 7.46 16.19 8.75 16.19C10 16.19 12.73 16.3 13.91 15.84C14.65 15.52 15.27 14.94 15.55 14.16Z" fill="white" />
+            </svg>
           </div>
           <div className="h-[17px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
             <svg className="absolute block inset-0 size-full" fill="none" height="17" preserveAspectRatio="none" viewBox="0 0 18 17" width="18">
@@ -78,7 +64,11 @@ function Footer({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid',sans-serif] inset-[50.75%_14.8%_41.79%_83.82%] leading-[normal] not-italic text-[20px] text-white whitespace-nowrap">phone</p>
+        <div className="absolute inset-[50.75%_14.8%_41.79%_83.82%] flex items-center justify-center pointer-events-none">
+          <svg className="w-[18px] h-[18px]" fill="white" viewBox="0 0 20 20">
+            <path d="M6.41 0.98L7.97 4.73C8.24 5.35 8.09 6.09 7.54 6.52L5.62 8.12C6.91 10.86 9.14 13.09 11.88 14.38L13.48 12.46C13.91 11.91 14.65 11.76 15.27 12.03L19.02 13.59C19.77 13.87 20.12 14.69 19.92 15.43L18.98 18.87C18.79 19.53 18.2 20 17.5 20C7.81 20 0 12.19 0 2.5C0 1.8 0.47 1.21 1.13 1.02L4.57 0.08C5.31 -0.12 6.13 0.23 6.41 0.98Z" />
+          </svg>
+        </div>
         <div className="absolute inset-[41.1%_65.32%_27.04%_14.67%] overflow-clip" data-name="Layer_1">
           <div className="absolute inset-[22.81%_34.52%_21.58%_0]" data-name="Group">
             <svg className="absolute block inset-0 size-full" fill="none" height="47.4786" preserveAspectRatio="none" viewBox="0 0 191.197 47.4786" width="191.197">
@@ -2373,15 +2363,15 @@ function LandingPage() {
           {heroSubtitle}
         </p>
       </div>
-      <div className="absolute bg-white border-3 border-[#409bc5] border-solid h-[171px] left-[100px] rounded-[15px] top-[823px] w-[1239px]" />
+      <div className="absolute bg-white border-3 border-[#409bc5] border-solid h-[171px] left-[100px] rounded-[15px] top-[823px] w-[1239px] reveal-on-scroll card-hover-fx" />
       <Frame1 />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[1048px] w-[418.961px] reveal-up" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[1048px] w-[418.961px] reveal-on-scroll" dir="auto">
         نبــــذة عن الجمعية
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.5px)] not-italic text-[#009dc4] text-[55px] text-center top-[1389px] w-[897px] reveal-up" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.5px)] not-italic text-[#009dc4] text-[55px] text-center top-[1389px] w-[897px] reveal-on-scroll" dir="auto">
         لماذا جمعية الابتكار والاستدامة المجتمعية؟
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px] reveal-fade delay-200">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px] reveal-on-scroll reveal-delay-150">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
           جمعية الابتكار والاستدامة المجتمعية هي جمعية أهلية وطنية متخصصة في تمكين الابتكار والاستدامة المجتمعية، تعمل على تطوير القدرات، وتصميم الحلول، ودعم المبادرات، وبناء الشراكات التي تسهم في تحقيق التنمية المستدامة وتعزيز جودة الحياة.
         </p>
@@ -2389,16 +2379,16 @@ function LandingPage() {
           نقدم حلولًا متكاملة في الابتكار المؤسسي، والابتكار المجتمعي، والاستدامة، وبناء القدرات، وأكاديمية STEAM، والدراسات والاستشارات، بما يسهم في تحويل الأفكار إلى أثر مستدام.
         </p>
       </div>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap reveal-fade delay-200">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap reveal-on-scroll reveal-delay-150">
         <p className="leading-[25px] mb-[8.521232604980469px]" dir="auto">{`يشهد العالم تحولًا متسارعًا يجعل الابتكار والاستدامة من أهم عوامل التنافس والتنمية. وفي ظل هذا التحول، تبرز الحاجة إلى جهة وطنية متخصصة تسهم في بناء القدرات، وتطوير الحلول، وربط مختلف القطاعات، وتحويل الأفكار إلى أثر مستدام. `}</p>
         <p className="leading-[25px]" dir="auto">
           جاء تأسيس الجمعية لتكون منصة وطنية تجمع بين الابتكار والاستدامة المجتمعية، وتدعم الأفراد والجهات في تطوير المبادرات، وتعزيز المعرفة، وبناء الشراكات، والمساهمة في معالجة التحديات المجتمعية من خلال حلول مبتكرة ومستدامة.
         </p>
       </div>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+209.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[3069px] w-[418.961px] reveal-up" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+209.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[3069px] w-[418.961px] reveal-on-scroll" dir="auto">
         أبرز البـــــرامج
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(79.17%+92px)] not-italic text-[#009dc4] text-[55px] text-right top-[4757px] whitespace-nowrap reveal-up" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(79.17%+92px)] not-italic text-[#009dc4] text-[55px] text-right top-[4757px] whitespace-nowrap reveal-on-scroll" dir="auto">
         دعوة للتعاون
       </p>
       <Group20 />
@@ -2409,54 +2399,54 @@ function LandingPage() {
       <Group25 />
       <Group22 />
       <Group26 />
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[1233px] left-[calc(8.33%+85px)] rounded-[30px] top-[1712px] w-[1030px]" />
-      <div className="absolute bg-[#009dc4] h-[98px] left-[calc(25%+98px)] top-[1678px] w-[524px]" />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1706px] w-[418.961px] reveal-up" dir="auto">
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[1233px] left-[calc(8.33%+85px)] rounded-[30px] top-[1712px] w-[1030px] reveal-on-scroll" />
+      <div className="absolute bg-[#009dc4] h-[98px] left-[calc(25%+98px)] top-[1678px] w-[524px] reveal-on-scroll" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1706px] w-[418.961px] reveal-on-scroll" dir="auto">
         مجالات التمكين
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(16.67%+480px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[3557px] w-[820px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(16.67%+480px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[3557px] w-[820px] reveal-on-scroll reveal-delay-100" dir="auto">
         رسالتنا لا تُقاس بعدد الأنشطة، بل بما تحققه من أثر مستدام.
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[3500px] w-[418.961px] reveal-up" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[3500px] w-[418.961px] reveal-on-scroll" dir="auto">
         الأثـــــر
       </p>
-      <div className="absolute bg-[#009dc4] h-[178px] left-0 top-[4034px] w-[1440px]" />
+      <div className="absolute bg-[#009dc4] h-[178px] left-0 top-[4034px] w-[1440px] reveal-on-scroll" />
       <Group33 />
-      <div className="absolute bg-[#ebeef3] h-[474px] left-[-66px] rounded-[6px] top-[4212px] w-[1571px]" />
+      <div className="absolute bg-[#ebeef3] h-[474px] left-[-66px] rounded-[6px] top-[4212px] w-[1571px] reveal-on-scroll" />
       <Frame />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[305px] leading-[34px] left-[calc(58.33%+390px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[3136px] w-[395px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[305px] leading-[34px] left-[calc(58.33%+390px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[3136px] w-[395px] reveal-on-scroll reveal-delay-150" dir="auto">
         تقدّم الجمعية برامج نوعية تستهدف مختلف الفئات، وتركّز على بناء القدرات في الابتكار والاستدامة المجتمعية، من خلال برامج احترافية، وأكاديمية STEAM، وورش العمل، والمعسكرات، والهاكاثونات، والبرامج التنفيذية والقيادية.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(66.67%+272px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[4841px] w-[292px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(66.67%+272px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[4841px] w-[292px] reveal-on-scroll reveal-delay-150" dir="auto">
         ندعو جميع الجهات والأفراد والشركاء إلى التعاون معنا لبناء مستقبل أكثر ابتكارًا واستدامة، وتحويل الأفكار إلى مبادرات ومشروعات تسهم في تنمية المجتمع وتحقيق مستهدفات رؤية المملكة العربية السعودية 2030.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(75%+152px)] not-italic text-[#009dc4] text-[30px] text-right top-[4800px] whitespace-nowrap" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(75%+152px)] not-italic text-[#009dc4] text-[30px] text-right top-[4800px] whitespace-nowrap reveal-on-scroll" dir="auto">
         لنصنع الأثر معًا
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[4355px] w-[1020px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[4355px] w-[1020px] reveal-on-scroll reveal-delay-100" dir="auto">
         نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع الجهات الحكومية، والقطاع الخاص، والقطاع غير الربحي، والجامعات، والمراكز البحثية، والشركاء المحليين والدوليين.
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px] reveal-up" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px] reveal-on-scroll" dir="auto">
         الشـــركاء
       </p>
       <Component />
       <Group37 />
-      <div className="absolute h-[424px] left-0 top-[3610px] w-[1440px]" data-name="١ 1">
+      <div className="absolute h-[424px] left-0 top-[3610px] w-[1440px] reveal-on-scroll reveal-scale" data-name="١ 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[155.99%] left-0 max-w-none top-[-15.85%] w-full" src={img2} />
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute h-[424px] left-1/2 top-[3610px] w-[1714px]" data-name="ChatGPT Image Jul 19, 2026 at 12_37_40 PM 1">
+      <div className="-translate-x-1/2 absolute h-[424px] left-1/2 top-[3610px] w-[1714px] reveal-on-scroll reveal-scale" data-name="ChatGPT Image Jul 19, 2026 at 12_37_40 PM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[139.93%] left-0 max-w-none top-[-31.4%] w-full" src={imgChatGptImageJul192026At123740Pm1} />
         </div>
       </div>
-      <div className="-translate-x-1/2 absolute h-[320px] left-[calc(33.33%+29.5px)] rounded-[30px] top-[3065px] w-[609px]" data-name="ChatGPT Image Apr 1, 2026 at 11_39_40 AM 1">
+      <div className="-translate-x-1/2 absolute h-[320px] left-[calc(33.33%+29.5px)] rounded-[30px] top-[3065px] w-[609px] reveal-on-scroll reveal-scale banner-hover-fx" data-name="ChatGPT Image Apr 1, 2026 at 11_39_40 AM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
           <img alt="" className="absolute h-[218.69%] left-[-64.07%] max-w-none top-[-85.57%] w-[229.67%]" src={imgChatGptImageApr12026At113940Am1} />
         </div>
       </div>
-      <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px]" />
+      <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px] reveal-on-scroll" />
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">
         <NavigationBar />
       </div>

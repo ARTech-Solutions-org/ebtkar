@@ -1,8 +1,8 @@
 import svgPaths from "./svg-uovl7lkqvh";
 import { useNavigate } from "react-router";
 import { NavigationBar } from "../../app/components/NavigationBar";
-import imgLayer11 from "./922ea633b05e4bd1260330b71876671f04ddc610.png";
 import { useContent } from "../../cms/ContentContext";
+import { defaultContent } from "../../cms/defaultContent";
 import imgChatGptImageJul262026At123334Pm1 from "./a4872119b5435f79c77a36dc6c6967acc94c4bae.png";
 import imgChatGptImageJul262026At123635Pm1 from "./b449752371c061277d1e5ecf6987d42f1888418f.png";
 import imgChatGptImageJul262026At123737Pm1 from "./69b1452a2c62f9411b71d7c00d4636016dc13e4f.png";
@@ -10,6 +10,7 @@ import img17 from "./43dfa4ce6274a023ca1b17803ff70ffe493314c8.png";
 import imgPicture11 from "./d05aad8e03c2b75812770acbb0daa720cb289f81.png";
 import imgDotOverlay1 from "./3d1aa09a4fbd4c779285b29927ee6ee9e6e5abf2.png";
 import imgLayer01 from "./5e119b044b0d41ca373358d8869db79118eb5c02.png";
+import imgLayer11 from "./922ea633b05e4bd1260330b71876671f04ddc610.png";
 import img21 from "./e2802921a89593a3a85452ff8ab02c3f58926a17.png";
 import img121 from "./6629da1079a37f15c700219087ca6fafa64627de.png";
 import img12131 from "./d6ed6f9adbf90557ff040c46b5728beb3c8b80eb.png";
@@ -20,24 +21,8 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
-            <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
-              <div className="relative size-full">
-                <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
-                  <g id="Group 1">
-                    <circle cx="33" cy="33" fill="white" id="Ellipse 2" r="32.5" stroke="#1A4668" />
-                    <g id="arrow_upward">
-                      <mask height="30" id="mask0_0_175" maskUnits="userSpaceOnUse" style={{ maskType: "alpha" }} width="30" x="18" y="18">
-                        <rect fill="#D9D9D9" height="28.921" id="Bounding box" stroke="#1A4668" strokeWidth="0.507692" transform="matrix(1 0 0 -1 18.2773 47.2155)" width="28.921" x="0.253846" y="-0.253846" />
-                      </mask>
-                      <g mask="url(#mask0_0_175)">
-                        <path d={svgPaths.p12f60180} fill="#1A4668" id="arrow_upward_2" stroke="#1A4668" strokeWidth="0.0126923" />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top transition-transform duration-300 hover:scale-110" style={{ cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+            <img src="/Group 1.svg" alt="للأعلى" className="w-[66px] h-[66px] block pointer-events-none select-none" />
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
@@ -57,8 +42,10 @@ function Footer({ className }: { className?: string }) {
               </svg>
             </div>
           </div>
-          <div className="content-stretch flex items-start relative shrink-0" data-name="Social Icon">
-            <p className="[word-break:break-word] font-['Font_Awesome_6_Brands:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-white whitespace-nowrap">instagram</p>
+          <div className="h-[18px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
+            <svg className="absolute block inset-0 size-full" fill="none" height="18" viewBox="0 0 18 18" width="18">
+              <path d="M8.75 4.51C11.21 4.51 13.24 6.54 13.24 9C13.24 11.46 11.21 13.49 8.75 13.49C6.25 13.49 4.26 11.5 4.26 9C4.26 6.54 6.25 4.51 8.75 4.51ZM8.75 11.93C10.35 11.93 11.64 10.64 11.64 9C11.64 7.4 10.35 6.11 8.75 6.11C7.11 6.11 5.82 7.4 5.82 9C5.82 10.64 7.15 11.93 8.75 11.93ZM14.45 4.35C14.45 3.77 13.98 3.3 13.4 3.3C12.81 3.3 12.34 3.77 12.34 4.35C12.34 4.94 12.81 5.41 13.4 5.41C13.98 5.41 14.45 4.94 14.45 4.35ZM17.42 5.41C17.5 6.85 17.5 11.19 17.42 12.63C17.34 14.04 17.03 15.25 16.02 16.3C15 17.32 13.75 17.63 12.34 17.71C10.9 17.79 6.56 17.79 5.12 17.71C3.71 17.63 2.5 17.32 1.45 16.3C0.43 15.25 0.12 14.04 0.04 12.63C-0.04 11.19 -0.04 6.85 0.04 5.41C0.12 4 0.43 2.75 1.45 1.73C2.5 0.72 3.71 0.41 5.12 0.33C6.56 0.25 10.9 0.25 12.34 0.33C13.75 0.41 15 0.72 16.02 1.73C17.03 2.75 17.34 4 17.42 5.41ZM15.55 14.16C16.02 13.02 15.9 10.29 15.9 9C15.9 7.75 16.02 5.02 15.55 3.84C15.23 3.1 14.65 2.48 13.91 2.2C12.73 1.73 10 1.85 8.75 1.85C7.46 1.85 4.73 1.73 3.59 2.2C2.81 2.52 2.23 3.1 1.91 3.84C1.45 5.02 1.56 7.75 1.56 9C1.56 10.29 1.45 13.02 1.91 14.16C2.23 14.94 2.81 15.52 3.59 15.84C4.73 16.3 7.46 16.19 8.75 16.19C10 16.19 12.73 16.3 13.91 15.84C14.65 15.52 15.27 14.94 15.55 14.16Z" fill="white" />
+            </svg>
           </div>
           <div className="h-[17px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
             <svg className="absolute block inset-0 size-full" fill="none" height="17" preserveAspectRatio="none" viewBox="0 0 18 17" width="18">
@@ -83,7 +70,11 @@ function Footer({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid',sans-serif] inset-[50.75%_14.8%_41.79%_83.82%] leading-[normal] not-italic text-[20px] text-white whitespace-nowrap">phone</p>
+        <div className="absolute inset-[50.75%_14.8%_41.79%_83.82%] flex items-center justify-center pointer-events-none">
+          <svg className="w-[18px] h-[18px]" fill="white" viewBox="0 0 20 20">
+            <path d="M6.41 0.98L7.97 4.73C8.24 5.35 8.09 6.09 7.54 6.52L5.62 8.12C6.91 10.86 9.14 13.09 11.88 14.38L13.48 12.46C13.91 11.91 14.65 11.76 15.27 12.03L19.02 13.59C19.77 13.87 20.12 14.69 19.92 15.43L18.98 18.87C18.79 19.53 18.2 20 17.5 20C7.81 20 0 12.19 0 2.5C0 1.8 0.47 1.21 1.13 1.02L4.57 0.08C5.31 -0.12 6.13 0.23 6.41 0.98Z" />
+          </svg>
+        </div>
         <div className="absolute inset-[41.1%_65.32%_27.04%_14.67%] overflow-clip" data-name="Layer_1">
           <div className="absolute inset-[22.81%_34.52%_21.58%_0]" data-name="Group">
             <svg className="absolute block inset-0 size-full" fill="none" height="47.4786" preserveAspectRatio="none" viewBox="0 0 191.197 47.4786" width="191.197">
@@ -955,10 +946,10 @@ function Group15() {
 function Group17() {
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[7959px]">
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[245px] leading-[34px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[8026px] w-[900px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[8032px] w-[900px]" dir="auto">
         الجمــعية العمـــومية
       </p>
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[370px] left-[calc(8.33%+85px)] rounded-[30px] top-[7959px] w-[1030px]" />
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[200px] left-[calc(8.33%+85px)] rounded-[30px] top-[7959px] w-[1030px]" />
     </div>
   );
 }
@@ -1260,16 +1251,20 @@ function Group25() {
 function LandingPage() {
   const { content } = useContent();
   const a = content.about;
+  const heroSubtitleText =
+    !a.heroSubtitle || a.heroSubtitle.includes("غير ربحية")
+      ? defaultContent.about.heroSubtitle
+      : a.heroSubtitle;
   const mainImg = a.mainImage || imgChatGptImageJul262026At123334Pm1;
   return (
     <div className="relative bg-white h-[8639px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Header1 />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[96.63%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[2.7%] w-[404px] animate-hero-reveal" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[96.63%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[2.7%] w-[404px]" dir="auto">
         {a.heroTitle}
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px] reveal-up" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px]" dir="auto">
         {a.mainTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+155px)] not-italic text-[#009dc4] text-[55px] text-right top-[1289px] w-[329px]" dir="auto">
@@ -1278,14 +1273,14 @@ function LandingPage() {
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(37.5%+216px)] not-italic text-[#009dc4] text-[55px] text-right top-[1289px] w-[329px]" dir="auto">
         {a.missionTitle}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[505px] reveal-fade delay-200">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[505px]">
         <p className="leading-[30px]" dir="auto">
           {a.mainBody}
         </p>
       </div>
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[262px] leading-[0] left-[calc(8.33%+590px)] not-italic text-[28px] text-right text-white top-[302px] w-[503px] whitespace-pre-wrap">
         <p className="leading-[30px]" dir="auto">
-          {a.heroSubtitle}
+          {heroSubtitleText}
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(58.33%+335px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1346px] w-[312px]" dir="auto">
@@ -1302,12 +1297,12 @@ function LandingPage() {
       <Group9 />
       <Group6 />
       <Group10 />
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(58.33%-3px)] rounded-[30px] top-[1241px] w-[398px]" />
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(8.33%+85px)] rounded-[30px] top-[1241px] w-[610px]" />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1559px] w-[418.961px]" dir="auto">
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(58.33%-3px)] rounded-[30px] top-[1241px] w-[398px] reveal-on-scroll card-hover-fx" />
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(8.33%+85px)] rounded-[30px] top-[1241px] w-[610px] reveal-on-scroll card-hover-fx reveal-delay-150" />
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1559px] w-[418.961px] reveal-on-scroll" dir="auto">
         القــــــيم
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[3612px] w-[900px] whitespace-pre-wrap">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[3612px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">
           كلمة رئيس مجلس الإدارة
         </p>
@@ -1321,7 +1316,7 @@ function LandingPage() {
           إننا نؤمن بأن الأثر الحقيقي يبدأ بفكرة، وينمو بالشراكة، ويستمر بالاستدامة، ونتطلع إلى العمل مع جميع شركائنا لبناء مستقبل أكثر ابتكارًا واستدامة.
         </p>
       </div>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[4332px] w-[900px] whitespace-pre-wrap">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[4332px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">
           كلمة المدير التنفيذي
         </p>
@@ -1335,33 +1330,33 @@ function LandingPage() {
           إننا نؤمن بأن الأثر الحقيقي يبدأ بفكرة، وينمو بالشراكة، ويستمر بالاستدامة، ونتطلع إلى العمل مع جميع شركائنا لبناء مستقبل أكثر ابتكارًا واستدامة.
         </p>
       </div>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[245px] leading-[34px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[5052px] w-[900px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[5058px] w-[900px] reveal-on-scroll" dir="auto">
         الهيــــكل التنظيمي
       </p>
-      <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px]" />
+      <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px] reveal-on-scroll" />
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[812px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px]" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />
         </div>
       </div>
-      <div className="absolute h-[347px] left-[calc(8.33%+85px)] rounded-[30px] top-[790px] w-[505px]" data-name="ChatGPT Image Jul 26, 2026 at 12_33_34 PM 1">
+      <div className="absolute h-[347px] left-[calc(8.33%+85px)] rounded-[30px] top-[790px] w-[505px] reveal-on-scroll reveal-scale banner-hover-fx" data-name="ChatGPT Image Jul 26, 2026 at 12_33_34 PM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
           <img alt="" className="absolute h-full left-[-0.05%] max-w-none top-0 w-[103.07%]" src={imgChatGptImageJul262026At123334Pm1} />
         </div>
       </div>
       <Group15 />
-      <div className="absolute h-[420px] left-0 top-[3075px] w-[1440px]" data-name="1 7">
+      <div className="absolute h-[420px] left-0 top-[3075px] w-[1440px] reveal-on-scroll reveal-scale" data-name="1 7">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[150.82%] left-0 max-w-none top-[-12.91%] w-full" src={img17} />
         </div>
       </div>
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[680px] left-[calc(8.33%+85px)] rounded-[30px] top-[3545px] w-[1030px]" />
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[680px] left-[calc(8.33%+85px)] rounded-[30px] top-[4265px] w-[1030px]" />
-      <div className="absolute border-3 border-[#009dc4] border-solid h-[370px] left-[calc(8.33%+85px)] rounded-[30px] top-[4985px] w-[1030px]" />
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[680px] left-[calc(8.33%+85px)] rounded-[30px] top-[3545px] w-[1030px] reveal-on-scroll card-hover-fx" />
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[680px] left-[calc(8.33%+85px)] rounded-[30px] top-[4265px] w-[1030px] reveal-on-scroll card-hover-fx" />
+      <div className="absolute border-3 border-[#009dc4] border-solid h-[200px] left-[calc(8.33%+85px)] rounded-[30px] top-[4985px] w-[1030px] reveal-on-scroll card-hover-fx" />
       <Group17 />
       <Group16 />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[54px] leading-[34px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[5273px] w-[900px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(8.33%+600px)] not-italic text-[#009dc4] text-[55px] text-center top-[5273px] w-[900px] reveal-on-scroll" dir="auto">
         مجـــلس الإدارة
       </p>
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">
@@ -1378,17 +1373,17 @@ function LandingPage() {
       <Group21 />
       <Group23 />
       <Group25 />
-      <div className="absolute h-[333px] left-[calc(66.67%-8px)] top-[6973px] w-[256px]" data-name="12 1">
+      <div className="absolute h-[333px] left-[calc(66.67%-8px)] top-[6973px] w-[256px] reveal-on-scroll" data-name="12 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[108.18%] left-0 max-w-none top-[-0.03%] w-full" src={img121} />
         </div>
       </div>
-      <div className="absolute h-[418px] left-[calc(66.67%-27px)] top-[7372px] w-[287px]" data-name="1213 1">
+      <div className="absolute h-[418px] left-[calc(66.67%-27px)] top-[7372px] w-[287px] reveal-on-scroll" data-name="1213 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <img alt="" className="absolute h-[105.61%] left-0 max-w-none top-[-0.05%] w-full" src={img12131} />
         </div>
       </div>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(66.67%+275px)] not-italic text-[60px] text-right text-white top-[3164px] w-[609px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(66.67%+275px)] not-italic text-[60px] text-right text-white top-[3164px] w-[609px] reveal-on-scroll" dir="auto">
         التـــوجه الاستراتيجي
       </p>
     </div>

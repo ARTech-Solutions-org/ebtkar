@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
+import { motion, AnimatePresence } from "motion/react";
 
 interface NavEntry {
   label: string;
@@ -27,6 +28,7 @@ const NAV_ITEMS: NavEntry[] = [
  */
 export function MobileNav() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [open, setOpen] = useState(false);
 
   const go = (route: string) => {
@@ -36,18 +38,19 @@ export function MobileNav() {
 
   return (
     // Only rendered on small/medium viewports
-    <div className="lg:hidden fixed top-0 left-0 right-0 z-50" dir="rtl">
+    <div className="lg:hidden fixed top-0 left-0 right-0 z-50 shadow-md" dir="rtl">
       {/* Top bar */}
       <div
         style={{
           background: "linear-gradient(to bottom, #0e3141, #409bc5)",
         }}
-        className="flex items-center justify-between px-4 py-3"
+        className="flex items-center justify-between px-4 py-3 select-none"
       >
         {/* Site name / logo text */}
         <span
-          className="text-white text-sm font-bold leading-tight"
+          className="text-white text-sm font-bold leading-tight cursor-pointer"
           style={{ fontFamily: "'29LT Bukra Variable', sans-serif" }}
+          onClick={() => go("/")}
         >
           جمعية الابتكار
           <br />
@@ -55,10 +58,11 @@ export function MobileNav() {
         </span>
 
         {/* Hamburger / Close button */}
-        <button
+        <motion.button
+          whileTap={{ scale: 0.9 }}
           onClick={() => setOpen((v) => !v)}
           aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
-          className="text-white focus:outline-none"
+          className="text-white focus:outline-none p-1 rounded-md cursor-pointer"
           style={{ lineHeight: 1 }}
         >
           {open ? (
@@ -75,29 +79,44 @@ export function MobileNav() {
               <line x1="3" y1="18" x2="21" y2="18" />
             </svg>
           )}
-        </button>
+        </motion.button>
       </div>
 
       {/* Dropdown menu */}
-      {open && (
-        <div
-          style={{
-            background: "linear-gradient(to bottom, #1a4a63, #2d7fa8)",
-          }}
-          className="flex flex-col animate-menu-slide"
-        >
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.route + item.label}
-              onClick={() => go(item.route)}
-              className="text-white text-right px-6 py-4 text-base border-b border-white/10 hover:bg-white/10 active:bg-white/20 transition-colors"
-              style={{ fontFamily: "'29LT Bukra Variable', sans-serif" }}
-            >
-              {item.label}
-            </button>
-          ))}
-        </div>
-      )}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: [0.215, 0.61, 0.355, 1] }}
+            style={{
+              background: "linear-gradient(to bottom, #1a4a63, #2d7fa8)",
+            }}
+            className="flex flex-col overflow-hidden shadow-2xl"
+          >
+            {NAV_ITEMS.map((item, idx) => {
+              const isActive = location.pathname === item.route;
+              return (
+                <motion.button
+                  key={item.route + item.label}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: idx * 0.025, duration: 0.2 }}
+                  onClick={() => go(item.route)}
+                  className={`text-white text-right px-6 py-3.5 text-base border-b border-white/10 transition-colors flex items-center justify-between ${
+                    isActive ? "bg-white/20 font-bold" : "hover:bg-white/10 active:bg-white/20"
+                  }`}
+                  style={{ fontFamily: "'29LT Bukra Variable', sans-serif" }}
+                >
+                  <span>{item.label}</span>
+                  {isActive && <span className="w-2 h-2 rounded-full bg-cyan-300" />}
+                </motion.button>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

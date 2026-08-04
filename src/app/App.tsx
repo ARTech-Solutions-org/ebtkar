@@ -14,6 +14,9 @@ import Frame3868 from "../imports/Frame3868";
 import { ContentProvider } from "../cms/ContentContext";
 import { ResponsiveScaler } from "./components/ResponsiveScaler";
 import { MobileNav } from "./components/MobileNav";
+import { PageTransition } from "./components/PageTransition";
+import { ScrollToTop } from "./components/ScrollToTop";
+import { ScrollRevealInit } from "./components/ScrollRevealInit";
 
 // Lazy load AdminPanel so regular visitors NEVER download Admin code or routes
 const AdminPanel = React.lazy(() => import("../cms/AdminPanel"));
@@ -34,9 +37,9 @@ function ScaledPage({ children }: { children: React.ReactNode }) {
       {/* Spacer that only appears on mobile to prevent content hiding under the fixed nav bar */}
       <div className="lg:hidden h-[52px]" />
       <ResponsiveScaler>
-        <div className="animate-page-entrance">
+        <PageTransition>
           {children}
-        </div>
+        </PageTransition>
       </ResponsiveScaler>
     </>
   );
@@ -46,7 +49,7 @@ function AppRoutes() {
   const adminPath = (import.meta.env.VITE_ADMIN_PATH as string) || "/secret-admin-portal-2025";
 
   return (
-    <Suspense fallback={<div className="p-8 text-center text-gray-500">جاري التحميل...</div>}>
+    <Suspense fallback={<div className="p-8 text-center text-gray-500 font-sans">جاري التحميل...</div>}>
       <Routes>
         <Route path="/" element={<ScaledPage><Frame3877 /></ScaledPage>} />
         <Route path="/about" element={<ScaledPage><Frame3876 /></ScaledPage>} />
@@ -71,6 +74,8 @@ export default function App() {
   return (
     <ContentProvider>
       <HashRouter>
+        <ScrollToTop />
+        <ScrollRevealInit />
         <AppRoutes />
       </HashRouter>
     </ContentProvider>

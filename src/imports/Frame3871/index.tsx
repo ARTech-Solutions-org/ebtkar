@@ -10,24 +10,8 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
-            <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
-              <div className="relative size-full">
-                <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
-                  <g id="Group 1">
-                    <circle cx="33" cy="33" fill="white" id="Ellipse 2" r="32.5" stroke="#1A4668" />
-                    <g id="arrow_upward">
-                      <mask height="30" id="mask0_0_184" maskUnits="userSpaceOnUse" style={{ maskType: "alpha" }} width="30" x="18" y="18">
-                        <rect fill="#D9D9D9" height="28.921" id="Bounding box" stroke="#1A4668" strokeWidth="0.507692" transform="matrix(1 0 0 -1 18.2773 47.2155)" width="28.921" x="0.253846" y="-0.253846" />
-                      </mask>
-                      <g mask="url(#mask0_0_184)">
-                        <path d={svgPaths.p12f60180} fill="#1A4668" id="arrow_upward_2" stroke="#1A4668" strokeWidth="0.0126923" />
-                      </g>
-                    </g>
-                  </g>
-                </svg>
-              </div>
-            </div>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top transition-transform duration-300 hover:scale-110" style={{ cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+            <img src="/Group 1.svg" alt="للأعلى" className="w-[66px] h-[66px] block pointer-events-none select-none" />
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
@@ -47,8 +31,10 @@ function Footer({ className }: { className?: string }) {
               </svg>
             </div>
           </div>
-          <div className="content-stretch flex items-start relative shrink-0" data-name="Social Icon">
-            <p className="[word-break:break-word] font-['Font_Awesome_6_Brands:Regular',sans-serif] leading-[normal] not-italic relative shrink-0 text-[20px] text-white whitespace-nowrap">instagram</p>
+          <div className="h-[18px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
+            <svg className="absolute block inset-0 size-full" fill="none" height="18" viewBox="0 0 18 18" width="18">
+              <path d="M8.75 4.51C11.21 4.51 13.24 6.54 13.24 9C13.24 11.46 11.21 13.49 8.75 13.49C6.25 13.49 4.26 11.5 4.26 9C4.26 6.54 6.25 4.51 8.75 4.51ZM8.75 11.93C10.35 11.93 11.64 10.64 11.64 9C11.64 7.4 10.35 6.11 8.75 6.11C7.11 6.11 5.82 7.4 5.82 9C5.82 10.64 7.15 11.93 8.75 11.93ZM14.45 4.35C14.45 3.77 13.98 3.3 13.4 3.3C12.81 3.3 12.34 3.77 12.34 4.35C12.34 4.94 12.81 5.41 13.4 5.41C13.98 5.41 14.45 4.94 14.45 4.35ZM17.42 5.41C17.5 6.85 17.5 11.19 17.42 12.63C17.34 14.04 17.03 15.25 16.02 16.3C15 17.32 13.75 17.63 12.34 17.71C10.9 17.79 6.56 17.79 5.12 17.71C3.71 17.63 2.5 17.32 1.45 16.3C0.43 15.25 0.12 14.04 0.04 12.63C-0.04 11.19 -0.04 6.85 0.04 5.41C0.12 4 0.43 2.75 1.45 1.73C2.5 0.72 3.71 0.41 5.12 0.33C6.56 0.25 10.9 0.25 12.34 0.33C13.75 0.41 15 0.72 16.02 1.73C17.03 2.75 17.34 4 17.42 5.41ZM15.55 14.16C16.02 13.02 15.9 10.29 15.9 9C15.9 7.75 16.02 5.02 15.55 3.84C15.23 3.1 14.65 2.48 13.91 2.2C12.73 1.73 10 1.85 8.75 1.85C7.46 1.85 4.73 1.73 3.59 2.2C2.81 2.52 2.23 3.1 1.91 3.84C1.45 5.02 1.56 7.75 1.56 9C1.56 10.29 1.45 13.02 1.91 14.16C2.23 14.94 2.81 15.52 3.59 15.84C4.73 16.3 7.46 16.19 8.75 16.19C10 16.19 12.73 16.3 13.91 15.84C14.65 15.52 15.27 14.94 15.55 14.16Z" fill="white" />
+            </svg>
           </div>
           <div className="h-[17px] overflow-clip relative shrink-0 w-[18px]" data-name="Social Icons">
             <svg className="absolute block inset-0 size-full" fill="none" height="17" preserveAspectRatio="none" viewBox="0 0 18 17" width="18">
@@ -73,7 +59,11 @@ function Footer({ className }: { className?: string }) {
             </div>
           </div>
         </div>
-        <p className="[word-break:break-word] absolute font-['Font_Awesome_6_Free:Solid',sans-serif] inset-[50.75%_14.8%_41.79%_83.82%] leading-[normal] not-italic text-[20px] text-white whitespace-nowrap">phone</p>
+        <div className="absolute inset-[50.75%_14.8%_41.79%_83.82%] flex items-center justify-center pointer-events-none">
+          <svg className="w-[18px] h-[18px]" fill="white" viewBox="0 0 20 20">
+            <path d="M6.41 0.98L7.97 4.73C8.24 5.35 8.09 6.09 7.54 6.52L5.62 8.12C6.91 10.86 9.14 13.09 11.88 14.38L13.48 12.46C13.91 11.91 14.65 11.76 15.27 12.03L19.02 13.59C19.77 13.87 20.12 14.69 19.92 15.43L18.98 18.87C18.79 19.53 18.2 20 17.5 20C7.81 20 0 12.19 0 2.5C0 1.8 0.47 1.21 1.13 1.02L4.57 0.08C5.31 -0.12 6.13 0.23 6.41 0.98Z" />
+          </svg>
+        </div>
         <div className="absolute inset-[41.1%_65.32%_27.04%_14.67%] overflow-clip" data-name="Layer_1">
           <div className="absolute inset-[22.81%_34.52%_21.58%_0]" data-name="Group">
             <svg className="absolute block inset-0 size-full" fill="none" height="47.4786" preserveAspectRatio="none" viewBox="0 0 191.197 47.4786" width="191.197">

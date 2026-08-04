@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore, doc, onSnapshot, setDoc } from "firebase/firestore";
+import { getFirestore, doc, onSnapshot, setDoc, collection, query } from "firebase/firestore";
 import { getSavedFirebaseConfig, isFirebaseConfigured } from "./firebaseConfig";
 import { SiteContent } from "./defaultContent";
 
@@ -125,14 +125,29 @@ export function subscribeToContactSubmissions(
   if (!firestoreDb) return () => {};
 
   try {
-    const docRef = doc(firestoreDb, "contact_submissions", "all_messages");
+    const q = query(collection(firestoreDb, "contact_submissions"));
     const unsubscribe = onSnapshot(
-      docRef,
+      q,
       (snapshot) => {
-        if (snapshot.exists()) {
-          const cloudMsgs = snapshot.data().list || [];
-          onUpdate(cloudMsgs);
-        }
+        const allMsgs: ContactSubmission[] = [];
+        snapshot.docs.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (docSnap.id === "all_messages" && Array.isArray(data.list)) {
+            // Legacy array format (old batch document)
+            allMsgs.push(...data.list);
+          } else if (data.name && data.email) {
+            // Individual document format — message field is optional (quick contact form doesn't have it)
+            allMsgs.push(data as ContactSubmission);
+          }
+        });
+
+        // Sort by createdAt descending (most recent first)
+        allMsgs.sort((a, b) => {
+          const dateA = new Date(a.createdAt || 0).getTime();
+          const dateB = new Date(b.createdAt || 0).getTime();
+          return dateB - dateA;
+        });
+        onUpdate(allMsgs);
       },
       () => {}
     );

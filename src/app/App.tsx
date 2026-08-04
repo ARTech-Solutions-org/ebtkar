@@ -1,16 +1,5 @@
 import React, { Suspense } from "react";
 import { HashRouter, Routes, Route } from "react-router";
-import Frame3877 from "../imports/Frame3877";
-import Frame3876 from "../imports/Frame3876";
-import Frame3875 from "../imports/Frame3875";
-import Frame3867 from "../imports/Frame3867";
-import Frame3874 from "../imports/Frame3874";
-import Frame3873 from "../imports/Frame3873";
-import Frame3872 from "../imports/Frame3872";
-import Frame3871 from "../imports/Frame3871";
-import Frame3870 from "../imports/Frame3870";
-import Frame3869 from "../imports/Frame3869";
-import Frame3868 from "../imports/Frame3868";
 import { ContentProvider } from "../cms/ContentContext";
 import { ResponsiveScaler } from "./components/ResponsiveScaler";
 import { MobileNav } from "./components/MobileNav";
@@ -18,7 +7,20 @@ import { PageTransition } from "./components/PageTransition";
 import { ScrollToTop } from "./components/ScrollToTop";
 import { ScrollRevealInit } from "./components/ScrollRevealInit";
 
-// Lazy load AdminPanel so regular visitors NEVER download Admin code or routes
+// Lazy-load every public page so the Suspense loading spinner fires on every
+// route navigation and the initial load of each chunk, giving users a smooth
+// loading state rather than a sudden pop-in of content.
+const Frame3877 = React.lazy(() => import("../imports/Frame3877"));
+const Frame3876 = React.lazy(() => import("../imports/Frame3876"));
+const Frame3875 = React.lazy(() => import("../imports/Frame3875"));
+const Frame3867 = React.lazy(() => import("../imports/Frame3867"));
+const Frame3874 = React.lazy(() => import("../imports/Frame3874"));
+const Frame3873 = React.lazy(() => import("../imports/Frame3873"));
+const Frame3872 = React.lazy(() => import("../imports/Frame3872"));
+const Frame3871 = React.lazy(() => import("../imports/Frame3871"));
+const Frame3870 = React.lazy(() => import("../imports/Frame3870"));
+const Frame3869 = React.lazy(() => import("../imports/Frame3869"));
+const Frame3868 = React.lazy(() => import("../imports/Frame3868"));
 const AdminPanel = React.lazy(() => import("../cms/AdminPanel"));
 
 /**
@@ -41,6 +43,14 @@ function ScaledPage({ children }: { children: React.ReactNode }) {
           {children}
         </PageTransition>
       </ResponsiveScaler>
+      {/*
+        ScrollRevealInit is placed here — inside ScaledPage, which itself renders
+        inside the Suspense boundary — so the IntersectionObserver scan runs only
+        after the lazy page chunk has been resolved and committed to the DOM.
+        Placing it in <App> (outside Suspense) caused it to scan before the lazy
+        component mounted, leaving every .reveal-on-scroll element permanently hidden.
+      */}
+      <ScrollRevealInit />
     </>
   );
 }
@@ -49,7 +59,7 @@ function AppRoutes() {
   const adminPath = (import.meta.env.VITE_ADMIN_PATH as string) || "/secret-admin-portal-2025";
 
   return (
-    <Suspense fallback={<div className="p-8 text-center text-gray-500 font-sans">جاري التحميل...</div>}>
+    <Suspense fallback={<div className="page-loading-spinner"><div className="page-loading-spinner__ring" /></div>}>
       <Routes>
         <Route path="/" element={<ScaledPage><Frame3877 /></ScaledPage>} />
         <Route path="/about" element={<ScaledPage><Frame3876 /></ScaledPage>} />
@@ -75,7 +85,6 @@ export default function App() {
     <ContentProvider>
       <HashRouter>
         <ScrollToTop />
-        <ScrollRevealInit />
         <AppRoutes />
       </HashRouter>
     </ContentProvider>

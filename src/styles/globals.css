@@ -1,0 +1,73 @@
+/* ==========================================================================
+   GLOBAL ANIMATION ENHANCEMENTS
+   ========================================================================== */
+
+/* ── Image fade-in (below-fold only, driven by ScrollRevealInit inline styles) ── */
+/* Above-fold / hero images: never hidden — no global opacity override on img. */
+
+/* ── Global button / link micro-interactions ─────────────────────────────── */
+@media (hover: hover) and (pointer: fine) {
+  /* Any plain <a> that is not a styled component */
+  a:not([class]),
+  a[class=""] {
+    transition: opacity 0.18s ease, color 0.18s ease;
+  }
+  a:not([class]):hover,
+  a[class=""]:hover {
+    opacity: 0.8;
+  }
+
+  /* Unstyled / utility buttons */
+  button:not([class]),
+  button[class=""] {
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  button:not([class]):hover,
+  button[class=""]:hover {
+    opacity: 0.85;
+  }
+}
+
+/* ── Suspense / page loading spinner ────────────────────────────────────── */
+@keyframes spinRing {
+  to { transform: rotate(360deg); }
+}
+
+.page-loading-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  background: #ffffff;
+  animation: pageFadeSlide 0.25s ease both;
+}
+
+.page-loading-spinner__ring {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #e0e0e0;
+  border-top-color: #0199c2;
+  border-radius: 50%;
+  animation: spinRing 0.7s linear infinite;
+}
+
+/* ── Accessibility: disable all motion for users who request it ─────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  img:not(.img-revealed) {
+    opacity: 1 !important;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

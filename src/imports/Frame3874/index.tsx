@@ -435,7 +435,7 @@ function Frame() {
 
 function Frame1() {
   return (
-    <div className="[word-break:break-word] absolute content-stretch flex flex-col font-['Hacen_Casablanca_Light:Regular',sans-serif] gap-[70px] items-start leading-[0] left-[calc(8.33%+150px)] not-italic text-[#6e6e6e] text-[0px] text-right top-[4089px] w-[900px]">
+    <div className="[word-break:break-word] absolute content-stretch flex flex-col font-['Hacen_Casablanca_Light:Regular',sans-serif] gap-[70px] items-start leading-[0] left-[calc(8.33%+150px)] not-italic text-[#6e6e6e] text-[0px] text-right top-[4089px] w-[900px] reveal-on-scroll">
       <p className="relative shrink-0 w-full" dir="auto">
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[#009dc4] text-[45px]">كيف يمكن الاستفادة من محتوى مركز المعرفة؟</span>
         <span className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[41px] text-[55px]">
@@ -520,7 +520,7 @@ function Layer1() {
 function Group3() {
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[3783px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[1240px] left-[calc(8.33%+85px)] rounded-[30px] top-[3783px] w-[1030px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[1240px] left-[calc(8.33%+85px)] rounded-[30px] top-[3783px] w-[1030px] reveal-on-scroll" />
       <Frame1 />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-[30px] top-[3783px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 3">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
@@ -564,7 +564,7 @@ function IsolationMode1() {
 function Group4() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[761px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[762px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[762px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[761px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
@@ -610,7 +610,7 @@ function IsolationMode2() {
 function Group5() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[1246px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1247px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1247px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[1246px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 4">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
@@ -655,7 +655,7 @@ function IsolationMode3() {
 function Group6() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[1730px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1731px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1731px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[1730px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 5">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
@@ -702,7 +702,7 @@ function IsolationMode4() {
 function Group7() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[2214px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2215px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2215px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[2214px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 6">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
@@ -751,7 +751,7 @@ function IsolationMode5() {
 function Group8() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[2699px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2700px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2700px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[2699px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 7">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
@@ -802,7 +802,7 @@ function IsolationMode6() {
 function Group9() {
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[3183px]">
-      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[3184px] w-[1028px]" />
+      <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[3184px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[3183px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 8">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
           <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />

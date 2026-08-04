@@ -434,7 +434,7 @@ function Frame() {
 
 function IsolationMode1() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(16.67%+74.76px)] top-[1100px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(16.67%+74.76px)] top-[1100px] w-[176.225px] reveal-on-scroll" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_146)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />
@@ -497,7 +497,7 @@ function Group7() {
 
 function IsolationMode2() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(33.33%+46.76px)] top-[1100px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(33.33%+46.76px)] top-[1100px] w-[176.225px] reveal-on-scroll reveal-delay-100" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_146)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />
@@ -568,7 +568,7 @@ function Group10() {
 
 function IsolationMode3() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(33.33%+46.76px)] top-[1473px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(33.33%+46.76px)] top-[1473px] w-[176.225px] reveal-on-scroll" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_221)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />
@@ -631,7 +631,7 @@ function Group13() {
 
 function IsolationMode4() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(50%+18.76px)] top-[1100px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(50%+18.76px)] top-[1100px] w-[176.225px] reveal-on-scroll reveal-delay-200" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_146)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />
@@ -691,7 +691,7 @@ function Group11() {
 
 function IsolationMode5() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(50%+18.76px)] top-[1473px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(50%+18.76px)] top-[1473px] w-[176.225px] reveal-on-scroll reveal-delay-100" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_221)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />
@@ -753,7 +753,7 @@ function Group14() {
 
 function IsolationMode6() {
   return (
-    <div className="absolute h-[229.8px] left-[calc(66.67%-12.24px)] top-[1100px] w-[176.225px]" data-name="Isolation_Mode">
+    <div className="absolute h-[229.8px] left-[calc(66.67%-12.24px)] top-[1100px] w-[176.225px] reveal-on-scroll reveal-delay-300" data-name="Isolation_Mode">
       <svg className="absolute block inset-0 size-full" fill="none" height="229.8" preserveAspectRatio="none" viewBox="0 0 176.225 229.8" width="176.225">
         <g clipPath="url(#clip0_0_146)" id="Isolation_Mode">
           <path d={svgPaths.p1d4a9b00} fill="#009DC4" id="Vector" />

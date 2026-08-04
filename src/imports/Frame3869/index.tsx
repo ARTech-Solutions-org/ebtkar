@@ -437,7 +437,7 @@ function Peach() {
   return (
     <div className="absolute contents left-[calc(16.67%+70.04px)] top-[796px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(16.67%+70.04px)] rounded-[29.019px] top-[796px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] top-[803.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] top-[803.52px] w-[246.665px] reveal-on-scroll" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[803.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );
@@ -545,7 +545,7 @@ function Peach1() {
   return (
     <div className="absolute contents left-[calc(16.67%+70.04px)] top-[1192px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(16.67%+70.04px)] rounded-[29.019px] top-[1192px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] top-[1199.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] top-[1199.52px] w-[246.665px] reveal-on-scroll reveal-delay-100" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(16.67%+77.57px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[1199.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );
@@ -653,7 +653,7 @@ function Peach2() {
   return (
     <div className="absolute contents left-[calc(33.33%+111.29px)] top-[796px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(33.33%+111.29px)] rounded-[29.019px] top-[796px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] top-[803.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] top-[803.52px] w-[246.665px] reveal-on-scroll reveal-delay-100" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[803.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );
@@ -761,7 +761,7 @@ function Peach3() {
   return (
     <div className="absolute contents left-[calc(33.33%+111.29px)] top-[1192px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(33.33%+111.29px)] rounded-[29.019px] top-[1192px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] top-[1199.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] top-[1199.52px] w-[246.665px] reveal-on-scroll reveal-delay-200" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(33.33%+118.81px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[1199.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );
@@ -869,7 +869,7 @@ function Peach4() {
   return (
     <div className="absolute contents left-[calc(58.33%+31.67px)] top-[796px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(58.33%+31.67px)] rounded-[29.019px] top-[796px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] top-[803.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] top-[803.52px] w-[246.665px] reveal-on-scroll reveal-delay-200" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[803.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );
@@ -977,7 +977,7 @@ function Peach5() {
   return (
     <div className="absolute contents left-[calc(58.33%+31.67px)] top-[1192px]" data-name="Peach🩷">
       <div className="absolute border-[#1fc3ec] border-[3.224px] border-solid h-[363.818px] left-[calc(58.33%+31.67px)] rounded-[29.019px] top-[1192px] w-[261.712px]" data-name="Outline" />
-      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] top-[1199.52px] w-[246.665px]" data-name="Background" />
+      <div className="absolute bg-[#43a6c3] border-[#1fc3ec] border-[3.224px] border-solid h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] top-[1199.52px] w-[246.665px] reveal-on-scroll reveal-delay-300" data-name="Background" />
       <div className="absolute bg-gradient-to-b border-[#1fc3ec] border-[3.224px] border-solid from-[29.167%] from-[rgba(0,0,0,0)] h-[348.771px] left-[calc(58.33%+39.2px)] rounded-[19.884px] to-[rgba(0,0,0,0.68)] top-[1199.52px] w-[246.665px]" data-name="Lower Gradient" />
     </div>
   );

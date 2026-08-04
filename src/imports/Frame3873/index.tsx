@@ -9,7 +9,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -834,7 +834,7 @@ function LandingPage() {
     <div className="relative bg-white h-[2134px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[84.86%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[12.42%] w-[404px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[84.86%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[12.42%] w-[404px] animate-hero-reveal" dir="auto">
         الأثــــــر...
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[710px] not-italic text-[28px] text-right text-white top-[334px] w-[555px]" dir="auto">
@@ -851,10 +851,10 @@ function LandingPage() {
         <NavigationBar />
       </div>
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[236px] left-[calc(8.33%+85px)] rounded-[30px] top-[823px] w-[1030px]" />
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[867px] w-[406px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[867px] w-[406px] reveal-up" dir="auto">
         منهجية قياس الأثر
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[933px] w-[928px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[933px] w-[928px] reveal-fade delay-200" dir="auto">
         تعتمد الجمعية منهجية متكاملة لقياس أثر برامجها ومبادراتها، بهدف تقييم النتائج، وتحسين الأداء، وتعظيم القيمة المضافة للمستفيدين والشركاء. وترتكز المنهجية على مجموعة من المراحل تشمل:
       </p>
       <Group7 />

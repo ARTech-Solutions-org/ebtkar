@@ -11,7 +11,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -451,7 +451,7 @@ function LandingPage() {
     <div className="relative bg-white h-[1598px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[75.85%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(20.83%+305px)] not-italic text-[55px] text-right text-white top-[20.31%] w-[430px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[75.85%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(20.83%+305px)] not-italic text-[55px] text-right text-white top-[20.31%] w-[430px] animate-hero-reveal" dir="auto">
         {g.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+485px)] not-italic text-[28px] text-right text-white top-[375px] w-[372px]" dir="auto">
@@ -467,10 +467,10 @@ function LandingPage() {
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">
         <NavigationBar />
       </div>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px] reveal-up" dir="auto">
         {g.sectionTitle}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[321px] leading-[0] left-[calc(58.33%+395px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[391px]">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[321px] leading-[0] left-[calc(58.33%+395px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[391px] reveal-right delay-100">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
           {g.sectionBodyLine1}
         </p>
@@ -478,7 +478,7 @@ function LandingPage() {
           {g.sectionBodyLine2}
         </p>
       </div>
-      <div className="absolute h-[349px] left-[calc(8.33%+85px)] rounded-[30px] top-[790px] w-[621px]" data-name="ChatGPT Image Jul 28, 2026 at 10_51_24 AM 1">
+      <div className="absolute h-[349px] left-[calc(8.33%+85px)] rounded-[30px] top-[790px] w-[621px] reveal-left img-zoom-hover" data-name="ChatGPT Image Jul 28, 2026 at 10_51_24 AM 1">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[30px] size-full" src={sectionImg} />
       </div>
     </div>

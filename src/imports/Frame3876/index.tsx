@@ -20,7 +20,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -1266,10 +1266,10 @@ function LandingPage() {
       <Header />
       <Header1 />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[96.63%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[2.7%] w-[404px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[96.63%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[2.7%] w-[404px] animate-hero-reveal" dir="auto">
         {a.heroTitle}
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(75%+154.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[790px] w-[418.961px] reveal-up" dir="auto">
         {a.mainTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+155px)] not-italic text-[#009dc4] text-[55px] text-right top-[1289px] w-[329px]" dir="auto">
@@ -1278,7 +1278,7 @@ function LandingPage() {
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(37.5%+216px)] not-italic text-[#009dc4] text-[55px] text-right top-[1289px] w-[329px]" dir="auto">
         {a.missionTitle}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[505px]">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[291px] leading-[0] left-[calc(50%+515px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[940px] w-[505px] reveal-fade delay-200">
         <p className="leading-[30px]" dir="auto">
           {a.mainBody}
         </p>

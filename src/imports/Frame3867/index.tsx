@@ -11,7 +11,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -728,7 +728,7 @@ function LandingPage() {
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[376px] left-[calc(8.33%+85px)] rounded-[30px] top-[3859px] w-[505px]" />
       <Header />
       <Layer1 />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[92.09%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[6.66%] w-[404px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[92.09%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[6.66%] w-[404px] animate-hero-reveal" dir="auto">
         {init.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[1084px] w-[406px]" dir="auto">
@@ -753,27 +753,27 @@ function LandingPage() {
         <br aria-hidden />
         {init.init5TitleLine2 || "شركاء الأثر"}
       </p>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[835px] whitespace-nowrap">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[835px] whitespace-nowrap reveal-up">
         <p className="leading-[54px] mb-0" dir="auto">
           {init.init1Number || "المبادرة الأولى"}
         </p>
       </div>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[1573px] whitespace-nowrap">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[1573px] whitespace-nowrap reveal-up">
         <p className="leading-[54px] mb-0" dir="auto">
           {init.init2Number || "المبادرة الثانية"}
         </p>
       </div>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[2259px] whitespace-nowrap">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[2259px] whitespace-nowrap reveal-up">
         <p className="leading-[54px] mb-0" dir="auto">
           {init.init3Number || "المبادرة الثالثة"}
         </p>
       </div>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[2965px] whitespace-nowrap">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[2965px] whitespace-nowrap reveal-up">
         <p className="leading-[54px] mb-0" dir="auto">
           {init.init4Number || "المبادرة الرابعة"}
         </p>
       </div>
-      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[3653px] whitespace-nowrap">
+      <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(45.83%+80px)] not-italic text-[55px] text-right text-white top-[3653px] whitespace-nowrap reveal-up">
         <p className="leading-[54px] mb-0" dir="auto">
           {init.init5Number || "المبادرة الخامسة"}
         </p>

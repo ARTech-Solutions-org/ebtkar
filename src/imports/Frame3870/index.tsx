@@ -11,7 +11,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -599,7 +599,7 @@ function LandingPage() {
     <div className="relative bg-white h-[2765px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
       <Header />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[85.93%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(25%+245px)] not-italic text-[55px] text-right text-white top-[11.97%] w-[404px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[85.93%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(25%+245px)] not-italic text-[55px] text-right text-white top-[11.97%] w-[404px] animate-hero-reveal" dir="auto">
         {c.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+485px)] not-italic text-[28px] text-right text-white top-[400px] w-[372px]" dir="auto">

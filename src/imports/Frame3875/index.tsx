@@ -15,7 +15,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -464,10 +464,10 @@ function LandingPage() {
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[439px] left-[calc(8.33%+85px)] rounded-[30px] top-[2959px] w-[1030px]" />
       <Header />
       <Layer />
-      <p className="-translate-x-full [word-break:break-word] absolute bottom-[90.59%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[7.88%] w-[404px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute bottom-[90.59%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[58px] left-[calc(33.33%+230px)] not-italic text-[55px] text-right text-white top-[7.88%] w-[404px] animate-hero-reveal" dir="auto">
         {p.heroTitle}
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[885px] w-[406px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(70.83%+165px)] not-italic text-[#009dc4] text-[55px] text-right top-[885px] w-[406px] reveal-up" dir="auto">
         الابتكــــــــار
         <br aria-hidden />
         المــــــــؤسسي
@@ -493,19 +493,19 @@ function LandingPage() {
         <br aria-hidden />
         STEAM
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[178px] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1005px] w-[400px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[178px] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1005px] w-[400px] reveal-fade delay-200" dir="auto">
         برنامج تدريبي احترافي يهدف إلى تمكين الجهات الحكومية والخاصة وغير الربحية من بناء منظومات ابتكار مؤسسية مستدامة، وتطوير استراتيجيات الابتكار، وتعزيز ثقافة الابتكار داخل بيئة العمل، بما يسهم في رفع كفاءة الأداء وتحقيق التميز المؤسسي.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1577px] w-[400px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1577px] w-[400px] reveal-fade delay-200" dir="auto">
         يهدف البرنامج إلى تعزيز فهم مفاهيم الاستدامة المجتمعية، وتمكين المشاركين من تصميم وتنفيذ مبادرات مستدامة تحقق أثرًا طويل المدى وتدعم جودة الحياة.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2096px] w-[400px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2096px] w-[400px] reveal-fade delay-200" dir="auto">
         برنامج يركز على تمكين المشاركين من فهم التحول الرقمي وتطبيقات الذكاء الاصطناعي، والاستفادة منها في تطوير الخدمات وتحسين العمليات ورفع كفاءة الأداء.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2645px] w-[400px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2645px] w-[400px] reveal-fade delay-200" dir="auto">
         برنامج يهدف إلى تطوير القيادات الوطنية وتعزيز مهارات القيادة، وإدارة التغيير، والابتكار، واتخاذ القرار، بما يسهم في رفع كفاءة الأداء المؤسسي.
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[3141px] w-[400px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(50%+465px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[3141px] w-[400px] reveal-fade delay-200" dir="auto">
         تطوّر أكاديمية الابتكار وSTEAM مهارات المستقبل لدى الأطفال والطلاب والمعلمين والجامعات، من خلال برامج STEAM، والروبوتات، والبرمجة، والذكاء الاصطناعي، والتفكير التصميمي، والابتكار وريادة الأعمال، بما يسهم في إعداد جيل قادر على الإبداع والابتكار ومواكبة متطلبات المستقبل.
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+590px)] not-italic text-[28px] text-right text-white top-[367px] w-[503px]" dir="auto">

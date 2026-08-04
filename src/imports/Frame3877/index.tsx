@@ -15,7 +15,7 @@ function Footer({ className }: { className?: string }) {
       <div className="absolute contents inset-0">
         <div className="absolute contents inset-0">
           <div className="absolute bg-gradient-to-r from-[#164256] inset-[17.16%_0_0_0] to-[#0199c2]" />
-          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
+          <div className="absolute flex inset-[0_10.42%_75.37%_85.06%] items-center justify-center z-50 cursor-pointer pointer-events-auto back-to-top" style={{ containerType: "size", cursor: "pointer" }} onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.body.scrollTo({ top: 0, left: 0, behavior: "smooth" }); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; }}>
             <div className="flex-none h-[100cqh] rotate-180 w-[100cqw]">
               <div className="relative size-full">
                 <svg className="absolute block inset-0 size-full" fill="none" height="66" preserveAspectRatio="none" viewBox="0 0 66 66" width="66">
@@ -2355,7 +2355,7 @@ function LandingPage() {
   const heroSubtitle = (!h.heroSubtitle || h.heroSubtitle === "جمعية الابتكار والاستدامة المجتمعية") ? "ونصنع أثـراً مستداماً" : h.heroSubtitle;
   return (
     <div className="relative bg-white h-[5954px] mx-auto overflow-clip w-[1440px]" data-name="Landing Page">
-      <div className="absolute h-[400px] left-[calc(8.33%+85px)] rounded-[30px] top-[4747px] w-[715px]" data-name="١ 2">
+      <div className="absolute h-[400px] left-[calc(8.33%+85px)] rounded-[30px] top-[4747px] w-[715px] reveal-scale img-zoom-hover" data-name="١ 2">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
           <img alt="" className="absolute h-[115.25%] left-[-20.17%] max-w-none top-0 w-[140.48%]" src={img2} />
         </div>
@@ -2365,7 +2365,7 @@ function LandingPage() {
       <Header />
       <Stats2 />
       <Layer />
-      <div className="-translate-x-1/2 [word-break:break-word] absolute bottom-[86.51%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-1/2 not-italic text-[#241e56] text-[65px] text-center top-[11.54%] w-[766px]">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute bottom-[86.51%] font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-1/2 not-italic text-[#241e56] text-[65px] text-center top-[11.54%] w-[766px] animate-hero-reveal">
         <p className="leading-[58px] mb-0" dir="auto">
           {heroTitle}
         </p>
@@ -2375,13 +2375,13 @@ function LandingPage() {
       </div>
       <div className="absolute bg-white border-3 border-[#409bc5] border-solid h-[171px] left-[100px] rounded-[15px] top-[823px] w-[1239px]" />
       <Frame1 />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[1048px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[1048px] w-[418.961px] reveal-up" dir="auto">
         نبــــذة عن الجمعية
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.5px)] not-italic text-[#009dc4] text-[55px] text-center top-[1389px] w-[897px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.5px)] not-italic text-[#009dc4] text-[55px] text-center top-[1389px] w-[897px] reveal-up" dir="auto">
         لماذا جمعية الابتكار والاستدامة المجتمعية؟
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px]">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px] reveal-fade delay-200">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
           جمعية الابتكار والاستدامة المجتمعية هي جمعية أهلية وطنية متخصصة في تمكين الابتكار والاستدامة المجتمعية، تعمل على تطوير القدرات، وتصميم الحلول، ودعم المبادرات، وبناء الشراكات التي تسهم في تحقيق التنمية المستدامة وتعزيز جودة الحياة.
         </p>
@@ -2389,16 +2389,16 @@ function LandingPage() {
           نقدم حلولًا متكاملة في الابتكار المؤسسي، والابتكار المجتمعي، والاستدامة، وبناء القدرات، وأكاديمية STEAM، والدراسات والاستشارات، بما يسهم في تحويل الأفكار إلى أثر مستدام.
         </p>
       </div>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap">
+      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap reveal-fade delay-200">
         <p className="leading-[25px] mb-[8.521232604980469px]" dir="auto">{`يشهد العالم تحولًا متسارعًا يجعل الابتكار والاستدامة من أهم عوامل التنافس والتنمية. وفي ظل هذا التحول، تبرز الحاجة إلى جهة وطنية متخصصة تسهم في بناء القدرات، وتطوير الحلول، وربط مختلف القطاعات، وتحويل الأفكار إلى أثر مستدام. `}</p>
         <p className="leading-[25px]" dir="auto">
           جاء تأسيس الجمعية لتكون منصة وطنية تجمع بين الابتكار والاستدامة المجتمعية، وتدعم الأفراد والجهات في تطوير المبادرات، وتعزيز المعرفة، وبناء الشراكات، والمساهمة في معالجة التحديات المجتمعية من خلال حلول مبتكرة ومستدامة.
         </p>
       </div>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+209.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[3069px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+209.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[3069px] w-[418.961px] reveal-up" dir="auto">
         أبرز البـــــرامج
       </p>
-      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(79.17%+92px)] not-italic text-[#009dc4] text-[55px] text-right top-[4757px] whitespace-nowrap" dir="auto">
+      <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(79.17%+92px)] not-italic text-[#009dc4] text-[55px] text-right top-[4757px] whitespace-nowrap reveal-up" dir="auto">
         دعوة للتعاون
       </p>
       <Group20 />
@@ -2411,13 +2411,13 @@ function LandingPage() {
       <Group26 />
       <div className="absolute border-3 border-[#009dc4] border-solid h-[1233px] left-[calc(8.33%+85px)] rounded-[30px] top-[1712px] w-[1030px]" />
       <div className="absolute bg-[#009dc4] h-[98px] left-[calc(25%+98px)] top-[1678px] w-[524px]" />
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1706px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1706px] w-[418.961px] reveal-up" dir="auto">
         مجالات التمكين
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(16.67%+480px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[3557px] w-[820px]" dir="auto">
         رسالتنا لا تُقاس بعدد الأنشطة، بل بما تحققه من أثر مستدام.
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[3500px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[3500px] w-[418.961px] reveal-up" dir="auto">
         الأثـــــر
       </p>
       <div className="absolute bg-[#009dc4] h-[178px] left-0 top-[4034px] w-[1440px]" />
@@ -2436,7 +2436,7 @@ function LandingPage() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[4355px] w-[1020px]" dir="auto">
         نؤمن بأن الشراكات الاستراتيجية هي أساس تحقيق الأثر المستدام، ونسعى إلى بناء منظومة تعاون فاعلة مع الجهات الحكومية، والقطاع الخاص، والقطاع غير الربحي، والجامعات، والمراكز البحثية، والشركاء المحليين والدوليين.
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px]" dir="auto">
+      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px] reveal-up" dir="auto">
         الشـــركاء
       </p>
       <Component />

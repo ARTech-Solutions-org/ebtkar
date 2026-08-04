@@ -6,6 +6,8 @@ import imgChatGptImageJul282026At114858Am3 from "./bd66a5ff4dbf9b7ddbe12ddc7cc2a
 import { useContent } from "../../cms/ContentContext";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -16,7 +18,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -564,19 +566,21 @@ function IsolationMode1() {
 }
 
 function Group4() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[761px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[762px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[761px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section1Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[859px] w-[406px]" dir="auto">
-        المقـــــالات
+        {k.section1Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1056px] w-[927px]" dir="auto">
-        يضم قسم المقالات مجموعة من المقالات المتخصصة التي تتناول أحدث المفاهيم والتوجهات في مجالات الابتكار، والاستدامة، والتحول المؤسسي، والتحول الرقمي، والذكاء الاصطناعي، وبناء القدرات، مع التركيز على تقديم محتوى معرفي مبسط يدعم التطوير المؤسسي والمجتمعي.
+        {k.section1Body}
       </p>
       <IsolationMode1 />
     </div>
@@ -610,19 +614,21 @@ function IsolationMode2() {
 }
 
 function Group5() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[1246px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1247px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[1246px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 4">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section2Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[1344px] w-[406px]" dir="auto">
-        الأدلـــــــة
+        {k.section2Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[1541px] w-[927px]" dir="auto">
-        يوفر قسم الأدلة مجموعة من الأدلة الإرشادية والأدوات العملية التي تساعد الجهات والأفراد على تطبيق أفضل الممارسات في مجالات الابتكار والاستدامة، وتطوير المبادرات، وقياس الأثر، وتحسين الأداء المؤسسي.
+        {k.section2Body}
       </p>
       <IsolationMode2 />
     </div>
@@ -655,19 +661,21 @@ function IsolationMode3() {
 }
 
 function Group6() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[1730px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[1731px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[1730px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 5">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section3Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[1828px] w-[406px]" dir="auto">
-        الدراســات
+        {k.section3Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2047px] w-[927px]" dir="auto">
-        يضم هذا القسم الدراسات والأبحاث المتخصصة التي تسلط الضوء على القضايا الوطنية والاتجاهات الحديثة في مجالات الابتكار والاستدامة، وتوفر معلومات تدعم متخذي القرار والباحثين والمهتمين.
+        {k.section3Body}
       </p>
       <IsolationMode3 />
     </div>
@@ -702,19 +710,21 @@ function IsolationMode4() {
 }
 
 function Group7() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[2214px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2215px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[2214px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 6">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section4Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[2312px] w-[406px]" dir="auto">
-        التقــــارير
+        {k.section4Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[2531px] w-[927px]" dir="auto">
-        يتضمن هذا القسم التقارير الدورية التي تستعرض إنجازات الجمعية، ومؤشرات الأداء، ونتائج المبادرات والبرامج، إضافة إلى التقارير البحثية والتحليلية التي تدعم الشفافية وتعزز تبادل المعرفة.
+        {k.section4Body}
       </p>
       <IsolationMode4 />
     </div>
@@ -751,19 +761,21 @@ function IsolationMode5() {
 }
 
 function Group8() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[2699px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[2700px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[2699px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 7">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section5Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[2797px] w-[406px]" dir="auto">
-        الفيديوهات
+        {k.section5Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[3003px] w-[927px]" dir="auto">
-        يوفر قسم الفيديوهات محتوى مرئيًا يهدف إلى نشر المعرفة وتعزيز التعلم، من خلال تسجيلات للبرامج التدريبية، والندوات، والمؤتمرات، واللقاءات، إضافة إلى الفيديوهات التعريفية التي تسلط الضوء على مبادرات الجمعية وإنجازاتها.
+        {k.section5Body}
       </p>
       <IsolationMode5 />
     </div>
@@ -802,21 +814,23 @@ function IsolationMode6() {
 }
 
 function Group9() {
+  const { content } = useContent();
+  const k = content.knowledge;
   return (
     <div className="absolute contents left-[calc(8.33%+87px)] top-[3183px]">
       <div className="absolute bg-white border-3 border-[#009dc4] border-solid h-[444px] left-[calc(8.33%+87px)] rounded-[30px] top-[3184px] w-[1028px] reveal-on-scroll" />
       <div className="absolute h-[256px] left-[calc(8.33%+87px)] rounded-tl-[30px] rounded-tr-[30px] top-[3183px] w-[1028px]" data-name="ChatGPT Image Jul 28, 2026 at 11_48_58 AM 8">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-tl-[30px] rounded-tr-[30px]">
-          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={imgChatGptImageJul282026At114858Am3} />
+          <img alt="" className="absolute h-[147.71%] left-0 max-w-none top-[-23.92%] w-[122.08%]" src={k.section6Image || imgChatGptImageJul282026At114858Am3} />
         </div>
       </div>
       <IsolationMode6 />
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[54px] left-[calc(50%+211px)] not-italic text-[55px] text-right text-white top-[3281px] w-[406px]" dir="auto">
-        البودكاست
+        {k.section6Title}
       </p>
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+1065px)] not-italic text-[#6e6e6e] text-[28px] text-right top-[3487px] w-[927px] whitespace-pre-wrap">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
-          يقدم البودكاست سلسلة من الحلقات الحوارية التي تستضيف خبراء ومختصين في مجالات الابتكار والاستدامة والبحث والتطوير، لمناقشة التجارب، واستعراض أفضل الممارسات، وتبادل المعرفة والخبرات.
+          {k.section6Body}
         </p>
         <p className="leading-[30px]" dir="auto">{` `}</p>
       </div>
@@ -842,7 +856,7 @@ function LandingPage() {
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[780px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px] animate-hero-image" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />
+          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={k.heroImage || imgLayer11} />
         </div>
       </div>
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">

@@ -675,7 +675,6 @@ const sections: SectionDef[] = [
     fields: [
       { label: "عنوان الهيرو", path: "partners.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "partners.heroSubtitle", type: "textarea" },
-      { label: "عنوان القسم الرئيسي", path: "partners.sectionTitle" },
       { label: "الفقرة 1", path: "partners.sectionBodyLine1", type: "textarea" },
       { label: "الفقرة 2", path: "partners.sectionBodyLine2", type: "textarea" },
       { label: "عنوان مزايا الشراكة", path: "partners.benefitsTitle" },
@@ -683,7 +682,6 @@ const sections: SectionDef[] = [
       { label: "عنوان مجالات التعاون", path: "partners.areasTitle" },
       { label: "مجالات التعاون", path: "partners.areasBody", type: "textarea" },
       { label: "صورة الهيرو", path: "partners.heroImage", type: "image" },
-      { label: "صورة القسم", path: "partners.sectionImage", type: "image" },
     ],
   },
 
@@ -693,8 +691,6 @@ const sections: SectionDef[] = [
     fields: [
       { label: "عنوان الهيرو", path: "impact.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "impact.heroSubtitle", type: "textarea" },
-      { label: "عنوان القسم", path: "impact.sectionTitle" },
-      { label: "محتوى القسم", path: "impact.sectionBodyLine1", type: "textarea" },
       { label: "عنوان منهجية قياس الأثر", path: "impact.methodologyTitle" },
       { label: "مقدمة المنهجية", path: "impact.methodologyBody", type: "textarea" },
       { label: "الخطوة 1", path: "impact.step1" },
@@ -704,7 +700,6 @@ const sections: SectionDef[] = [
       { label: "الخطوة 5", path: "impact.step5" },
       { label: "الخطوة 6", path: "impact.step6" },
       { label: "صورة الهيرو", path: "impact.heroImage", type: "image" },
-      { label: "صورة القسم", path: "impact.sectionImage", type: "image" },
     ],
   },
 ];

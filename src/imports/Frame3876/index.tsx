@@ -28,7 +28,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -1328,7 +1328,7 @@ function LandingPage() {
       <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(58.33%-3px)] rounded-[30px] top-[1241px] w-[398px] reveal-on-scroll card-hover-fx" />
       <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(8.33%+85px)] rounded-[30px] top-[1241px] w-[610px] reveal-on-scroll card-hover-fx reveal-delay-150" />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1559px] w-[418.961px] reveal-on-scroll" dir="auto">
-        القــــــيم
+        {a.valuesTitle}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[3612px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">

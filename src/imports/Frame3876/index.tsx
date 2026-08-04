@@ -892,41 +892,46 @@ function Group11() {
 }
 
 function Group12() {
+  const { content } = useContent();
+  const a = content.about;
+  const rawTitle = (a.strategicObjectivesTitle || "").trim();
+  const titleLines = rawTitle.includes("\n")
+    ? rawTitle.split("\n").map((l) => l.trim()).filter(Boolean)
+    : (() => {
+        const words = rawTitle.split(/\s+/).filter(Boolean);
+        if (words.length >= 2) {
+          const mid = Math.ceil(words.length / 2);
+          return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
+        }
+        return words.length ? words : [rawTitle];
+      })();
+  const goals = (a.strategicObjectivesBody || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[2606px]">
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(79.17%+95px)] not-italic text-[#009dc4] text-[55px] text-right top-[2606px] w-[259px]">
-        <p className="leading-[43px] mb-0" dir="auto">
-          الأهـــداف
-        </p>
-        <p className="leading-[43px]" dir="auto">
-          الاستراتيجية
-        </p>
+        {titleLines.map((line, i) => (
+          <p
+            key={i}
+            className={`leading-[43px]${i < titleLines.length - 1 ? " mb-0" : ""}`}
+            dir="auto"
+          >
+            {line}
+          </p>
+        ))}
       </div>
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+555px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[2644px] w-[470px]">
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          نشر ثقافة الابتكار والاستدامة المجتمعية.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          بناء القدرات الوطنية في مجالات الابتكار.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تطوير المبادرات والمشروعات ذات الأثر.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          دعم الاستدامة المجتمعية وجودة الحياة.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تعزيز نقل المعرفة وأفضل الممارسات.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          بناء شراكات وطنية ودولية فاعلة.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تطوير حلول مبتكرة للتحديات المجتمعية.
-        </p>
-        <p className="leading-[34px]" dir="auto">
-          قياس وتعظيم الأثر التنموي للمبادرات والبرامج.
-        </p>
+        {goals.map((goal, i) => (
+          <p
+            key={i}
+            className={`leading-[34px]${i < goals.length - 1 ? " mb-[8.521232604980469px]" : ""}`}
+            dir="auto"
+          >
+            {goal}
+          </p>
+        ))}
       </div>
       <div className="absolute bg-[#d9d9d9] h-[294px] left-[calc(66.67%+29px)] rounded-[30px] top-[2712px] w-[246px]" />
       <Group11 />

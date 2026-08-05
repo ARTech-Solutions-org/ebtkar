@@ -489,7 +489,7 @@ function Group6() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(66.67%+76.33px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
         {e.card4Body}
       </p>
-      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]" dir="auto">
         {e.card4Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(66.67%-16.54px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
@@ -532,7 +532,7 @@ function Group9() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(66.67%+76.33px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
         {e.card8Body}
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]" dir="auto">
         {e.card8Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(66.67%-16.54px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
@@ -593,7 +593,7 @@ function Group5() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
         {e.card3Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[251.636px] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]" dir="auto">
+      <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]" dir="auto">
         {e.card3Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
@@ -636,7 +636,7 @@ function Group10() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
         {e.card7Body}
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]" dir="auto">
         {e.card7Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
@@ -704,7 +704,7 @@ function Group13() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#636363] text-[19.845px] text-center top-[2265.88px] w-[149.235px]" dir="auto">
         {e.card10Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
+      <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(50%+105.18px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
         {e.card10Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[271.481px] left-[calc(50%+12.3px)] rounded-[15.876px] top-[2196.02px] w-[186.544px]" />
@@ -763,7 +763,7 @@ function Group12() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
         {e.card2Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1046.59px] w-[149.235px]" dir="auto">
+      <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1046.59px] w-[149.235px]" dir="auto">
         {e.card2Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
@@ -817,7 +817,7 @@ function Group15() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
         {e.card6Body}
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1653.06px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1653.06px] w-[149.235px]" dir="auto">
         {e.card6Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />
@@ -879,7 +879,7 @@ function Group17() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#636363] text-[19.845px] text-center top-[2265.88px] w-[149.235px]" dir="auto">
         {e.card9Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
+      <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(33.33%+134.03px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[2233.33px] w-[149.235px]" dir="auto">
         {e.card9Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[271.481px] left-[calc(33.33%+41.15px)] rounded-[15.876px] top-[2196.02px] w-[186.544px]" />
@@ -934,7 +934,7 @@ function Group19() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
         {e.card1Body}
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]" dir="auto">
         {e.card1Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(16.67%+70px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />
@@ -988,7 +988,7 @@ function Group21() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#636363] text-[19.845px] text-center top-[1705.45px] w-[149.235px]" dir="auto">
         {e.card5Body}
       </p>
-      <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]" dir="auto">
+      <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1644.33px] w-[149.235px]" dir="auto">
         {e.card5Title}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[307.996px] left-[calc(16.67%+70px)] rounded-[15.876px] top-[1615.75px] w-[186.544px]" />

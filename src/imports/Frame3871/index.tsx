@@ -489,7 +489,7 @@ function Group6() {
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[218.296px] leading-[23.606px] left-[calc(66.67%+76.33px)] not-italic text-[#636363] text-[19.845px] text-center top-[1098.99px] w-[149.235px]" dir="auto">
         {e.card4Body}
       </p>
-      <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] h-[251.636px] leading-[0] left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
+      <div className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-tight left-[calc(66.67%+76.33px)] not-italic text-[#009dc4] text-[23.814px] text-center top-[1037.86px] w-[149.235px]">
         {e.card4Title}
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[334.192px] left-[calc(66.67%-16.54px)] rounded-[15.876px] top-[1009.29px] w-[186.544px]" />

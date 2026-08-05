@@ -28,7 +28,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -892,41 +892,46 @@ function Group11() {
 }
 
 function Group12() {
+  const { content } = useContent();
+  const a = content.about;
+  const rawTitle = (a.strategicObjectivesTitle || "").trim();
+  const titleLines = rawTitle.includes("\n")
+    ? rawTitle.split("\n").map((l) => l.trim()).filter(Boolean)
+    : (() => {
+        const words = rawTitle.split(/\s+/).filter(Boolean);
+        if (words.length >= 2) {
+          const mid = Math.ceil(words.length / 2);
+          return [words.slice(0, mid).join(" "), words.slice(mid).join(" ")];
+        }
+        return words.length ? words : [rawTitle];
+      })();
+  const goals = (a.strategicObjectivesBody || "")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
   return (
     <div className="absolute contents left-[calc(8.33%+85px)] top-[2606px]">
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(79.17%+95px)] not-italic text-[#009dc4] text-[55px] text-right top-[2606px] w-[259px]">
-        <p className="leading-[43px] mb-0" dir="auto">
-          الأهـــداف
-        </p>
-        <p className="leading-[43px]" dir="auto">
-          الاستراتيجية
-        </p>
+        {titleLines.map((line, i) => (
+          <p
+            key={i}
+            className={`leading-[43px]${i < titleLines.length - 1 ? " mb-0" : ""}`}
+            dir="auto"
+          >
+            {line}
+          </p>
+        ))}
       </div>
       <div className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+555px)] not-italic text-[#6e6e6e] text-[30px] text-right top-[2644px] w-[470px]">
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          نشر ثقافة الابتكار والاستدامة المجتمعية.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          بناء القدرات الوطنية في مجالات الابتكار.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تطوير المبادرات والمشروعات ذات الأثر.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          دعم الاستدامة المجتمعية وجودة الحياة.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تعزيز نقل المعرفة وأفضل الممارسات.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          بناء شراكات وطنية ودولية فاعلة.
-        </p>
-        <p className="leading-[34px] mb-[8.521232604980469px]" dir="auto">
-          تطوير حلول مبتكرة للتحديات المجتمعية.
-        </p>
-        <p className="leading-[34px]" dir="auto">
-          قياس وتعظيم الأثر التنموي للمبادرات والبرامج.
-        </p>
+        {goals.map((goal, i) => (
+          <p
+            key={i}
+            className={`leading-[34px]${i < goals.length - 1 ? " mb-[8.521232604980469px]" : ""}`}
+            dir="auto"
+          >
+            {goal}
+          </p>
+        ))}
       </div>
       <div className="absolute bg-[#d9d9d9] h-[294px] left-[calc(66.67%+29px)] rounded-[30px] top-[2712px] w-[246px]" />
       <Group11 />
@@ -1328,7 +1333,7 @@ function LandingPage() {
       <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(58.33%-3px)] rounded-[30px] top-[1241px] w-[398px] reveal-on-scroll card-hover-fx" />
       <div className="absolute border-3 border-[#009dc4] border-solid h-[275px] left-[calc(8.33%+85px)] rounded-[30px] top-[1241px] w-[610px] reveal-on-scroll card-hover-fx reveal-delay-150" />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[55px] text-center text-white top-[1559px] w-[418.961px] reveal-on-scroll" dir="auto">
-        القــــــيم
+        {a.valuesTitle}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[443px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-center top-[3612px] w-[900px] whitespace-pre-wrap reveal-on-scroll">
         <p className="font-['Hacen_Casablanca:Regular',sans-serif] leading-[65px] text-[#009dc4] text-[55px] mb-[25px]" dir="auto">

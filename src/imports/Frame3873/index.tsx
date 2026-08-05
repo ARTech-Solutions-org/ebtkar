@@ -482,15 +482,14 @@ function Group3() {
 }
 
 function Group7() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(16.67%+70px)] top-[1100px]">
       <Group3 />
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(16.67%+162.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1373.86px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          تحــــــديد
-        </p>
         <p className="leading-[23.606px]" dir="auto">
-          الأهداف
+          {im.step1}
         </p>
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(16.67%+70px)] rounded-[15.876px] top-[1345px] w-[187px]" />
@@ -553,15 +552,14 @@ function Group4() {
 }
 
 function Group10() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(33.33%+42px)] top-[1100px]">
       <Group4 />
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(33.33%+134.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1373.86px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          تحــــــديد
-        </p>
         <p className="leading-[23.606px]" dir="auto">
-          مؤشرات الأداء
+          {im.step2}
         </p>
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(33.33%+42px)] rounded-[15.876px] top-[1345px] w-[187px]" />
@@ -621,11 +619,13 @@ function Group5() {
 }
 
 function Group13() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(33.33%+42px)] top-[1473px]">
       <Group5 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(33.33%+134.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1746.86px] w-[149.235px]" dir="auto">
-        إعــــداد التقارير
+        {im.step5}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(33.33%+42px)] rounded-[15.876px] top-[1718px] w-[187px]" />
     </div>
@@ -681,11 +681,13 @@ function Group6() {
 }
 
 function Group11() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(50%+14px)] top-[1100px]">
       <Group6 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(50%+106.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1373.86px] w-[149.235px]" dir="auto">
-        جمــــــع البيانات
+        {im.step3}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(50%+14px)] rounded-[15.876px] top-[1345px] w-[187px]" />
     </div>
@@ -743,11 +745,13 @@ function Group8() {
 }
 
 function Group14() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(50%+14px)] top-[1473px]">
       <Group8 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[23.606px] left-[calc(50%+106.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1746.86px] w-[149.235px]" dir="auto">
-        التحسين المستمر
+        {im.step6}
       </p>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(50%+14px)] rounded-[15.876px] top-[1718px] w-[187px]" />
     </div>
@@ -806,15 +810,14 @@ function Group9() {
 }
 
 function Group12() {
+  const { content } = useContent();
+  const im = content.impact;
   return (
     <div className="absolute contents left-[calc(66.67%-17px)] top-[1100px]">
       <Group9 />
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[0] left-[calc(66.67%+75.88px)] not-italic text-[#009dc4] text-[28px] text-center top-[1373.86px] w-[149.235px]">
-        <p className="leading-[23.606px] mb-0" dir="auto">
-          تحــــليل
-        </p>
         <p className="leading-[23.606px]" dir="auto">
-          النتـــــائج
+          {im.step4}
         </p>
       </div>
       <div className="absolute border-[#009dc4] border-[1.588px] border-solid h-[107px] left-[calc(66.67%-17px)] rounded-[15.876px] top-[1345px] w-[187px]" />
@@ -833,13 +836,13 @@ function LandingPage() {
         {im.heroTitle}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[30px] left-[710px] not-italic text-[28px] text-right text-white top-[334px] w-[555px]" dir="auto">
-        {im.sectionBodyLine1}
+        {im.heroSubtitle}
       </p>
       <Footer className="-translate-x-1/2 absolute bottom-0 h-[268px] left-[calc(50%-0.5px)] w-[1459px]" />
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[780px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px] animate-hero-image" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />
+          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={im.heroImage || imgLayer11} />
         </div>
       </div>
       <div className="absolute h-[39px] left-[calc(25%+49px)] top-[53px] w-[931px]" data-name="NAV Bar">

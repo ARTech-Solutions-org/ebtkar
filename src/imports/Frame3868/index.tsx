@@ -6,6 +6,8 @@ import imgChatGptImageJul282026At105124Am1 from "./7d68074e2307ed8b90cde325e9528
 import { useContent } from "../../cms/ContentContext";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -16,7 +18,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />

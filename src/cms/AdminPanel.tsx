@@ -1,7 +1,6 @@
 import React, { useState, useRef, useCallback, useEffect } from "react";
 import { useContent } from "./ContentContext";
-import { getSavedFirebaseConfig, saveFirebaseConfig, isFirebaseConfigured } from "./firebaseConfig";
-import { initFirebase, subscribeToContactSubmissions, ContactSubmission } from "./firebaseService";
+import { subscribeToContactSubmissions, ContactSubmission } from "./firebaseService";
 
 function MessagesInboxCard() {
   const [messages, setMessages] = useState<ContactSubmission[]>([]);
@@ -675,7 +674,6 @@ const sections: SectionDef[] = [
     fields: [
       { label: "عنوان الهيرو", path: "partners.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "partners.heroSubtitle", type: "textarea" },
-      { label: "عنوان القسم الرئيسي", path: "partners.sectionTitle" },
       { label: "الفقرة 1", path: "partners.sectionBodyLine1", type: "textarea" },
       { label: "الفقرة 2", path: "partners.sectionBodyLine2", type: "textarea" },
       { label: "عنوان مزايا الشراكة", path: "partners.benefitsTitle" },
@@ -683,7 +681,6 @@ const sections: SectionDef[] = [
       { label: "عنوان مجالات التعاون", path: "partners.areasTitle" },
       { label: "مجالات التعاون", path: "partners.areasBody", type: "textarea" },
       { label: "صورة الهيرو", path: "partners.heroImage", type: "image" },
-      { label: "صورة القسم", path: "partners.sectionImage", type: "image" },
     ],
   },
 
@@ -693,8 +690,6 @@ const sections: SectionDef[] = [
     fields: [
       { label: "عنوان الهيرو", path: "impact.heroTitle" },
       { label: "نص الهيرو الفرعي", path: "impact.heroSubtitle", type: "textarea" },
-      { label: "عنوان القسم", path: "impact.sectionTitle" },
-      { label: "محتوى القسم", path: "impact.sectionBodyLine1", type: "textarea" },
       { label: "عنوان منهجية قياس الأثر", path: "impact.methodologyTitle" },
       { label: "مقدمة المنهجية", path: "impact.methodologyBody", type: "textarea" },
       { label: "الخطوة 1", path: "impact.step1" },
@@ -704,7 +699,6 @@ const sections: SectionDef[] = [
       { label: "الخطوة 5", path: "impact.step5" },
       { label: "الخطوة 6", path: "impact.step6" },
       { label: "صورة الهيرو", path: "impact.heroImage", type: "image" },
-      { label: "صورة القسم", path: "impact.sectionImage", type: "image" },
     ],
   },
 ];
@@ -758,86 +752,13 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
   );
 }
 
-function FirebaseConfigCard() {
-  const [showConfig, setShowConfig] = useState(false);
-  const [config, setConfig] = useState(getSavedFirebaseConfig);
-  const [savedSuccess, setSavedSuccess] = useState(false);
-
-  const configured = isFirebaseConfigured(config);
-
-  const handleSave = (e: React.FormEvent) => {
-    e.preventDefault();
-    saveFirebaseConfig(config);
-    initFirebase();
-    setSavedSuccess(true);
-    setTimeout(() => setSavedSuccess(false), 2500);
-  };
-
-  return (
-    <div style={{ background: "#1a202c", border: "1px solid #2d3748", borderRadius: "12px", padding: "16px 20px", marginBottom: "24px" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <span style={{ fontSize: "20px" }}>{configured ? "🔥" : "☁️"}</span>
-          <div>
-            <div style={{ color: "#fff", fontWeight: "bold", fontSize: "16px" }}>
-              حالة المزامنة السحابية (Firebase Cloud Sync)
-            </div>
-            <div style={{ color: configured ? "#48bb78" : "#ecc94b", fontSize: "14px", marginTop: "2px" }}>
-              {configured ? "🟢 متصل بقاعدة البيانات السحابية (تغييراتك تظهر فوراً لكل الزوار)" : "🟡 يعمل محلياً — أدخل بيانات Firebase لتشغيل المزامنة لجميع الزوار"}
-            </div>
-          </div>
-        </div>
-        <button
-          onClick={() => setShowConfig(!showConfig)}
-          style={{ background: "#2b6cb0", color: "#fff", border: "none", borderRadius: "6px", padding: "8px 14px", cursor: "pointer", fontSize: "13px", fontWeight: "bold" }}
-        >
-          {showConfig ? "إغلاق الإعدادات" : "⚙️ إعدادات Firebase"}
-        </button>
-      </div>
-
-      {showConfig && (
-        <form onSubmit={handleSave} style={{ marginTop: "16px", paddingTop: "16px", borderTop: "1px solid #2d3748" }}>
-          <div style={{ color: "#a0aec0", fontSize: "13px", marginBottom: "12px" }}>
-            احصل على مفاتيح مشروعك المجاني من <a href="https://console.firebase.google.com/" target="_blank" rel="noreferrer" style={{ color: "#63b3ed", textDecoration: "underline" }}>console.firebase.google.com</a> وضعها هنا:
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
-            <div>
-              <label style={styles.label}>API Key</label>
-              <input style={styles.input} value={config.apiKey} onChange={(e) => setConfig({ ...config, apiKey: e.target.value })} placeholder="AIzaSy..." />
-            </div>
-            <div>
-              <label style={styles.label}>Project ID</label>
-              <input style={styles.input} value={config.projectId} onChange={(e) => setConfig({ ...config, projectId: e.target.value })} placeholder="my-project-id" />
-            </div>
-            <div>
-              <label style={styles.label}>Auth Domain</label>
-              <input style={styles.input} value={config.authDomain} onChange={(e) => setConfig({ ...config, authDomain: e.target.value })} placeholder="my-project.firebaseapp.com" />
-            </div>
-            <div>
-              <label style={styles.label}>Storage Bucket</label>
-              <input style={styles.input} value={config.storageBucket} onChange={(e) => setConfig({ ...config, storageBucket: e.target.value })} placeholder="my-project.appspot.com" />
-            </div>
-          </div>
-          <div style={{ marginTop: "16px", display: "flex", gap: "12px", alignItems: "center" }}>
-            <button type="submit" style={{ background: "#38a169", color: "#fff", border: "none", borderRadius: "6px", padding: "10px 20px", fontWeight: "bold", cursor: "pointer" }}>
-              💾 حفظ تفعيل السحابة
-            </button>
-            {savedSuccess && <span style={{ color: "#48bb78", fontSize: "14px", fontWeight: "bold" }}>✓ تم حفظ المفاتيح وتفعيل الاقتران!</span>}
-          </div>
-        </form>
-      )}
-    </div>
-  );
-}
-
 // ================================================================
 // Main Admin Panel
 // ================================================================
 
 function AdminPanelInner() {
-  const { content, updateContent, resetContent } = useContent();
+  const { content, updateContent } = useContent();
   const [saved, setSaved] = useState(false);
-  const [resetConfirm, setResetConfirm] = useState(false);
 
   // Helper: get nested value by dot-path
   const getVal = useCallback(
@@ -861,16 +782,6 @@ function AdminPanelInner() {
     },
     [updateContent]
   );
-
-  const handleReset = () => {
-    if (resetConfirm) {
-      resetContent();
-      setResetConfirm(false);
-    } else {
-      setResetConfirm(true);
-      setTimeout(() => setResetConfirm(false), 4000);
-    }
-  };
 
   return (
     <div style={styles.panelWrap}>
@@ -897,20 +808,8 @@ function AdminPanelInner() {
           >
             👁 معاينة الموقع
           </a>
-          <button
-            style={{
-              ...styles.resetBtn,
-              background: resetConfirm ? "#c53030" : "#2d3748",
-            }}
-            onClick={handleReset}
-          >
-            {resetConfirm ? "⚠️ تأكيد الاستعادة؟" : "🔄 استعادة الافتراضي"}
-          </button>
         </div>
       </div>
-
-      {/* Firebase Cloud Sync Status Card */}
-      <FirebaseConfigCard />
 
       {/* Incoming Messages Card */}
       <MessagesInboxCard />
@@ -1057,16 +956,6 @@ const styles: Record<string, React.CSSProperties> = {
     border: "1px solid rgba(255,255,255,0.25)",
     cursor: "pointer",
     fontWeight: 600,
-  },
-  resetBtn: {
-    color: "white",
-    padding: "8px 18px",
-    borderRadius: 8,
-    fontSize: 14,
-    border: "none",
-    cursor: "pointer",
-    fontWeight: 600,
-    transition: "background 0.3s",
   },
 
   // --- Info bar ---

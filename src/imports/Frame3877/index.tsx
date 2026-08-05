@@ -1497,13 +1497,15 @@ function Group26() {
 }
 
 function Group2() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="[word-break:break-word] absolute contents left-[calc(83.33%-57px)] not-italic text-center text-white top-[4082.22px] whitespace-nowrap">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[56.687px] left-[calc(83.33%-11.6px)] text-[52.326px] top-[4082.22px] tracking-[-2.6163px]" dir="auto">
-        ٢٠٤
+        {h.impactStat1Value}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[15.698px] left-[calc(83.33%-13.5px)] text-[16.793px] top-[4134.92px]" dir="auto">
-        عدد المستفيدين
+        {h.impactStat1Label}
       </p>
     </div>
   );
@@ -1539,13 +1541,15 @@ function Group30() {
 }
 
 function Group27() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="[word-break:break-word] absolute contents left-[calc(66.67%+57px)] not-italic text-center text-white top-[4082.22px] whitespace-nowrap">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[56.687px] left-[calc(66.67%+87.63px)] text-[52.326px] top-[4082.22px] tracking-[-2.6163px]" dir="auto">
-        ١٩
+        {h.impactStat2Value}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[15.698px] left-[calc(66.67%+87px)] text-[16.793px] top-[4134.92px]" dir="auto">
-        عدد البرامج
+        {h.impactStat2Label}
       </p>
     </div>
   );
@@ -1565,13 +1569,15 @@ function Group31() {
 }
 
 function Group28() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="[word-break:break-word] absolute contents left-[calc(58.33%+28px)] not-italic text-center text-white top-[4082.22px] whitespace-nowrap">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[56.687px] left-[calc(58.33%+69.5px)] text-[52.326px] top-[4082.22px] tracking-[-2.6163px]" dir="auto">
-        ١٣٢
+        {h.impactStat3Value}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[15.698px] left-[calc(58.33%+70.19px)] text-[16.793px] top-[4134.92px]" dir="auto">
-        عدد المبادرات
+        {h.impactStat3Label}
       </p>
     </div>
   );
@@ -1591,13 +1597,15 @@ function Group32() {
 }
 
 function Group29() {
+  const { content } = useContent();
+  const h = content.home;
   return (
     <div className="[word-break:break-word] absolute contents left-[calc(50%+4px)] not-italic text-center text-white top-[4082.22px] whitespace-nowrap">
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[56.687px] left-[calc(50%+42.46px)] text-[52.326px] top-[4082.22px] tracking-[-2.6163px]" dir="auto">
-        ٨
+        {h.impactStat4Value}
       </p>
       <p className="-translate-x-1/2 absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[15.698px] left-[calc(50%+43px)] text-[16.793px] top-[4134.92px]" dir="auto">
-        عدد الشراكات
+        {h.impactStat4Label}
       </p>
     </div>
   );
@@ -2374,10 +2382,10 @@ function LandingPage() {
       <div className="absolute bg-white border-3 border-[#409bc5] border-solid h-[171px] left-[100px] rounded-[15px] top-[823px] w-[1239px] reveal-on-scroll card-hover-fx" />
       <Frame1 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[1048px] w-[418.961px] reveal-on-scroll" dir="auto">
-        نبــــذة عن الجمعية
+        {h.section1Title}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.5px)] not-italic text-[#009dc4] text-[55px] text-center top-[1389px] w-[897px] reveal-on-scroll" dir="auto">
-        لماذا جمعية الابتكار والاستدامة المجتمعية؟
+        {h.section2Title}
       </p>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] h-[176px] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1124px] w-[1030px] reveal-on-scroll reveal-delay-150">
         <p className="leading-[30px] mb-[8.521232604980469px]" dir="auto">
@@ -2388,16 +2396,16 @@ function LandingPage() {
         </p>
       </div>
       <div className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[0] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[1465px] w-[1030px] whitespace-pre-wrap reveal-on-scroll reveal-delay-150">
-        <p className="leading-[25px] mb-[8.521232604980469px]" dir="auto">{`يشهد العالم تحولًا متسارعًا يجعل الابتكار والاستدامة من أهم عوامل التنافس والتنمية. وفي ظل هذا التحول، تبرز الحاجة إلى جهة وطنية متخصصة تسهم في بناء القدرات، وتطوير الحلول، وربط مختلف القطاعات، وتحويل الأفكار إلى أثر مستدام. `}</p>
+        <p className="leading-[25px] mb-[8.521232604980469px]" dir="auto">{h.section2Body}</p>
         <p className="leading-[25px]" dir="auto">
-          جاء تأسيس الجمعية لتكون منصة وطنية تجمع بين الابتكار والاستدامة المجتمعية، وتدعم الأفراد والجهات في تطوير المبادرات، وتعزيز المعرفة، وبناء الشراكات، والمساهمة في معالجة التحديات المجتمعية من خلال حلول مبتكرة ومستدامة.
+          {h.section2Body2}
         </p>
       </div>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(70.83%+209.96px)] not-italic text-[#009dc4] text-[55px] text-right top-[3069px] w-[418.961px] reveal-on-scroll" dir="auto">
-        أبرز البـــــرامج
+        {h.section3Title}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(79.17%+92px)] not-italic text-[#009dc4] text-[55px] text-right top-[4757px] whitespace-nowrap reveal-on-scroll" dir="auto">
-        دعوة للتعاون
+        {h.ctaTitle}
       </p>
       <Group20 />
       <Group23 />
@@ -2429,13 +2437,13 @@ function LandingPage() {
         {h.ctaBody}
       </p>
       <p className="-translate-x-full [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[34px] left-[calc(75%+152px)] not-italic text-[#009dc4] text-[30px] text-right top-[4800px] whitespace-nowrap reveal-on-scroll" dir="auto">
-        {h.ctaTitle}
+        {h.ctaSubtitle}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[25px] left-[calc(8.33%+600px)] not-italic text-[#6e6e6e] text-[28px] text-center top-[4355px] w-[1020px] reveal-on-scroll reveal-delay-100" dir="auto">
         {h.partnersBody}
       </p>
       <p className="-translate-x-1/2 [word-break:break-word] absolute font-['Hacen_Casablanca:Regular',sans-serif] leading-[43px] left-[calc(50%+0.48px)] not-italic text-[#009dc4] text-[55px] text-center top-[4294px] w-[418.961px] reveal-on-scroll" dir="auto">
-        الشـــركاء
+        {h.partnersTitle}
       </p>
       <Component />
       <Group37 />
@@ -2451,7 +2459,7 @@ function LandingPage() {
       </div>
       <div className="-translate-x-1/2 absolute h-[320px] left-[calc(33.33%+29.5px)] rounded-[30px] top-[3065px] w-[609px] reveal-on-scroll reveal-scale banner-hover-fx" data-name="ChatGPT Image Apr 1, 2026 at 11_39_40 AM 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[30px]">
-          <img alt="" className="absolute h-[218.69%] left-[-64.07%] max-w-none top-[-85.57%] w-[229.67%]" src={imgChatGptImageApr12026At113940Am1} />
+          <img alt="" className="absolute h-[218.69%] left-[-64.07%] max-w-none top-[-85.57%] w-[229.67%]" src={h.section3Image || imgChatGptImageApr12026At113940Am1} />
         </div>
       </div>
       <Footer className="absolute bottom-0 h-[268px] left-0 w-[1440px] reveal-on-scroll" />

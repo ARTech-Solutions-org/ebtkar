@@ -22,7 +22,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />

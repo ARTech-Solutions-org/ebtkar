@@ -6,6 +6,8 @@ import { useContent } from "../../cms/ContentContext";
 import { imgRectangle21939, imgRectangle21940, imgRectangle21941, imgRectangle21942, imgRectangle21943, imgRectangle21944 } from "./svg-5czs3";
 
 function Footer({ className }: { className?: string }) {
+  const { content } = useContent();
+  const phone = content.global?.footer?.phone || "+966 0000 000 0000";
   return (
     <div className={className || "h-[268px] relative w-[1459px]"} data-name="Footer">
       <div className="absolute contents inset-0">
@@ -16,7 +18,7 @@ function Footer({ className }: { className?: string }) {
           </div>
         </div>
         <p className="[word-break:break-word] absolute font-['Hacen_Casablanca_Light:Regular',sans-serif] inset-[51.12%_23.65%_41.04%_66.07%] leading-[22.254px] not-italic text-[20px] text-right text-white whitespace-pre-wrap" dir="auto">
-          +966 00 000 0000
+          {phone}
           <br aria-hidden />
           <br aria-hidden />
           <br aria-hidden />
@@ -529,11 +531,13 @@ function Group2() {
 }
 
 function Group16() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(8.33%+165px)] top-[796px]">
       <Group15 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[43.8%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(29.17%+21.53px)] not-italic text-[27.549px] text-center text-white top-[51.83%] w-[100.179px]" dir="auto">
-        لائحة العضوية
+        {pol.card1Title}
       </p>
       <Group9 />
       <Group2 />
@@ -637,11 +641,13 @@ function Group3() {
 }
 
 function Group19() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(8.33%+165px)] top-[1192px]">
       <Group17 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[22.86%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(29.17%+21.53px)] not-italic text-[27.549px] text-center text-white top-[72.77%] w-[100.179px]" dir="auto">
-        لائحة الصلاحيات
+        {pol.card4Title}
       </p>
       <Group10 />
       <Group3 />
@@ -745,11 +751,13 @@ function Group4() {
 }
 
 function Group18() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(33.33%+86.24px)] top-[796px]">
       <Group20 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[43.8%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(50%+2.77px)] not-italic text-[27.549px] text-center text-white top-[51.83%] w-[100.179px]" dir="auto">
-        اللائحة التنظيمية
+        {pol.card2Title}
       </p>
       <Group11 />
       <Group4 />
@@ -853,11 +861,13 @@ function Group5() {
 }
 
 function Group21() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(33.33%+86.24px)] top-[1192px]">
       <Group22 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[22.86%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(50%+2.77px)] not-italic text-[27.549px] text-center text-white top-[72.77%] w-[100.179px]" dir="auto">
-        اللائحة المالية
+        {pol.card5Title}
       </p>
       <Group12 />
       <Group5 />
@@ -961,11 +971,13 @@ function Group6() {
 }
 
 function Group23() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(58.33%+6.63px)] top-[796px]">
       <Group24 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[43.8%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(70.83%-16.84px)] not-italic text-[27.549px] text-center text-white top-[51.83%] w-[100.179px]" dir="auto">
-        اللائحة الأساسية للجمعية
+        {pol.card3Title}
       </p>
       <Group13 />
       <Group6 />
@@ -1069,11 +1081,13 @@ function Group7() {
 }
 
 function Group25() {
+  const { content } = useContent();
+  const pol = content.policies;
   return (
     <div className="absolute contents left-[calc(58.33%+6.63px)] top-[1192px]">
       <Group26 />
       <p className="-translate-x-1/2 [word-break:break-word] absolute bottom-[22.86%] font-['Hacen_Casablanca_Light:Regular',sans-serif] leading-[28.801px] left-[calc(70.83%-16.84px)] not-italic text-[27.549px] text-center text-white top-[72.77%] w-[100.179px]" dir="auto">
-        لائحة الموارد البشرية
+        {pol.card6Title}
       </p>
       <Group14 />
       <Group7 />

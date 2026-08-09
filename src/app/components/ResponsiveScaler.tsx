@@ -98,7 +98,14 @@ function TransformScaler({
     const el = innerRef.current;
     if (!el) return;
 
-    const measure = () => setContentHeight(el.scrollHeight);
+    // NOTE: intentionally `offsetHeight`, not `scrollHeight`. Every page root
+    // sets an explicit height + `overflow-clip` (e.g. `h-[5954px] overflow-clip`)
+    // to intentionally hide decorative elements positioned past that boundary.
+    // `scrollHeight` ignores an element's own overflow-clip and reports the
+    // full, unclipped content extent — which inflated our measured height and
+    // left blank scrollable space below the footer. `offsetHeight` respects
+    // the clipped/declared box size, matching what's actually rendered.
+    const measure = () => setContentHeight(el.offsetHeight);
     measure();
 
     const resizeObserver = new ResizeObserver(measure);

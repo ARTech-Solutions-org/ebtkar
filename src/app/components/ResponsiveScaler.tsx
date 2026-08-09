@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
 
@@ -31,48 +31,6 @@ function useZoomScale() {
 
 export function ResponsiveScaler({ children }: { children: React.ReactNode }) {
   const scale = useZoomScale();
-  const innerRef = useRef<HTMLDivElement>(null);
-  const [contentHeight, setContentHeight] = useState<number>(0);
-
-  const isIOS = typeof navigator !== "undefined" && 
-    (/iPad|iPhone|iPod/.test(navigator.userAgent) || 
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
-
-  useLayoutEffect(() => {
-    if (!innerRef.current || !isIOS) return;
-    const updateHeight = () => {
-      if (innerRef.current) setContentHeight(innerRef.current.scrollHeight);
-    };
-    
-    // Setup observer to track any DOM changes in the children that affect height
-    const ro = new ResizeObserver(updateHeight);
-    ro.observe(innerRef.current);
-    
-    // Initial measure
-    updateHeight();
-    
-    return () => ro.disconnect();
-  }, [isIOS]);
-
-  if (isIOS) {
-    return (
-      <div style={{ width: "100%", overflowX: "hidden", position: "relative", height: contentHeight ? contentHeight * scale : "100vh" }}>
-        <div
-          ref={innerRef}
-          style={{
-            width: DESIGN_WIDTH,
-            position: "absolute",
-            left: "50%",
-            top: 0,
-            transform: `translateX(-50%) scale(${scale})`,
-            transformOrigin: "top center",
-          }}
-        >
-          {children}
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div style={{ width: "100%", overflowX: "hidden" }}>

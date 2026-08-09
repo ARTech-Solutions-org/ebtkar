@@ -1,10 +1,11 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getFirestore, doc, onSnapshot, setDoc, collection, query } from "firebase/firestore";
+import { getFirestore, doc, onSnapshot, setDoc, getDoc, collection, query } from "firebase/firestore";
 import { getSavedFirebaseConfig, isFirebaseConfigured } from "./firebaseConfig";
 import { SiteContent } from "./defaultContent";
 
 const COLLECTION_NAME = "site_content";
 const DOCUMENT_ID = "global_content";
+const IMAGES_COLLECTION = "site_images"; // each doc = one image field path
 
 let firestoreDb: ReturnType<typeof getFirestore> | null = null;
 
@@ -25,6 +26,124 @@ export function initFirebase() {
 
 // Auto init on import if configured
 initFirebase();
+
+// ================================================================
+// Image compression using browser Canvas API (100% free, no Storage)
+// Compresses to max 900px wide at JPEG quality 0.75 → typically 40-100KB
+// Well under Firestore's 1MB document limit.
+// ================================================================
+
+/**
+ * Compress a base64 image using canvas.
+ * Returns a compressed JPEG data-URL.
+ */
+export function compressImage(
+  dataUrl: string,
+  maxWidth = 900,
+  quality = 0.75
+): Promise<string> {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => {
+      const scale = Math.min(1, maxWidth / img.width);
+      const w = Math.round(img.width * scale);
+      const h = Math.round(img.height * scale);
+      const canvas = document.createElement("canvas");
+      canvas.width = w;
+      canvas.height = h;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) { resolve(dataUrl); return; }
+      ctx.drawImage(img, 0, 0, w, h);
+      resolve(canvas.toDataURL("image/jpeg", quality));
+    };
+    img.onerror = () => resolve(dataUrl);
+    img.src = dataUrl;
+  });
+}
+
+/**
+ * Save a compressed image to a dedicated Firestore document.
+ * Collection: site_images / document: encoded field path
+ * e.g. path "home.heroImage" → doc id "home__heroImage"
+ */
+export async function saveImageToCloud(
+  fieldPath: string,
+  dataUrl: string
+): Promise<boolean> {
+  if (!firestoreDb) firestoreDb = initFirebase();
+  if (!firestoreDb) return false;
+
+  try {
+    // Compress before saving
+    const compressed = await compressImage(dataUrl);
+    // Encode the path as a safe Firestore doc ID (no dots allowed)
+    const docId = fieldPath.replace(/\./g, "__");
+    const docRef = doc(firestoreDb, IMAGES_COLLECTION, docId);
+    await setDoc(docRef, { dataUrl: compressed, path: fieldPath, updatedAt: Date.now() });
+    return true;
+  } catch (err) {
+    console.error("Failed to save image to Firestore:", err);
+    return false;
+  }
+}
+
+/**
+ * Load all images from Firestore once (for initial hydration).
+ * Returns a flat record { fieldPath: dataUrl }.
+ */
+export async function loadAllImagesFromCloud(): Promise<Record<string, string>> {
+  if (!firestoreDb) firestoreDb = initFirebase();
+  if (!firestoreDb) return {};
+
+  try {
+    const { getDocs } = await import("firebase/firestore");
+    const col = collection(firestoreDb, IMAGES_COLLECTION);
+    const snapshot = await getDocs(col);
+    const images: Record<string, string> = {};
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
+      if (data.path && data.dataUrl) {
+        images[data.path] = data.dataUrl;
+      }
+    });
+    return images;
+  } catch (err) {
+    console.warn("Could not load images from Firestore:", err);
+    return {};
+  }
+}
+
+/**
+ * Subscribe to real-time image updates from Firestore.
+ * Fires with the full images map whenever any image changes.
+ */
+export function subscribeToCloudImages(
+  onUpdate: (images: Record<string, string>) => void
+): () => void {
+  if (!firestoreDb) firestoreDb = initFirebase();
+  if (!firestoreDb) return () => {};
+
+  try {
+    const col = collection(firestoreDb, IMAGES_COLLECTION);
+    const unsubscribe = onSnapshot(
+      col,
+      (snapshot) => {
+        const images: Record<string, string> = {};
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+          if (data.path && data.dataUrl) {
+            images[data.path] = data.dataUrl;
+          }
+        });
+        onUpdate(images);
+      },
+      (err) => console.warn("Image subscription warning:", err)
+    );
+    return unsubscribe;
+  } catch {
+    return () => {};
+  }
+}
 
 export function subscribeToCloudContent(
   onUpdate: (content: Partial<SiteContent>) => void
@@ -61,8 +180,17 @@ export async function saveContentToCloud(content: SiteContent): Promise<boolean>
   if (!firestoreDb) return false;
 
   try {
+    // Strip any base64 image data before saving to the main content doc.
+    // Images are stored separately in site_images collection.
+    const safeContent = JSON.parse(JSON.stringify(content, (_key, value) => {
+      if (typeof value === "string" && value.startsWith("data:image")) {
+        return ""; // Strip base64 — stored separately via saveImageToCloud
+      }
+      return value;
+    })) as SiteContent;
+
     const docRef = doc(firestoreDb, COLLECTION_NAME, DOCUMENT_ID);
-    await setDoc(docRef, content, { merge: true });
+    await setDoc(docRef, safeContent, { merge: true });
     return true;
   } catch (error) {
     console.error("Failed to save content to Cloud Firestore:", error);
@@ -133,15 +261,12 @@ export function subscribeToContactSubmissions(
         snapshot.docs.forEach((docSnap) => {
           const data = docSnap.data();
           if (docSnap.id === "all_messages" && Array.isArray(data.list)) {
-            // Legacy array format (old batch document)
             allMsgs.push(...data.list);
           } else if (data.name && data.email) {
-            // Individual document format — message field is optional (quick contact form doesn't have it)
             allMsgs.push(data as ContactSubmission);
           }
         });
 
-        // Sort by createdAt descending (most recent first)
         allMsgs.sort((a, b) => {
           const dateA = new Date(a.createdAt || 0).getTime();
           const dateB = new Date(b.createdAt || 0).getTime();

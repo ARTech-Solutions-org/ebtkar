@@ -76,13 +76,21 @@ export async function saveImageToCloud(
   try {
     // Compress before saving
     const compressed = await compressImage(dataUrl);
+    
+    // Debug size
+    const sizeInKb = Math.round(compressed.length / 1024);
+    console.log(`📸 Saving image ${fieldPath}: ${sizeInKb} KB`);
+    if (sizeInKb > 900) {
+      console.warn("⚠️ Image is dangerously close to 1MB limit!");
+    }
+
     // Encode the path as a safe Firestore doc ID (no dots allowed)
     const docId = fieldPath.replace(/\./g, "__");
     const docRef = doc(firestoreDb, IMAGES_COLLECTION, docId);
     await setDoc(docRef, { dataUrl: compressed, path: fieldPath, updatedAt: Date.now() });
     return true;
   } catch (err) {
-    console.error("Failed to save image to Firestore:", err);
+    console.error("❌ Failed to save image to Firestore:", err);
     return false;
   }
 }

@@ -68,7 +68,8 @@ function saveImageCache(images: Record<string, string>): void {
 /** Apply a flat { "page.fieldName": dataUrl } map onto a SiteContent object */
 function applyImages(content: SiteContent, images: Record<string, string>): SiteContent {
   if (!Object.keys(images).length) return content;
-  const result = structuredClone(content) as Record<string, unknown>;
+  // Use JSON parse/stringify for maximum browser compatibility
+  const result = JSON.parse(JSON.stringify(content)) as Record<string, unknown>;
   for (const [path, value] of Object.entries(images)) {
     if (!value) continue;
     const parts = path.split(".");
@@ -170,6 +171,7 @@ export function ContentProvider({ children }: { children: React.ReactNode }) {
   // 2. Subscribe to images from Firebase (site_images collection)
   useEffect(() => {
     const unsubscribe = subscribeToCloudImages((cloudImages) => {
+      console.log("☁️ [Firebase] Received images update:", Object.keys(cloudImages).length, "images");
       if (!Object.keys(cloudImages).length) return;
       // Update local cache with the latest cloud images
       const currentCache = loadImageCache();

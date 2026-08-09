@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const DESIGN_WIDTH = 1440;
 
@@ -46,12 +46,28 @@ function isIOS(): boolean {
   return navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
 }
 
-export function ResponsiveScaler({ children }: { children: React.ReactNode }) {
+export function ResponsiveScaler({
+  children,
+  designHeight,
+}: {
+  children: React.ReactNode;
+  /**
+   * The page's real, unscaled content height in design pixels (i.e. the
+   * `h-[Npx]` value on that page's root element). Required so the iOS
+   * `TransformScaler` fallback can size its wrapper deterministically —
+   * see that component's doc comment for why this replaced DOM measurement.
+   */
+  designHeight: number;
+}) {
   const scale = useZoomScale();
   const [ios] = useState(isIOS);
 
   if (ios) {
-    return <TransformScaler scale={scale}>{children}</TransformScaler>;
+    return (
+      <TransformScaler scale={scale} designHeight={designHeight}>
+        {children}
+      </TransformScaler>
+    );
   }
 
   return (
@@ -78,64 +94,40 @@ export function ResponsiveScaler({ children }: { children: React.ReactNode }) {
  * still occupies its full, unscaled size in the document flow. Left alone
  * that would leave a huge blank gap below the (visually shrunk) page.
  *
- * We fix this by measuring the real, unscaled content height ourselves and
- * setting it explicitly (scaled) on the outer wrapper, so the page's scroll
- * height matches what's actually visible. The height is re-measured whenever
- * the content's size changes (images loading, scroll-reveal animations,
- * route changes swapping the page content, etc.).
+ * We fix this by giving the outer wrapper an explicit height of
+ * `designHeight * scale`, where `designHeight` is the page's real,
+ * known-in-advance content height (every Figma-exported page root has a
+ * fixed `h-[Npx]` class — see the route definitions in `App.tsx`).
+ *
+ * A previous version of this component *measured* the rendered height at
+ * runtime (via `offsetHeight` + `ResizeObserver`/`MutationObserver`) instead
+ * of taking it as a prop. That was unreliable in practice: the measurement
+ * could run before scroll-reveal animations, route-transition motion, web
+ * fonts, or lazy images finished settling, producing a wrapper taller than
+ * the actual visible content and leaving blank scrollable space below the
+ * footer on iOS Safari/Chrome. Since every page's content height is fixed
+ * (Figma exports use absolute positioning, so CMS text edits reflow inside
+ * fixed-size boxes rather than changing the page height), a static, known
+ * value is both simpler and correct — no measurement, no races.
  */
 function TransformScaler({
   children,
   scale,
+  designHeight,
 }: {
   children: React.ReactNode;
   scale: number;
+  designHeight: number;
 }) {
-  const innerRef = useRef<HTMLDivElement>(null);
-  const [contentHeight, setContentHeight] = useState(0);
-
-  useLayoutEffect(() => {
-    const el = innerRef.current;
-    if (!el) return;
-
-    // NOTE: intentionally `offsetHeight`, not `scrollHeight`. Every page root
-    // sets an explicit height + `overflow-clip` (e.g. `h-[5954px] overflow-clip`)
-    // to intentionally hide decorative elements positioned past that boundary.
-    // `scrollHeight` ignores an element's own overflow-clip and reports the
-    // full, unclipped content extent — which inflated our measured height and
-    // left blank scrollable space below the footer. `offsetHeight` respects
-    // the clipped/declared box size, matching what's actually rendered.
-    const measure = () => setContentHeight(el.offsetHeight);
-    measure();
-
-    const resizeObserver = new ResizeObserver(measure);
-    resizeObserver.observe(el);
-
-    // Content height also changes as lazy images load or reveal animations
-    // add/adjust elements, which ResizeObserver alone won't always catch.
-    const mutationObserver = new MutationObserver(measure);
-    mutationObserver.observe(el, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-    });
-
-    return () => {
-      resizeObserver.disconnect();
-      mutationObserver.disconnect();
-    };
-  }, []);
-
   return (
     <div
       style={{
         width: "100%",
         overflowX: "hidden",
-        height: contentHeight ? contentHeight * scale : undefined,
+        height: designHeight * scale,
       }}
     >
       <div
-        ref={innerRef}
         style={{
           width: DESIGN_WIDTH,
           transform: `scale(${scale})`,

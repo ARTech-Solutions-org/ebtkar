@@ -1358,7 +1358,7 @@ function LandingPage() {
       <div className="absolute border border-solid border-white h-[411px] left-[100px] rounded-[30px] top-[205px] w-[812px]" />
       <div className="absolute h-[583px] left-[calc(50%+10px)] top-[124px] w-[608px] animate-hero-image" data-name="Layer 1 1">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={imgLayer11} />
+          <img alt="" className="absolute h-[107.72%] left-[-0.06%] max-w-none top-0 w-[100.11%]" src={a.heroImage || imgLayer11} />
         </div>
       </div>
       <div className="absolute h-[347px] left-[calc(8.33%+85px)] rounded-[30px] top-[790px] w-[505px] reveal-on-scroll reveal-scale banner-hover-fx" data-name="ChatGPT Image Jul 26, 2026 at 12_33_34 PM 1">

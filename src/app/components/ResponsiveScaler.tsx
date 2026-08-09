@@ -123,7 +123,17 @@ function TransformScaler({
     <div
       style={{
         width: "100%",
-        overflowX: "hidden",
+        // `overflow: hidden` on BOTH axes (not just X) is load-bearing here.
+        // Every page relies on `overflow-clip` on its own root div to hide
+        // decorative/off-canvas elements Figma positions below the visible
+        // design boundary. `overflow-clip` only has iOS Safari support from
+        // iOS 16 onward — on anything older it's silently ignored, so that
+        // leftover content isn't clipped and leaks through, extending the
+        // page's real scrollable height well past our computed `height`
+        // below and leaving blank space under the footer. Setting
+        // `overflow: hidden` here enforces our computed height as a hard
+        // boundary regardless of whether the inner `overflow-clip` worked.
+        overflow: "hidden",
         height: designHeight * scale,
       }}
     >

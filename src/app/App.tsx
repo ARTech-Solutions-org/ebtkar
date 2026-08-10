@@ -30,15 +30,26 @@ const AdminPanel = React.lazy(() => import("../cms/AdminPanel"));
  * On mobile viewports (< 1024px) a fixed MobileNav header is shown.
  * The MobileNav is ~52px tall, so we push the scaled content down by
  * that amount so it doesn't hide underneath the fixed bar.
+ *
+ * `designHeight` is that page's root element's real, fixed content height
+ * (the `h-[Npx]` class on its "Landing Page" root div) — required by
+ * ResponsiveScaler's iOS fallback. Keep it in sync if a page's root height
+ * class ever changes.
  */
-function ScaledPage({ children }: { children: React.ReactNode }) {
+function ScaledPage({
+  children,
+  designHeight,
+}: {
+  children: React.ReactNode;
+  designHeight: number;
+}) {
   return (
     <>
       {/* Mobile nav is rendered outside the scaler so it stays full-size */}
       <MobileNav />
       {/* Spacer that only appears on mobile to prevent content hiding under the fixed nav bar */}
       <div className="lg:hidden h-[52px]" />
-      <ResponsiveScaler>
+      <ResponsiveScaler designHeight={designHeight}>
         <PageTransition>
           {children}
         </PageTransition>
@@ -61,20 +72,20 @@ function AppRoutes() {
   return (
     <Suspense fallback={<div className="page-loading-spinner"><div className="page-loading-spinner__ring" /></div>}>
       <Routes>
-        <Route path="/" element={<ScaledPage><Frame3877 /></ScaledPage>} />
-        <Route path="/about" element={<ScaledPage><Frame3876 /></ScaledPage>} />
-        <Route path="/programs" element={<ScaledPage><Frame3875 /></ScaledPage>} />
-        <Route path="/initiatives" element={<ScaledPage><Frame3867 /></ScaledPage>} />
-        <Route path="/knowledge" element={<ScaledPage><Frame3874 /></ScaledPage>} />
-        <Route path="/partners" element={<ScaledPage><Frame3872 /></ScaledPage>} />
-        <Route path="/impact" element={<ScaledPage><Frame3873 /></ScaledPage>} />
-        <Route path="/empowerment" element={<ScaledPage><Frame3871 /></ScaledPage>} />
-        <Route path="/contact" element={<ScaledPage><Frame3870 /></ScaledPage>} />
-        <Route path="/policies" element={<ScaledPage><Frame3869 /></ScaledPage>} />
-        <Route path="/governance" element={<ScaledPage><Frame3868 /></ScaledPage>} />
+        <Route path="/" element={<ScaledPage designHeight={5954}><Frame3877 /></ScaledPage>} />
+        <Route path="/about" element={<ScaledPage designHeight={8639}><Frame3876 /></ScaledPage>} />
+        <Route path="/programs" element={<ScaledPage designHeight={3783}><Frame3875 /></ScaledPage>} />
+        <Route path="/initiatives" element={<ScaledPage designHeight={4626}><Frame3867 /></ScaledPage>} />
+        <Route path="/knowledge" element={<ScaledPage designHeight={5330}><Frame3874 /></ScaledPage>} />
+        <Route path="/partners" element={<ScaledPage designHeight={2602}><Frame3872 /></ScaledPage>} />
+        <Route path="/impact" element={<ScaledPage designHeight={2134}><Frame3873 /></ScaledPage>} />
+        <Route path="/empowerment" element={<ScaledPage designHeight={2786}><Frame3871 /></ScaledPage>} />
+        <Route path="/contact" element={<ScaledPage designHeight={2765}><Frame3870 /></ScaledPage>} />
+        <Route path="/policies" element={<ScaledPage designHeight={1891}><Frame3869 /></ScaledPage>} />
+        <Route path="/governance" element={<ScaledPage designHeight={1598}><Frame3868 /></ScaledPage>} />
         <Route path={adminPath} element={<AdminPanel />} />
         {/* If someone tries /admin, render home page */}
-        <Route path="/admin" element={<ScaledPage><Frame3877 /></ScaledPage>} />
+        <Route path="/admin" element={<ScaledPage designHeight={5954}><Frame3877 /></ScaledPage>} />
       </Routes>
     </Suspense>
   );

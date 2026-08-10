@@ -73,12 +73,18 @@ function ScaledPage({
           color: "rgba(255,255,255,0.75)",
           letterSpacing: "0.04em",
           userSelect: "none",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "10px",
         }}
       >
-        Powered by{" "}
-        <span style={{ color: "#fff", fontWeight: 700, letterSpacing: "0.08em" }}>
-          ARTECH
-        </span>
+        <span style={{ color: "rgba(255,255,255,0.75)" }}>Powered by</span>
+        <img
+          src="/artech-logo.png"
+          alt="ARTECH"
+          style={{ height: "22px", objectFit: "contain", display: "block" }}
+        />
       </div>
     </>
   );

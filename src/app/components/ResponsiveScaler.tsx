@@ -8,6 +8,11 @@ const DESIGN_WIDTH = 1440;
  *   - Exact 1440px       → zoom = 1  (design at native size)
  *   - Larger viewports   → zoom > 1  (scales up, fills wide screens, eliminates
  *                                      white gaps beside colored sections)
+ *
+ * BUG 2 FIX: The previous version used Math.min(1, …) which capped at 1.0.
+ * At viewports wider than 1440px (e.g. 1920px) the 1440px canvas was centered
+ * and the white outer wrapper background showed beside every colored section.
+ * Removing the cap lets the canvas fill any viewport width.
  */
 function useZoomScale() {
   const [scale, setScale] = useState(() =>
@@ -25,62 +30,118 @@ function useZoomScale() {
 }
 
 /**
- * Resets any accidental horizontal scroll that iOS Safari may introduce
- * after a pinch-to-zoom gesture. Even with CSS zoom (which fixes layout width),
- * a partial gesture can leave window.scrollX > 0.
- *
- * We listen on "scroll" at the capture phase so we catch it before any
- * component's own scroll handler, then snap back to x=0 if it drifted.
+ * Every browser on iOS (Safari, Chrome, Firefox, ...) is required by Apple to
+ * run on WebKit under the hood, and WebKit's CSS `zoom` support is unreliable:
+ * it can scale the layout box without scaling text/rendering the same way,
+ * which desyncs our absolutely-positioned Figma sections from their text and
+ * produces a garbled, overlapping page. Detect iOS once and route those
+ * devices to a `transform: scale()`-based fallback instead (see below).
  */
-function useBlockHorizontalScroll() {
-  useEffect(() => {
-    const handler = () => {
-      if (window.scrollX !== 0) {
-        window.scrollTo({ left: 0, behavior: "instant" as ScrollBehavior });
-      }
-    };
-    window.addEventListener("scroll", handler, { passive: true, capture: true });
-    return () => window.removeEventListener("scroll", handler, { capture: true });
-  }, []);
+function isIOS(): boolean {
+  if (typeof navigator === "undefined") return false;
+  const ua = navigator.userAgent || "";
+  if (/iPad|iPhone|iPod/.test(ua)) return true;
+  // iPadOS 13+ sends a desktop-Safari-style UA, but reports multi-touch support
+  // (real Macs don't), so this catches iPads that would otherwise slip through.
+  return navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
 }
 
 export function ResponsiveScaler({
   children,
-  designHeight: _designHeight,
+  designHeight,
 }: {
   children: React.ReactNode;
   /**
-   * Previously required by the iOS TransformScaler fallback to compute
-   * the wrapper height deterministically. Now unused — CSS zoom (used on
-   * all devices, including iOS) affects layout, so the document height is
-   * naturally correct without an explicit height override.
-   *
-   * Kept in the prop signature to avoid breaking the callsites in App.tsx.
+   * The page's real, unscaled content height in design pixels (i.e. the
+   * `h-[Npx]` value on that page's root element). Required so the iOS
+   * `TransformScaler` fallback can size its wrapper deterministically —
+   * see that component's doc comment for why this replaced DOM measurement.
    */
   designHeight: number;
 }) {
   const scale = useZoomScale();
-  useBlockHorizontalScroll();
+  const [ios] = useState(isIOS);
+
+  if (ios) {
+    return (
+      <TransformScaler scale={scale} designHeight={designHeight}>
+        {children}
+      </TransformScaler>
+    );
+  }
 
   return (
-    // CSS `zoom` scales both the visual rendering AND the layout box, so:
-    //   1. The inner 1440px div's *layout* width becomes 1440 * scale ≈ viewport width.
-    //      iOS Safari therefore sees no horizontal overflow → no horizontal scroll
-    //      region → pinch-to-zoom no longer reveals a white blank area to the right.
-    //   2. Tap targets, scroll heights, and document flow are all naturally correct
-    //      (unlike `transform: scale` which only scales visually, not in layout space).
-    //
-    // Previous approach (iOS): `transform: scale` was used because an old WebKit bug
-    // could desync absolutely-positioned children from their text when CSS zoom was
-    // applied. That bug is fixed in modern iOS (15+). Switching to a unified CSS zoom
-    // path eliminates the horizontal-scroll-after-pinch bug on iOS completely.
     <div style={{ width: "100%", overflowX: "hidden" }}>
       <div
         style={{
           width: DESIGN_WIDTH,
           marginLeft: "auto",
           marginRight: "auto",
+          // CSS zoom scales both visually AND in layout space (unlike transform: scale),
+          // so scroll height, tap targets, and document flow all scale correctly.
           zoom: scale,
+        }}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * iOS fallback: `transform: scale()` renders reliably on WebKit (unlike
+ * `zoom`), but unlike `zoom` it does NOT affect layout — the scaled element
+ * still occupies its full, unscaled size in the document flow. Left alone
+ * that would leave a huge blank gap below the (visually shrunk) page.
+ *
+ * We fix this by giving the outer wrapper an explicit height of
+ * `designHeight * scale`, where `designHeight` is the page's real,
+ * known-in-advance content height (every Figma-exported page root has a
+ * fixed `h-[Npx]` class — see the route definitions in `App.tsx`).
+ *
+ * A previous version of this component *measured* the rendered height at
+ * runtime (via `offsetHeight` + `ResizeObserver`/`MutationObserver`) instead
+ * of taking it as a prop. That was unreliable in practice: the measurement
+ * could run before scroll-reveal animations, route-transition motion, web
+ * fonts, or lazy images finished settling, producing a wrapper taller than
+ * the actual visible content and leaving blank scrollable space below the
+ * footer on iOS Safari/Chrome. Since every page's content height is fixed
+ * (Figma exports use absolute positioning, so CMS text edits reflow inside
+ * fixed-size boxes rather than changing the page height), a static, known
+ * value is both simpler and correct — no measurement, no races.
+ */
+function TransformScaler({
+  children,
+  scale,
+  designHeight,
+}: {
+  children: React.ReactNode;
+  scale: number;
+  designHeight: number;
+}) {
+  return (
+    <div
+      style={{
+        width: "100%",
+        // `overflow: hidden` on BOTH axes (not just X) is load-bearing here.
+        // Every page relies on `overflow-clip` on its own root div to hide
+        // decorative/off-canvas elements Figma positions below the visible
+        // design boundary. `overflow-clip` only has iOS Safari support from
+        // iOS 16 onward — on anything older it's silently ignored, so that
+        // leftover content isn't clipped and leaks through, extending the
+        // page's real scrollable height well past our computed `height`
+        // below and leaving blank space under the footer. Setting
+        // `overflow: hidden` here enforces our computed height as a hard
+        // boundary regardless of whether the inner `overflow-clip` worked.
+        overflow: "hidden",
+        height: designHeight * scale,
+      }}
+    >
+      <div
+        style={{
+          width: DESIGN_WIDTH,
+          transform: `scale(${scale})`,
+          transformOrigin: "top left",
         }}
       >
         {children}

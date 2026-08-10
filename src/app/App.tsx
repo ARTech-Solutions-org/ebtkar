@@ -62,6 +62,24 @@ function ScaledPage({
         component mounted, leaving every .reveal-on-scroll element permanently hidden.
       */}
       <ScrollRevealInit />
+      {/* Powered by ARTECH — rendered outside the scaler so it's always native size */}
+      <div
+        style={{
+          background: "linear-gradient(to left, #0e3141, #0199c2)",
+          textAlign: "center",
+          padding: "10px 16px",
+          fontFamily: "'29LT Bukra Variable', sans-serif",
+          fontSize: "13px",
+          color: "rgba(255,255,255,0.75)",
+          letterSpacing: "0.04em",
+          userSelect: "none",
+        }}
+      >
+        Powered by{" "}
+        <span style={{ color: "#fff", fontWeight: 700, letterSpacing: "0.08em" }}>
+          ARTECH
+        </span>
+      </div>
     </>
   );
 }

@@ -48,7 +48,7 @@ function MessagesInboxCard() {
 }
 
 // ================================================================
-// ADMIN PANEL — CMS for the ARTech Connect website
+// ADMIN PANEL — CMS for the ISCA Connect website
 // Route: /admin  (protected by simple password gate)
 // ================================================================
 
@@ -726,7 +726,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
     <div style={styles.loginWrap}>
       <div style={styles.loginCard}>
         <div style={styles.loginLogo}>🔐</div>
-        <h1 style={styles.loginTitle}>لوحة التحكم — ARTech Connect</h1>
+        <h1 style={styles.loginTitle}>لوحة التحكم — ISCA Connect</h1>
         <p style={styles.loginSub}>يرجى إدخال كلمة المرور للمتابعة</p>
         <form onSubmit={handleSubmit} style={styles.loginForm}>
           <input
@@ -793,7 +793,7 @@ function AdminPanelInner() {
           <div>
             <div style={styles.headerTitle}>لوحة إدارة المحتوى</div>
             <div style={styles.headerSub}>
-              ARTech Connect — كل التغييرات تُحفظ تلقائيًا
+              ISCA Connect — كل التغييرات تُحفظ تلقائيًا
             </div>
           </div>
         </div>
